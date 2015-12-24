@@ -6,6 +6,6 @@ categories: jekyll update
 ---
 
 this is my first blog. 
-i will post new blogs if i think it will be usefull for others. 
+i will post new blogs if i think it will be useful for others. 
 
 
