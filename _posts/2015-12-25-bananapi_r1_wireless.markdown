@@ -63,7 +63,6 @@ auto br0
 iface br0 inet static
       address 192.168.241.93
       netmask 255.255.255.0
-      gateway 192.168.241.10
       bridge_ports eth0.102 wlan1
       bridge_waitport 0
 
@@ -95,7 +94,43 @@ country_code=XY 	# where you are living
 bridge name     bridge id               STP enabled     interfaces
 br0             8000.024c05c2f439       no              eth0.102
                                                         wlan1
+# ip ( previously ifconfig ) 
 
 </pre> 
+
+Beware the fact a local firewall could run and block some protocols or the complete traffic. 
+
+### Example output 
+
+<pre>
+# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN group default
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UNKNOWN group default qlen 1000
+    link/ether 02:4c:05:c2:f4:39 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.0.1/30 brd 10.0.0.3 scope global eth0
+    inet 192.168.241.93/24 brd 192.168.241.255 scope global eth0
+    inet6 fe80::4c:5ff:fec2:f439/64 scope link
+       valid_lft forever preferred_lft forever
+3: tunl0: <NOARP> mtu 1480 qdisc noop state DOWN group default
+    link/ipip 0.0.0.0 brd 0.0.0.0
+4: wlan1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master br0 state UP group default qlen 1000
+    link/ether 20:f4:1b:07:83:18 brd ff:ff:ff:ff:ff:ff
+5: eth0.101@eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 02:4c:05:c2:f4:39 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.0.1/30 brd 10.0.0.3 scope global eth0.101
+    inet6 fe80::4c:5ff:fec2:f439/64 scope link
+       valid_lft forever preferred_lft forever
+6: br0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 02:4c:05:c2:f4:39 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.241.93/24 brd 192.168.241.255 scope global br0
+    inet6 fe80::4c:5ff:fec2:f439/64 scope link
+       valid_lft forever preferred_lft forever
+7: eth0.102@eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br0 state UP group default
+    link/ether 02:4c:05:c2:f4:39 brd ff:ff:ff:ff:ff:ff
+</pre>
 
 
