@@ -16,7 +16,7 @@ iface br0 inet6 static
 
 All bridged interfaces will get this new IPv6 address. 
 
-For details about bridge configuration see my yesterdays posting: [bananapi_r1_wireless](/2015/12/26/bananapi_r1_wireless.html)
+For details about bridge configuration see my yesterdays posting: [bananapi_r1_wireless](/2015/12/25/bananapi_r1_wireless.html)
 
 
 
