@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "welcome to hans mayer "
-date:   2015-12-23 18:00:00
-categories: jekyll update
+date:   2015-12-23 18:00:00 CET
+categories: general
 ---
 
 this is my first blog. 

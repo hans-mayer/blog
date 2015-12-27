@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "banana pi r1 with switch configuration and wireless "
-date:   2015-12-25 23:30:00
-categories: jekyll update
+date:   2015-12-25 23:30:00 CET
+categories: bananapi bridge wireless switch
 ---
 
 This document describes how to configure a BananaPi R1 with a switch configuration and an additional bridge interface for wireless connectivity. 

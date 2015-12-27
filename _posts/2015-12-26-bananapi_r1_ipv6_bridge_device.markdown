@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "banana pi r1 with a bridge device and IPv6 "
-date:   2015-12-26 22:40:00
-categories: jekyll update
+date:   2015-12-26 22:40:00 CET
+categories: ipv6 bananapi bridge wireless switch
 ---
 
 
