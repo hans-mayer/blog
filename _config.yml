@@ -9,4 +9,6 @@ github_username:  hans-mayer
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title.html
+gems:
+  - jekyll-sitemap
 
