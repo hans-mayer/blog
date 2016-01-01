@@ -15,6 +15,4 @@ Some useful external links for the Banana Pi
 
 [http://hardware-libre.fr/2014/07/banana-pi-gpio-now-supported/](http://hardware-libre.fr/2014/07/banana-pi-gpio-now-supported/){:target="_blank"}
 
-
-
-
+[https://github.com/infinet/bananapi](https://github.com/infinet/bananapi){:target="_blank"} - PPS over GPIO patch 
