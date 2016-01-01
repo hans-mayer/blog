@@ -75,7 +75,7 @@ Now you are IPv6 ready. The client must be enabled for IPv6. But this is typical
    Link-local IPv6-Address . . . . . : fe80::cc2b:5a5f:52a:1007%10(Preferred)
 </pre>
 
-Maybe you are not happy with this long addresses. Especially if you want connect remotely to this IPv6 client. In this case you need a DHCP server which updates DNS records. 
+Maybe you are not happy with this long addresses. Especially if you want connect remotely to this IPv6 client. In this case you need a DHCP server which updates DNS records. See [dhcp-with-ipv6]({% post_url 2015-12-31-dhcp-with-ipv6%})
 
 For IPv6 access to the Internet we are missing 2 aspects:
 
