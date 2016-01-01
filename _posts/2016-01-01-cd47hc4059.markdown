@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "CD74HC4059" 
+date:   2016-01-01 16:50:00 CET
+categories: integrated circuit 
+---
+
+
+## IC 74HC4059 
+
+divide-by-n mode: PIN latch enable = L ( PIN 2 )  <br />
+ground: PIN 12  -  Vcc: PIN 24 <br /> 
+Kb ( PIN 13 ) = Kc ( PIN 11 ) = Low for master reset during power on 
+
+
+## divide by 1000 ( n = 1000 ) 
+
+input frequency 10000000 Hz = 10 MHz 
+
+output first stage 10000 Hz = 10 kHz 
+
+mode 5 -> preset value = 1000 / 5 = 200 
+
+n = 1000 = 5 * ( 0 * 1000 + 2 * 100 + 0 * 10 + 0 ) 
+
+<pre>
+                       one           ten             hundred 
+dec       0     0       0             0                2
+jam   j1 j2 j3 j4  j5 j6 j7 j8  j9 j10 j11 j12  j13 j14 j15 j16    Ka Kb Kc 
+bin    L  L  L  L   L  L  L  L   L   L   L   L    L   H   L   L     H  L  H
+PIN    3  4  5  6  22 21 20 19  18  17  16  15   10   9   8   7    14 13 11
+</pre>
+
+
+## divide by 2500 ( n = 2500 ) 
+
+input frequency 5000 Hz = 5 kHz 
+
+output second stage 2 Hz
+
+mode 5 -> preset value = 2500 / 5 = 500 
+
+n = 2500 = 5 * ( 0 * 1000 + 5 * 100 + 0 * 10 + 0 ) 
+
+<pre>
+                       one           ten             hundred
+dec       0     0       0             0                5
+jam   j1 j2 j3 j4  j5 j6 j7 j8  j9 j10 j11 j12  j13 j14 j15 j16    Ka Kb Kc
+bin    L  L  L  L   L  L  L  L   L   L   L   L    H   L   H   L     H  L  H
+PIN    3  4  5  6  22 21 20 19  18  17  16  15   10   9   8   7    14 13 11
+</pre>
+
+
+[74HC4059](/images/74HC_HCT4059_CNV.pdf){:target="_blank"}
+
