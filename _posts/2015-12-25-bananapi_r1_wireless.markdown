@@ -16,10 +16,12 @@ Linux 3.4.108-bananian armv7l GNU/Linux
 ### Additional packages to install 
 
 <pre>
-||/ Name                Version      Architecture      Description
-+++-===================-============-=================-==========================================================
-ii  bridge-utils        1.5-9        armhf             Utilities for configuring the Linux Ethernet bridge
-ii  hostapd-rtl         2.4-4        armhf             IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
+||/ Name             Version      Architecture      Description
++++-================-============-=================-==========================================================
+ii  bridge-utils     1.5-9        armhf             Utilities for configuring the Linux Ethernet bridge
+ii  hostapd-rtl      2.4-4        armhf             IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator
+ii  vlan             1.9-3.2      armhf             user mode programs to enable VLANs on your ethernet devices
+
 </pre>
 
 ### Switch config 
