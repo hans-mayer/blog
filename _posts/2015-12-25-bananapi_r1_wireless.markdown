@@ -70,7 +70,16 @@ iface br0 inet static
 
 </pre> 
 
+
 ### Wireless config 
+
+
+#### /etc/default/hostapd
+
+<pre>
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
+</pre>
+
 
 #### /etc/hostapd/hostapd.conf
 
