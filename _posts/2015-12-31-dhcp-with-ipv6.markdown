@@ -16,7 +16,7 @@ But DHCP offers some additional possibilities, so called DHCP options. In this c
 * define a network 
 * assign a fixed IP address for a client 
 
-If you think about to run a DHCP server for IPv6 you run already maybe on for IPv4. I am using the one from isc.org but not saying that others do their jobs not worse. For IPv6 I run a second instance. The following ports are used 
+If you think about to run a DHCP server for IPv6 maybe you run already one for IPv4. I am using the one from isc.org but not saying that others do their jobs worse. For IPv6 I run a second instance. The following ports are used 
 
 * IPv4 67/UDP bootps
 * IPv6 547/UDP dhcpv6-server 
@@ -70,7 +70,7 @@ subnet6 2001:db8::64 {
 host mywinpc {
         host-identifier option dhcp6.client-id 00:01:00:01:1d:db:2d:09:c0:20:03:10:a6:4f ;
         fixed-address6 2001:db8:0:0:3::43 ;
-        option dhcp6.domain-search "mywinpc.mydomain.com" ;
+        option dhcp6.domain-search "mydomain.com" ;
 }
 
 </pre> 
