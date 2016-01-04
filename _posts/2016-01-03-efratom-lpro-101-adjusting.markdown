@@ -36,7 +36,7 @@ Sun Jan  3 00:13:20 CET 2016 I took 2 measure points and did the calculation:
 
 <pre>
 mp1 : x=0.0173913 y=-0.292421
-mp2 : x=16.8261 y=-0.293467
+mp2 : x=16.8261 y=-0.293467  ( x = time decimal hours ) 
 
 drift .00000001728601290803 per second
 1.7 ^-2 = 17 ^-3  ppm  = 1.7 ^-8
@@ -58,6 +58,26 @@ Sun Jan  3 10:23:35 CET 2016
 I turned again the potentiometer clockwise for 90 degrees.
 
 Let's see. 
+
+Mon Jan  4 21:58:38 CET 2016
+
+![plot_10209.png](/images/plot_10209.png) 
+
+Surprise surprise. 
+
+Instead of a smaller drift it's much bigger.
+
+<pre>
+mp1: x=79.012 y=-0.339719843
+mp2: x=74703.012 y=-0.342186132 ( x = time in seconds ) 
+
+drift .00000003304954170240 per second
+</pre>
+
+So I will turn the potentiometer counter clockwise 360 degrees. 
+
+Let's see.
+
 
 ## Attachment 
 
