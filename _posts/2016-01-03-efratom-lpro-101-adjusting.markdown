@@ -76,7 +76,14 @@ drift .00000003304954170240 per second
 
 So I will turn the potentiometer counter clockwise 360 degrees. 
 
-Let's see.
+Tuesday, January  5, 2016 04:59:05 PM CET - no change 
+
+<pre>
+47.012 0.342543585 
+57263.013 0.344436830
+
+drift .00000003308943244740 per second
+</pre>
 
 
 ## Attachment 
