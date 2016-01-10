@@ -85,6 +85,27 @@ Tuesday, January  5, 2016 04:59:05 PM CET - no change
 drift .00000003308943244740 per second
 </pre>
 
+Sun Jan 10 20:46:57 CET 2016
+
+After some days of observation I can say: 
+
+**turning the potentiometer counter clockwise reduce the frequency** <br />
+**turning the potentiometer clockwise increase the frequency**
+
+For easier verification I modified my [scripts for viewing NTP statistic files](https://github.com/hans-mayer/ntpgraph){:target="_blank"}. Now it is possible to generate a FIT function. The text output prints directly the value. Running
+
+> ntp_shdiff -t 30 -F 0.01 0.0007 -f png  127.127.22.0 127.127.22.1 .
+
+I can see the graph 
+
+![plot_27938.png](/images/plot_27938.png) 
+
+and reading the result on the text screen 
+
+m = -1.22497e-05 which is now the drift in hours, but easy to calculate drift per second: -.00000000340269444444 
+
+What I have done additionally I made the rubidium source ( 127.127.22.1 ) as primary time source and the GPS source ( 127.127.22.0 ) only as reference.  This is because GPS has a jitter and makes adjustments not easy. As side effect if I change the rubidium frequency it seems the drift of the GPS will change. 
+
 
 ## Attachment 
 
