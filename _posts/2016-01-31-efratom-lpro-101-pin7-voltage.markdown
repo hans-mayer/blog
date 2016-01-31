@@ -2,7 +2,7 @@
 layout: post
 title:  EFRATOM LPRO-101 Pin 7 voltage vs. offset in PPB
 date:   2016-01-31 22:02:00 CET
-categories: 
+categories: electronic
 ---
 
 This document describes the relation ship between the voltage on PIN 7 and the deviation in part per billion (ppb) 

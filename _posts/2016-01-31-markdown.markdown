@@ -1,0 +1,13 @@
+---
+layout: post
+title:  markdown
+date:   2016-01-31 23:36:00 CET
+categories: programming language 
+---
+
+Useful links: 
+
+[https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax){:target="_blank"} <br />
+[http://www.tablesgenerator.com/markdown_tables](http://www.tablesgenerator.com/markdown_tables){:target="_blank"} <br />
+
+
