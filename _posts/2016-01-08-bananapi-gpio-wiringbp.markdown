@@ -7,9 +7,10 @@ categories:
 
 This document describes how-to use a PIN of the GPIO module of the BananaPi M1
 
-Download the source from **https://github.com/LeMaker/WiringBP.git**
+Download the source from **[https://github.com/LeMaker/WiringBP.git](https://github.com/LeMaker/WiringBP.git){:target="_blank"}** <br />
+or fetch it with **git clone git@github.com:LeMaker/WiringBP.git**
 
-Compile the package and install the binaries 
+Compile the package and install the binaries. 
 
 After that installation one should be able to run command "gpio readall" 
 
