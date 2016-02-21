@@ -106,6 +106,14 @@ m = -1.22497e-05 which is now the drift in hours, but easy to calculate drift pe
 
 What I have done additionally I made the rubidium source ( 127.127.22.1 ) as primary time source and the GPS source ( 127.127.22.0 ) only as reference.  This is because GPS has a jitter and makes adjustments not easy. As side effect if I change the rubidium frequency it seems the drift of the GPS will change. 
 
+Sun Feb 21 21:00:41 CET 2016
+
+I recognized it is not possible to adjust the frequency exactly to 10 MHz with the internal trimmer. 
+
+I opened the case. 
+
+R126 has a value of 6.51 kohm I add a resistor in series of 1.007 k
+
 
 ## Attachment 
 
