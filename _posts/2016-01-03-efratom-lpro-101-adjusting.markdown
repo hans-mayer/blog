@@ -94,15 +94,15 @@ After some days of observation I can say:
 
 For easier verification I modified my [scripts for viewing NTP statistic files](https://github.com/hans-mayer/ntpgraph){:target="_blank"}. Now it is possible to generate a FIT function. The text output prints directly the value. Running
 
-> ntp_shdiff -t 30 -F 0.01 0.0007 -f png  127.127.22.0 127.127.22.1 .
+> ntp_shdiff -t 30 -F 1 -x -0.5:21.1 -f png 127.127.22.1 127.127.22.0 0110
 
 I can see the graph 
 
-![plot_27938.png](/images/plot_27938.png) 
+![plot_diff_20160110.png](/images/plot_diff_20160110.png) 
 
 and reading the result on the text screen 
 
-m = -1.22497e-05 which is now the drift in hours, but easy to calculate drift per second: -.00000000340269444444 
+m = 1.224937106662e-05 which is now the drift in hours, but easy to calculate drift per second: .00000000340260307406 or ppb: 3.40260307406
 
 What I have done additionally I made the rubidium source ( 127.127.22.1 ) as primary time source and the GPS source ( 127.127.22.0 ) only as reference.  This is because GPS has a jitter and makes adjustments not easy. As side effect if I change the rubidium frequency it seems the drift of the GPS will change. 
 
@@ -113,6 +113,20 @@ I recognized it is not possible to adjust the frequency exactly to 10 MHz with t
 I opened the case. 
 
 R126 has a value of 6.51 kohm I add a resistor in series of 1.007 k
+
+Wed Feb 24 22:19:48 CET 2016
+
+The difference of the frequency didn't change dramatically. 
+
+> ntp_shdiff -t 30 -F 1 -x -0.5:19.5 -f png 127.127.22.1 127.127.22.0 0224
+
+![plot_diff_20160224.png](/images/plot_diff_20160224.png) 
+
+m = 8.06382423182752e-06 which is 2.239951175 ppb 
+
+The difference against the situation without the resistor is 1.162 ppb 
+
+The lamp voltage on PIN 5 is 6.86 V
 
 
 ## Attachment 
