@@ -128,6 +128,35 @@ The difference against the situation without the resistor is 1.162 ppb
 
 The lamp voltage on PIN 5 is 6.86 V
 
+Sun Feb 28 20:27:39 CET 2016
+
+Yesterday I removed the 1k resistor and replaced by a 5k1 resistor
+
+![plot_20825.png](/images/plot_20825.png)
+
+m = -3.63573255384452e-07 which is -0.10072 ppb 
+
+With the previous results we get the following table: ( R in kilo-ohm ) 
+
+|   ppb 	|   	|   R 	|
+|------:	|---	|----:	|
+| +3.40 	|   	| 0.0 	|
+| +2.24 	|   	| 1.0 	|
+| -0.10 	|   	| 5.1 	|
+|       	|   	|     	|
+
+Doing the math: looking for a second-degree polynomial for interpolation 
+
+f(x) = y0 + m*x + n*x^2 = 4.8678219 + -2.2963496 * x + 0.2543050 * X^2 
+
+<pre>
+export X=0 ; dc <<< "20k 4.8678219 _2.2963496 $X *+ 0.2543050 $X d **+ p"
+</pre>
+
+we get the result: 4.868 kohm 
+
+I will connect a parallel resistor with 110 k
+
 
 ## Attachment 
 
