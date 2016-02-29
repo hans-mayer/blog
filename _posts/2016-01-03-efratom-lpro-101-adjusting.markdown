@@ -116,7 +116,7 @@ R126 has a value of 6.51 kohm I add a resistor in series of 1.007 k
 
 Wed Feb 24 22:19:48 CET 2016
 
-The difference of the frequency didn't change dramatically. 
+The difference of the frequency didn't change dramatically. 127.127.22.0 is again time source. 
 
 > ntp_shdiff -t 30 -F 1 -x -0.5:19.5 -f png 127.127.22.1 127.127.22.0 0224
 
@@ -130,7 +130,7 @@ The lamp voltage on PIN 5 is 6.86 V
 
 Sun Feb 28 20:27:39 CET 2016
 
-Yesterday I removed the 1k resistor and replaced by a 5k1 resistor
+Yesterday I removed the 1k resistor and replaced by a 5k1 resistor. The situation is much better. 
 
 ![plot_20825.png](/images/plot_20825.png)
 
@@ -155,8 +155,33 @@ export X=0 ; dc <<< "20k 4.8678219 _2.2963496 $X *+ 0.2543050 $X d **+ p"
 
 we get the result: 4.868 kohm 
 
-I will connect a parallel resistor with 110 k
+I will connect a parallel resistor with 110 k - actually it has 113k6 
 
+Mon Feb 29 20:53:27 CET 2016
+
+### The happy end 
+
+![plot_1599.png](/images/plot_1599.png) 
+
+<pre>
+drift per second: _.00000000001936356165 ppb: -.01936356165000000000
+drift per hour: -.00000006970882194488
+drift per day: _.00000167301172667712
+drift per month: _.00005088744001976240
+drift per year: -.00061064928023714880
+</pre>
+
+|   ppb 	|   	|   R 	|
+|------:	|---	|----:	|
+| +3.40 	|   	| 0.0 	|
+| +2.24 	|   	| 1.0 	|
+| -0.02 	|   	| 4.88 	|
+| -0.10 	|   	| 5.1 	|
+|       	|   	|     	|
+
+The lamp voltage on PIN 5 is 6.87 V measured with a cheap voltmeter. 
+
+<img src="/images/opened_efratom.jpg" alt="opened_efratom.jpg" style="width: 800px;"/>
 
 ## Attachment 
 
