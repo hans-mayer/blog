@@ -161,6 +161,8 @@ Mon Feb 29 20:53:27 CET 2016
 
 ### The happy end 
 
+<a name="success">success</a>
+
 ![plot_1599.png](/images/plot_1599.png) 
 
 <pre>
@@ -182,6 +184,18 @@ drift per year: -.00061064928023714880
 The lamp voltage on PIN 5 is 6.87 V measured with a cheap voltmeter. 
 
 <img src="/images/opened_efratom.jpg" alt="opened_efratom.jpg" style="width: 800px;"/>
+
+![plot_20160303.png](/images/plot_20160303.png)
+
+ppb: -0.01909162956
+
+I turned the internal trimmer 4 times clockwise. The next days plot shows the change. 
+
+Fri Mar  4 22:22:22 CET 2016
+
+![plot_20160304.png](/images/plot_20160304.png)
+
+ppb: +0.01052103476
 
 ## Attachment 
 
