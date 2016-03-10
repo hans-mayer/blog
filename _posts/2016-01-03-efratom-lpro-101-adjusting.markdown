@@ -197,6 +197,20 @@ Fri Mar  4 22:22:22 CET 2016
 
 ppb: +0.01052103476
 
+Thu Mar 10 21:56:11 CET 2016
+
+The result after turning the trimmer 2x 1/3 turns ( = 2/3 ) to the left ( counter clockwise ) 
+
+![plot_diff_20160309](/images/plot_diff_20160309) 
+
+<pre>
+drift per second: .00000000000205334083 ppb: .00205334083000000000
+drift per hour: .00000000739202701370
+drift per day: .00000017740864832880
+drift per month: .00000539617972000100
+drift per year: .00006475415664001200
+</pre>
+
 ## Attachment 
 
 [EFRATOM LPRO-101 user's guide](/images/efratom_LPRO-101.pdf){:target="_blank"} 
