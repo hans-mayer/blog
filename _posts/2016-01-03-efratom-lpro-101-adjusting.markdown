@@ -201,7 +201,7 @@ Thu Mar 10 21:56:11 CET 2016
 
 The result after turning the trimmer 2x 1/3 turns ( = 2/3 ) to the left ( counter clockwise ) 
 
-![plot_diff_20160309](/images/plot_diff_20160309) 
+![plot_diff_20160309](/images/plot_diff_20160309.png) 
 
 <pre>
 drift per second: .00000000000205334083 ppb: .00205334083000000000
@@ -209,6 +209,20 @@ drift per hour: .00000000739202701370
 drift per day: .00000017740864832880
 drift per month: .00000539617972000100
 drift per year: .00006475415664001200
+</pre>
+
+Fri Mar 11 20:09:16 CET 2016
+
+The next day wihtout any changes. 
+
+![plot_diff_20160310](/images/plot_diff_20160310.png)
+
+<pre>
+drift per second: _.00000000000049144816 ppb: -.00049144816000000000
+drift per hour: -.00000000176921340005
+drift per day: _.00000004246112160120
+drift per month: _.00000129152578203650
+drift per year: -.00001549830938443800
 </pre>
 
 ## Attachment 
