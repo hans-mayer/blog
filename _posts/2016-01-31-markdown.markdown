@@ -5,9 +5,34 @@ date:   2016-01-31 23:36:00 CET
 categories: programming language 
 ---
 
+Some hints: 
+
+Embedded images: 
+
+<pre>
+![alternativename](/images/path_to_file.png)
+</pre> 
+
+The greek &mu; 
+
+<pre>
+&amp;mu;
+</pre>
+
+External link in a new window
+
+<pre>
+[hans mayer's home page](http://hans.mayer.tv/){:target="_blank"}
+</pre>
+
+Internal link 
+<pre>
+[Banana Pi compile kernel and header]({% post_url 2016-01-01-bananapi-compile-kernel %}){:target="_blank"} )
+</pre>
+
 Useful links: 
 
 [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax){:target="_blank"} <br />
 [http://www.tablesgenerator.com/markdown_tables](http://www.tablesgenerator.com/markdown_tables){:target="_blank"} <br />
-
+[https://dev.w3.org/html5/html-author/charref](https://dev.w3.org/html5/html-author/charref){:target="_blank"} <br />
 
