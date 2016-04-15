@@ -37,9 +37,11 @@ And what is the practical significance ?
 
 If somebody is using NTP as a client in a network with ADSL connectivity it is always 5 ms behind the reference. Not important, but good to know. 
 
-And the other way around
+### And the other way around
 
 Below you can see two different destinations.
+
+#### Delay 20 ms 
 
 The first one show a remote server with around 20 ms round trip delay. This is typical for an ADSL line like described above. 
 
@@ -49,11 +51,34 @@ Here one can see that the server seems to be ahead about 5.2 ms.
 
 ![plot_12680_ipv4_diff](/images/plot_12680_ipv4_diff.png)
 
-The second server is reachable through an IPv6 tunnel which generates a roundtrip time of about 65 ms. This IPv6-in-IPv4 tunnel goes over an ADSL line too. 
+Actually this result is not surprising now. 
+
+<pre>
+# ntpq -pn
+     remote           refid      st t when poll reach   delay   offset  jitter
+==============================================================================
+o127.127.22.0    .PPS.            0 l    2   16  377    0.000   -0.004   0.002
+*127.127.28.0    .GPS.            0 l   12   16  377    0.000    2.732   0.763
+ XXX.XX.75.134   .PPS.            1 u   37   64  377   19.758    5.114   1.021
+</pre>
+
+
+#### Delay 65 ms 
+
+The second server is reachable through an IPv6 tunnel which generates a round-trip time of about 65 ms. This IPv6-in-IPv4 tunnel goes over an ADSL line too. 
 
 ![plot_12741_ipv6_rt](/images/plot_12741_ipv6_rt.png)
 
 We can see an average offset of 20 ms. 
 
 ![plot_12808_ipv6_diff](/images/plot_12808_ipv6_diff.png)
+
+<pre>
+# ntpq -pn
+     remote           refid      st t when poll reach   delay   offset  jitter
+==============================================================================
+o127.127.22.0    .PPS.            0 l    2   16  377    0.000   -0.004   0.002
+*127.127.28.0    .GPS.            0 l   12   16  377    0.000    2.732   0.763
+ 2001:XXX:XXXX:2 .PPS.            1 u   34   64  377   65.190   20.147   1.548
+</pre>
 
