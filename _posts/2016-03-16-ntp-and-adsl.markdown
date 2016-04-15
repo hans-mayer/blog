@@ -37,3 +37,23 @@ And what is the practical significance ?
 
 If somebody is using NTP as a client in a network with ADSL connectivity it is always 5 ms behind the reference. Not important, but good to know. 
 
+And the other way around
+
+Below you can see two different destinations.
+
+The first one show a remote server with around 20 ms round trip delay. This is typical for an ADSL line like described above. 
+
+![plot_12617_ipv4_rt](/images/plot_12617_ipv4_rt.png)
+
+Here one can see that the server seems to be ahead about 5.2 ms. 
+
+![plot_12680_ipv4_diff](/images/plot_12680_ipv4_diff.png)
+
+The second server is reachable through an IPv6 tunnel which generates a roundtrip time of about 65 ms. This IPv6-in-IPv4 tunnel goes over an ADSL line too. 
+
+![plot_12741_ipv6_rt](/images/plot_12741_ipv6_rt.png)
+
+We can see an average offset of 20 ms. 
+
+![plot_12808_ipv6_diff](/images/plot_12808_ipv6_diff.png)
+
