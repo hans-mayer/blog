@@ -39,6 +39,8 @@ If somebody is using NTP as a client in a network with ADSL connectivity it is a
 
 ### And the other way around
 
+This is the situation where the NTP server is located behind an ADSL line and the query is done from the Internet.
+
 Below you can see two different destinations.
 
 #### Delay 20 ms 
