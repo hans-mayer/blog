@@ -19,7 +19,7 @@ The greek &mu;
 &amp;mu;
 </pre>
 
-External link in a new window
+External link in a new window like this:  [hans mayer's home page](http://hans.mayer.tv/){:target="_blank"}
 
 <pre>
 [hans mayer's home page](http://hans.mayer.tv/){:target="_blank"}
@@ -28,6 +28,12 @@ External link in a new window
 Internal link 
 <pre>
 [Banana Pi compile kernel and header]({% post_url 2016-01-01-bananapi-compile-kernel %}){:target="_blank"} )
+</pre>
+
+Header line starting with one or more #
+
+<pre>
+# 
 </pre>
 
 Useful links: 
