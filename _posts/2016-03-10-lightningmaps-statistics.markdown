@@ -5,7 +5,7 @@ date:   2016-03-10 22:26:00 CET
 categories: divers
 ---
 
-There is a lightning detection system. Detailed information you can find at 
+There is a lightning detection system based on a group of enthusiasts. Detailed information you can find at 
 
 [www.blitzortung.org](http://www.blitzortung.org){:target="_blank"}
 
@@ -23,3 +23,5 @@ Here you can see the stroke ratio of my station "Wien Mauer JN88DD45at"
 Most of the time I am in the top 10. But sometime my station is detecting most strokes of all stations. 
 
 ![lightningmaps_statistics_20160310.png](/images/lightningmaps_statistics_20160310.png)
+
+An alternative commercial lightning system you can find here: [www.euclid.org](http://www.euclid.org/){:target="_blank"}
