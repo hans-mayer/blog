@@ -11,7 +11,7 @@ Therefore an NTP frame with 90 bytes or 720 bits needs 937.5 &mu;s going to the 
 Reading NTP documentation it says the protocol assumes a symmetric situation for both directions. 
 I was always wondering how precisely NTP could be at home. To verify this I prepared a stratum 1 server. It consists of a Banana Pi with a GPS module from M0UPU. The 1PPS is feed to the GPIO and "ntpd" is using this signal directly. The time information is read via SHMEM over "gpsd". 
 
-I installed this NTP server in a network which is connected with 1 Gbit/sec in both directions ( upload and downlod ) to the backbone of Vienna's Internet. In "ntp.conf" I configured a stratum 1 server as reference with keyword "noselect". The typical round-trip-time to this server is 4.5 ms. 
+I installed this NTP server in a network which is connected with 1 Gbit/sec in both directions ( upload and download ) to the backbone of Vienna's Internet. In "ntp.conf" I configured a stratum 1 server as reference with keyword "noselect". The typical round-trip-time to this server is 4.5 ms. 
 
 Below you see a graph with the offset over a day (20160313). The average offset is 22.57 &mu;s. Probably this could be adjusted but I don't care about this.  
 
@@ -84,6 +84,7 @@ o127.127.22.0    .PPS.            0 l    2   16  377    0.000   -0.004   0.002
  2001:XXX:XXXX:2 .PPS.            1 u   34   64  377   65.190   20.147   1.548
 </pre>
 
+For theoretical explanations and mathematical examples about NTP over ADSL see [my other blog here](/2016/05/02/ntp-and-adsl-part2.html){:target="_blank"}. 
 
 See also: [NTP Timestamp Calculations](https://www.eecis.udel.edu/~mills/time.html){:target="_blank"} 
 
