@@ -12,3 +12,6 @@ If you are looking for a possibility to check if your DNS is configured well. He
 
 > [www.grc.com](https://www.grc.com/dns/dns.htm){:target="_blank"}
 
+## Nice graphical overview about all root servers
+
+> [www.root-servers.org](http://www.root-servers.org/){:target="_blank"}
