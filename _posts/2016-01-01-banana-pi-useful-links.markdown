@@ -16,3 +16,11 @@ Some useful external links for the Banana Pi
 [http://hardware-libre.fr/2014/07/banana-pi-gpio-now-supported/](http://hardware-libre.fr/2014/07/banana-pi-gpio-now-supported/){:target="_blank"}
 
 [https://github.com/infinet/bananapi](https://github.com/infinet/bananapi){:target="_blank"} - PPS over GPIO patch 
+
+[Banana PI BPI-M3 User Manual](https://drive.google.com/file/d/0B4PAo2nW2KfnTFMza29rZkpNZUU/view){:target="_blank"}
+
+[http://linux-sunxi.org/Main_Page](http://linux-sunxi.org/Main_Page){:target="_blank"}
+
+[http://www.banana-pi.org/download.html](http://www.banana-pi.org/download.html){:target="_blank"}
+
+
