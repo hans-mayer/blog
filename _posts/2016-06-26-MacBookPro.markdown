@@ -13,7 +13,7 @@ Technical details are:
 
 * 2,7 GHz Dual-Core Intel Core i5 Prozessor 
 * 13" Retina display 2560 x 1600 Pixel
-* 32 GB Memory
+* 16 GB Memory
 * 256 GB SSD 
 * OS X El Capitan 
 
