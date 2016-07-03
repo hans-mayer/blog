@@ -11,11 +11,11 @@ Last week I got a new notebook. It's a MacBook Pro.
 
 Technical details are: 
 
-* 2,7 GHz Dual-Core Intel Core i5 Prozessor 
+* 3,1 GHz Dual-Core Intel Core i7 Prozessor 
 * 13" Retina display 2560 x 1600 Pixel
-* 32 GB Memory
+* 16 GB Memory 1867 MHz DDR3
 * 256 GB SSD 
-* OS X El Capitan 
+* OS X El Capitan Version 10.11.5 ( 15F34 )
 
 It's really an amazing device. 
 
