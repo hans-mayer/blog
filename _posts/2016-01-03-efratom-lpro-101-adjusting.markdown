@@ -7,7 +7,7 @@ categories:  rubidium frequency standard NTP
 
 This document describes how-to adjust an EFRATOM LPRO-101 using a NTP daemon 
 
-I bought a refurbished EFRATOM LPRO-101 from the second hand market. As this LPRO is a secondary frequency standard you cannot expect an accuracy of theoretical 3 * 10 ^ -15 for rubidium <br />
+I bought a refurbished EFRATOM LPRO-101 from the second hand market. It's coming from China and I paid about 80 EUR in October 2010. Some weeks ago you could buy it for less than 80 USD. As this LPRO is a secondary frequency standard you cannot expect an accuracy of theoretical 3 * 10 ^ -15 for rubidium <br />
 The one I bought had an offset less than 0.1 HZ at 10 MHz which is about 10 ^ -8 <br />
 In most cases this is good enough for private use. Not so if you are ham operator and playing around with micro wave equipment or if you try to use this frequency standard as stratum 0 source for a NTP server. As you can easy calculate this clock would go wrong about 3 seconds per year. This is not much better than a quartz watch. 
 
@@ -138,7 +138,7 @@ m = -3.63573255384452e-07 which is -0.10072 ppb
 
 With the previous results we get the following table: ( R in kilo-ohm ) 
 
-|   ppb 	|   	|   R 	|
+|   PPB 	|   	|   R 	|
 |------:	|---	|----:	|
 | +3.40 	|   	| 0.0 	|
 | +2.24 	|   	| 1.0 	|
@@ -173,7 +173,7 @@ drift per month: _.00005088744001976240
 drift per year: -.00061064928023714880
 </pre>
 
-|   ppb 	|   	|   R 	|
+|   PPB 	|   	|   R 	|
 |------:	|---	|----:	|
 | +3.40 	|   	| 0.0 	|
 | +2.24 	|   	| 1.0 	|
@@ -224,6 +224,10 @@ drift per day: _.00000004246112160120
 drift per month: _.00000129152578203650
 drift per year: -.00001549830938443800
 </pre>
+
+### See also 
+
+[my second Efratom LPRO-101](/2016/07/25/second-efratom.html){:target="_blank"}
 
 ## Attachment 
 

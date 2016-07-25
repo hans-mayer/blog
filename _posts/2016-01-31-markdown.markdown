@@ -27,7 +27,7 @@ External link in a new window like this:  [hans mayer's home page](http://hans.m
 
 Internal link 
 <pre>
-[Banana Pi compile kernel and header]({% post_url 2016-01-01-bananapi-compile-kernel %}){:target="_blank"} )
+[Banana Pi compile kernel and header]({% post_url 2016-01-01-bananapi-compile-kernel %}){:target="_blank"} 
 </pre>
 
 Header line starting with one or more #
