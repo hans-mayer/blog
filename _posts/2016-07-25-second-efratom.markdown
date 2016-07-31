@@ -35,3 +35,31 @@ drift per year: .00261294130929326760
 
 Without any adjustments this system much closer to the "real" clock than my first device. It has only an offset of 0.08 PPB. My first device is 3 PPB away from real 10 MHz. 
 
+Sun Jul 31 19:01:49 CEST 2016
+
+And sometimes it's even better.
+
+This is the GPS based stratum 0 reference. 
+
+![gps_reference](/images/plot_0730_18051.png)
+
+This is the offset messured from the peerstats file for the new Efratron. 
+
+![new_efratron](/images/plot_0730_18077.png)
+
+And this is the difference. 
+
+![difference_from_peerstatsfile](/images/plot_0730_18131.png)
+
+<pre>
+drift per second: _.00000000000962494532 ppb: -.00962494532000000000
+drift per hour: -.00000003464980315935 
+drift per day: _.00000083159527582440 
+drift per month: _.00002529435630632550 
+drift per year: -.00030353227567590600 
+</pre>
+
+All without any adjustments. 
+
+
+
