@@ -13,4 +13,6 @@ Gefunden in Gumpoldskirchen am Ende der Straße "Rotes Mäuerl"
 
 <img src="/images/20160703_193201.jpg"  width="600">
 
+Und Anrainer dürfen dort ( die Straße führt in den Wald ) auch nur mit dem PKW oder LKW fahren. Denn das Fahren mit dem Fahrrad ist ja allen untersagt. 
+
 
