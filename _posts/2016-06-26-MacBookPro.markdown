@@ -15,7 +15,7 @@ Technical details are:
 * 13" Retina display 2560 x 1600 Pixel
 * 16 GB Memory 1867 MHz DDR3
 * 256 GB SSD 
-* OS X El Capitan Version 10.11.5 ( 15F34 )
+* OS X El Capitan Version 10.11.6 
 
 It's really an amazing device. 
 
