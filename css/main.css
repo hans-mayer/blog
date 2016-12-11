@@ -47,11 +47,13 @@ a:visited { color: #205caa; }
   background-color: white;
 }
 
+/* header underline und gruene farbe - 2016 12 11 */ 
 .site-title,
 .site-title:hover,
 .site-title:visited {
   display: block;
-  color: #333;
+  color: #41a31d;
+  text-decoration: underline;
   font-size: 26px;
   letter-spacing: -1px;
   float: left;
