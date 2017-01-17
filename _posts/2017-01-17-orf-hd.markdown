@@ -1,0 +1,40 @@
+---
+layout: post
+title:  ORF HD digital 
+date:   2017-01-17 15:30:00 CET
+categories: 
+---
+
+Das analoge Signal für ORF über Satellit Astra ist ja nun Geschichte. Also entschloss ich mich die ORF Digitalkarte zu bestellen. Dieser Tage kam sie auch mit der Post. Meine Vorstellung, dass die Installation bei einem einigermaßen neuen Fernseher einfach zu bewerkstelligen sei, war jedoch weit gefehlt. 
+
+Nachdem ich die Karte in das CI+ Modul gesteckt und dieses in den Slot im Fernseher gesteckt hatte, kam eine nette Ausschrift, dass diese Karte nicht frei geschalten ist und ich mich an den Service Anbieter wenden solle. Gut dass die ORF Hotline unter 0800 090010 auch an einem Samstag besetzt ist und kostenfrei zu erreichen ist. Schnell wurde ich zu einem Bearbeiter verbunden, der meine Karte nochmals frei schaltete, obwohl sie ja laut beliegendem Schreiben schon frei geschalten sein sollte. Ich sollte warten, dann wird es gehen. Hieß es. Dem war nicht so. 
+
+Also macht ich mich auf der Suche nach Einstellungen im Fernseher. In einem der Menüpunkte stelle ich fest, dass ich kein Signal vom Satellit hatte. Nun gut dachte ich mir, die Informationen über die Frequenz wird sich ja ergooglen lassen. Schnell finde ich diese ORF Seite
+
+<img src="/images/orf_digital_info.png" alt="orf_digital_info.png" style="width: 800px;"/>
+
+Ich fand heraus, das Transponder 5 auf 11273 MHz und Transponder 7 auf 11302 MHz liegt. Zumindest laut http://www.satindex.de/transponderv-1.php. Ich stelle also die Frequenzen auf die vom ORF angegebenen Werte. Aber das Bild bleibt finster. Im Web finde ich auch noch andere Informationen, die von den Angaben des ORF jedoch abweichen. Ich kann es eigentlich gar nicht glauben, dass der ORF falsche Informationen auf seine Homepage hat. Wer es ja wissen muss ist Astra. Als ich auf die Frenquenzliste klicke, kommt das: 
+
+<img src="/images/astra_home_page.png" alt="astra_home_page.png" style="width: 800px;"/>
+
+OK dachte ich, heute hat sich alles gegen mich verschworen. Heute ist zwar nicht Freitag der 13te, aber einen Tag danach. Vielleicht hat sich beim Datum diesbezüglich jemand geirrt.  
+Ich überlegte, ob vielleicht wirklich keine Signal aus der Steckdose kommt, obwohl es ja noch vor wenigen Wochen mit dem analogen Astra Signal funktioniert hatte. Also organisierte ich einen SAT-Receiver, von dem ich wusste, dass er funktioniert. Und der funktionierte auch an dieser Dose. Auch konnte ich feststellen, dass meine ORF Karte funktionierte.  
+Also musste es an den Einstellungen für den Satellit liegen. Und die waren ganz anders als die Vorgaben auf der ORF Homepage:
+
+## LNB Settings
+
+LOF low 9750 MHz  
+LOF high 10600 MHz  
+22-kHz-Ton automatisch  
+DiSEqC C  
+LNB-Spannung 13/18 V  
+
+## Transponder Settings
+
+Transponder 12109 MHz  
+Polarisation horizontal od links  
+Symbolrate 27500 kBd   
+
+Die Einstellungen für den LNB sind wohl spezifisch für meinen Multiswitch. Jedenfalls mit diesen Werten funtioniert es. 
+
+
