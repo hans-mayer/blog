@@ -18,8 +18,8 @@ Ich fand heraus, das Transponder 5 auf 11273 MHz und Transponder 7 auf 11302 MHz
 <img src="/images/astra_home_page.png" alt="astra_home_page.png" style="width: 800px;"/>
 
 OK dachte ich, heute hat sich alles gegen mich verschworen. Heute ist zwar nicht Freitag der 13te, aber einen Tag danach. Vielleicht hat sich beim Datum diesbezüglich jemand geirrt.  
-Ich überlegte, ob vielleicht wirklich keine Signal aus der Steckdose kommt, obwohl es ja noch vor wenigen Wochen mit dem analogen Astra Signal funktioniert hatte. Also organisierte ich einen SAT-Receiver, von dem ich wusste, dass er funktioniert. Und der funktionierte auch an dieser Dose. Auch konnte ich feststellen, dass meine ORF Karte funktionierte.  
-Also musste es an den Einstellungen für den Satellit liegen. Und die waren ganz anders als die Vorgaben auf der ORF Homepage:
+Ich überlegte, ob vielleicht wirklich kein Signal aus der Steckdose kommt, obwohl es ja noch vor wenigen Wochen mit dem analogen Astra Signal funktioniert hatte. Also organisierte ich einen SAT-Receiver, von dem ich wusste, dass er funktioniert. Und der funktionierte auch an dieser Dose. Auch konnte ich feststellen, dass meine ORF Karte funktionierte.  
+Also musste es an den Einstellungen für den Satellit liegen. Ich las die Werte aus dem ausgeborgten Transceiver aus. Und die waren ganz anders als die Vorgaben auf der ORF Homepage:
 
 ## LNB Settings
 
