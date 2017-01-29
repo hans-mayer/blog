@@ -5,7 +5,7 @@ date:   2016-08-18 17:28:00 CET
 categories: IT 
 ---
 
-Environment: An EMC filer VNX5400 and an OS X client <br>
+Environment: An EMC filer VNX5400 and an OS X client El Capitan 10.11.6 <br>
 Protocol: Server Message Block (SMB) <br>
 The issue: The client can see empty directories only
 
@@ -25,4 +25,9 @@ Now you can mount the share in the usual way with "Finder" and "Connect to Serve
 A very similar situation exists also for Windows based operating systems. One can query the settings with <br>
   fsutil behavior query SymlinkEvaluation <br> 
 and all 4 settings should be enabled. 
+
+### Update January 2017 
+
+In the meantime I updated my MacBook to macOS Sierra 10.12.3   
+The solution described above doesn't work anymore. 
 
