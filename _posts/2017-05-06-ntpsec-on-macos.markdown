@@ -37,5 +37,5 @@ Some important external links:
 
 * [www.ntpsec.org](https://www.ntpsec.org/){:target="_blank"}
 * [docs.ntpsec.org](https://docs.ntpsec.org/latest/){:target="_blank"}
-* [gitlab.com/NTPsec/ntpse](https://gitlab.com/NTPsec/ntpsec/){:target="_blank"}
+* [gitlab.com/NTPsec/ntpsec](https://gitlab.com/NTPsec/ntpsec/){:target="_blank"}
 * [github.com/ntpsec](https://github.com/ntpsec/ntpsec){:target="_blank"}
