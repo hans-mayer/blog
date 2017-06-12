@@ -10,7 +10,7 @@ categories:
 
 To build a stratum-1 NTP server with a stratum 0 source is maybe a hobby. I am sure in most cases it's not necessary to build a high precisely time server in the own network. For most IT infrastructure it's good enough to get the time via NTP protocol from Internet. But sometime we are ambitious and we build our own NTP server.
 
-This project results out of an idea to be independent. I am already running stratum 1 servers in the own network. These are a very low frequency receiver based server and a GPS based NTP server. With this I am dependent of others. So could it be the political decision to switch off the system. This possibility is maybe small. But there could also be physical situations which prevents normal operation, for example during a solar storm. An other reason could be someone is using a jammer for a dedicated disruption of this service.
+This project results out of an idea to be independent. I am already running stratum 1 servers in the own network. These are a very low frequency receiver based server and a GPS disciplined NTP server. With this I am dependent of others. So could it be the political decision to switch off the system. This possibility is maybe small. But there could also be physical situations which prevents normal operation, for example during a solar storm. An other reason could be someone is using a jammer for a dedicated disruption of this service.
 
 ## Components to use
 
@@ -29,6 +29,15 @@ And of course power supplies for these devices.
 The Banana Pi M1 and the EFRATOM I could buy. The divider I had to develop by myself. I put this product at GitHub. You can find the source for this PC-board here
 
 [https://github.com/hans-mayer/teiler10e7](https://github.com/hans-mayer/teiler10e7)
+
+## OS with 1PPS support
+
+As operating system I am using Bananian OS which is a Debian Linux for ARM hardware.
+Even during the installation of my first GPS based NTP server I figured out this OS does not support 1PPS per default. So it's necessary to compile the kernel. How to do you can see  in this posting:
+
+[Banana Pi compile kernel and header](/2016/01/01/bananapi-compile-kernel.html){:target="_blank"}
+
+
 
 ## More details
 
