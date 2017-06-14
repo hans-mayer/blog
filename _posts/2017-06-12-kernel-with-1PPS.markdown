@@ -25,30 +25,30 @@ For example
  .config - Linux/arm 3.4.108 Kernel Configuration
  ──────────────────────────────────────────────────────────────────────────────
   ┌──────────────── Linux/arm 3.4.108 Kernel Configuration ─────────────────┐
-  │  Arrow keys navigate the menu.  .Enter. selects submenus ---..          │  
+  │  Arrow keys navigate the menu.  .Enter. selects submenus --->.          │  
   │  Highlighted letters are hotkeys.  Pressing .Y. includes, .N. excludes, │  
   │  .M. modularizes features.  Press .Esc..Esc. to exit, .?. for Help,     │  
   │  for Search.  Legend: [*] built-in  [ ] excluded  .M. module  . .       │  
   │ ┌─────────────────────────────────────────────────────────────────────┐ │  
-  │ │        General setup  ---.                                          │ │  
-  │ │    [*] Enable loadable module support  ---.                         │ │  
-  │ │    -*- Enable the block layer  ---.                                 │ │  
-  │ │        System Type  ---.                                            │ │  
+  │ │        General setup  --->                                          │ │  
+  │ │    [*] Enable loadable module support  --->                         │ │  
+  │ │    -*- Enable the block layer  --->                                 │ │  
+  │ │        System Type  --->                                            │ │  
   │ │    [ ] FIQ Mode Serial Debugger                                     │ │  
-  │ │        Bus support  ---.                                            │ │  
-  │ │        Kernel Features  ---.                                        │ │  
-  │ │        Boot options  ---.                                           │ │  
-  │ │        CPU Power Management  ---.                                   │ │  
-  │ │        Floating point emulation  ---.                               │ │  
-  │ │        Userspace binary formats  ---.                               │ │  
-  │ │        Power management options  ---.                               │ │  
-  │ │    -*- Networking support  ---.                                     │ │  
-  │ │        Device Drivers  ---.                                         │ │  
-  │ │        File systems  ---.                                           │ │  
-  │ │        Kernel hacking  ---.                                         │ │  
-  │ │        Security options  ---.                                       │ │  
-  │ │    -*- Cryptographic API  ---.                                      │ │  
-  │ │        Library routines  ---.                                       │ │  
+  │ │        Bus support  --->                                            │ │  
+  │ │        Kernel Features  --->                                        │ │  
+  │ │        Boot options  --->                                           │ │  
+  │ │        CPU Power Management  --->                                   │ │  
+  │ │        Floating point emulation  --->                               │ │  
+  │ │        Userspace binary formats  --->                               │ │  
+  │ │        Power management options  --->                               │ │  
+  │ │    -*- Networking support  --->                                     │ │  
+  │ │        Device Drivers  --->                                         │ │  
+  │ │        File systems  --->                                           │ │  
+  │ │        Kernel hacking  --->                                         │ │  
+  │ │        Security options  --->                                       │ │  
+  │ │    -*- Cryptographic API  --->                                      │ │  
+  │ │        Library routines  --->                                       │ │  
   │ │    ---                                                              │ │  
   │ │        Load an Alternate Configuration File                         │ │  
   │ │        Save an Alternate Configuration File                         │ │  
@@ -70,38 +70,38 @@ Scroll down to the "Device Drivers" section and press the "return" button if the
  .config - Linux/arm 3.4.108 Kernel Configuration
  ──────────────────────────────────────────────────────────────────────────────
   ┌──────────────────────────── Device Drivers ─────────────────────────────┐
-  │  Arrow keys navigate the menu.  .Enter. selects submenus ---..          │  
+  │  Arrow keys navigate the menu.  .Enter. selects submenus --->.          │  
   │  Highlighted letters are hotkeys.  Pressing .Y. includes, .N. excludes, │  
   │  .M. modularizes features.  Press .Esc..Esc. to exit, .?. for Help, ./. │  
   │  for Search.  Legend: [*] built-in  [ ] excluded  .M. module  . .       │  
   │ ┌─────────────────────────────────────────────────────────────────────┐ │  
-  │ │        Generic Driver Options  ---.                                 │ │  
-  │ │    {*} Connector - unified userspace .-. kernelspace linker  ---.   │ │  
-  │ │    .M. Memory Technology Device (MTD) support  ---.                 │ │  
-  │ │    .M. Parallel port support  ---.                                  │ │  
-  │ │    [*] Block devices  ---.                                          │ │  
-  │ │        Misc devices  ---.                                           │ │  
-  │ │        SCSI device support  ---.                                    │ │  
-  │ │    .*. Serial ATA and Parallel ATA drivers  ---.                    │ │  
-  │ │    [*] Multiple devices driver support (RAID and LVM)  ---.         │ │  
-  │ │    .M. Generic Target Core Mod (TCM) and ConfigFS Infrastructure  --│ │  
-  │ │    [*] Network device support  ---.                                 │ │  
-  │ │    [ ] ISDN support  ---.                                           │ │  
-  │ │        Input device support  ---.                                   │ │  
-  │ │    [*] Gsensor support  ---.                                        │ │  
-  │ │        Character devices  ---.                                      │ │  
-  │ │    {*} I2C support  ---.                                            │ │  
-  │ │    [*] SPI support  ---.                                            │ │  
-  │ │    . . HSI support  ---.                                            │ │  
-  │ │        PPS support  ---.                                            │ │  
-  │ │        PTP clock support  ---.                                      │ │  
-  │ │    [*] GPIO Support  ---.                                           │ │  
-  │ │    .*. Dallas's 1-wire support  ---.                                │ │  
-  │ │    {*} Power supply class support  ---.                             │ │  
-  │ │    .*. Hardware Monitoring support  ---.                            │ │  
-  │ │    .*. Generic Thermal sysfs driver  ---.                           │ │  
-  │ │    [*] Watchdog Timer Support  ---.                                 │ │  
-  │ │        Sonics Silicon Backplane  ---.                               │ │  
+  │ │        Generic Driver Options  --->                                 │ │  
+  │ │    {*} Connector - unified userspace .-. kernelspace linker  --->   │ │  
+  │ │    .M. Memory Technology Device (MTD) support  --->                 │ │  
+  │ │    .M. Parallel port support  --->                                  │ │  
+  │ │    [*] Block devices  --->                                          │ │  
+  │ │        Misc devices  --->                                           │ │  
+  │ │        SCSI device support  --->                                    │ │  
+  │ │    .*. Serial ATA and Parallel ATA drivers  --->                    │ │  
+  │ │    [*] Multiple devices driver support (RAID and LVM)  --->         │ │  
+  │ │    .M. Generic Target Core Mod (TCM) and ConfigFS Infrastructure  ->│ │  
+  │ │    [*] Network device support  --->                                 │ │  
+  │ │    [ ] ISDN support  --->                                           │ │  
+  │ │        Input device support  --->                                   │ │  
+  │ │    [*] Gsensor support  --->                                        │ │  
+  │ │        Character devices  --->                                      │ │  
+  │ │    {*} I2C support  --->                                            │ │  
+  │ │    [*] SPI support  --->                                            │ │  
+  │ │    . . HSI support  --->                                            │ │  
+  │ │        PPS support  --->                                            │ │  
+  │ │        PTP clock support  --->                                      │ │  
+  │ │    [*] GPIO Support  --->                                           │ │  
+  │ │    .*. Dallas's 1-wire support  --->                                │ │  
+  │ │    {*} Power supply class support  --->                             │ │  
+  │ │    .*. Hardware Monitoring support  --->                            │ │  
+  │ │    .*. Generic Thermal sysfs driver  --->                           │ │  
+  │ │    [*] Watchdog Timer Support  --->                                 │ │  
+  │ │        Sonics Silicon Backplane  --->                               │ │  
   │ └────v(+)─────────────────────────────────────────────────────────────┘ │  
   ├─────────────────────────────────────────────────────────────────────────┤  
   │                    .Select.    . Exit .    . Help .                     │  
@@ -117,7 +117,7 @@ I selected the following kernel modules with "M"
  .config - Linux/arm 3.4.108 Kernel Configuration
  ──────────────────────────────────────────────────────────────────────────────
   ┌────────────────────────────── PPS support ──────────────────────────────┐
-  │  Arrow keys navigate the menu.  .Enter. selects submenus ---..          │  
+  │  Arrow keys navigate the menu.  .Enter. selects submenus --->.          │  
   │  Highlighted letters are hotkeys.  Pressing .Y. includes, .N. excludes, │  
   │  .M. modularizes features.  Press .Esc..Esc. to exit, .?. for Help, ./. │  
   │  for Search.  Legend: [*] built-in  [ ] excluded  .M. module  . .       │  

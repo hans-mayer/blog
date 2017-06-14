@@ -13,13 +13,13 @@ To run a GPS disciplined NTP server one has to us a so called driver. There are 
 
 Driver 22 needs at least one preferred source. In my case it's driver 28 but it could be as well any other "remote" NTP server.
 
-As you can see offset is typically within a range of +/- 10 us.
+As you can see offset is typically within a range of +/- 10 &mu;s.
 
 ![plot_20592_driver_22.png](/images/plot_20592_driver_22.png)
 
 See also: [https://www.eecis.udel.edu/~mills/ntp/html/drivers/driver22.html](https://www.eecis.udel.edu/~mills/ntp/html/drivers/driver22.html){:target="_blank"}
 
-Driver 22 does the ticks.
+Driver 22 does the ticks. This driver is configured wiht "maxpoll 5". 
 
 ## Driver 28 - Shared Memory Driver
 
@@ -32,3 +32,15 @@ See also: [https://www.eecis.udel.edu/~mills/ntp/html/drivers/driver28.html](htt
 ## Disadvantage
 
 If connectivity to the satellites is lost and finally available the NTP daemon starts to synchronize with the preferred server (28). This pulls the server away from the real time even if the free running server wouldn't be so bad.
+
+
+## Output 
+
+This is rhe result of "ntpq -pn -W 80" running NTPsec 
+
+<pre>
+     remote           refid      st t when poll reach   delay   offset   jitter
+===============================================================================
+oPPS(0)          .PPS.            0 u    3   32  377   0.0000  -0.0033   0.0040
+*SHM(0)          .GPS.            0 u    2   32  377   0.0000   0.4335   0.7495
+</pre>
