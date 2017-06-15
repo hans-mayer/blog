@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Stratum-1 NTP Server
+title:  Stratum-1 NTP Server with rubidium source
 date:   2017-06-11 17:06:00 CET
 categories:
 ---
@@ -20,7 +20,7 @@ There is always the question about the costs. And therefore which time source ca
 
 With a hardware like the Banana Pi or a Raspberry Pi one has already an interface called GPIO. Source code of NTP classic or NTPsec has a driver which can handle an 1PPS (one pulse per second) signal. The rubidium oscillator delivers a 10 MHz sinus wave. To get a 1PPS you need a divider by 10^7. All together 3 components.
 
-* Banana Pi M1 micro computer with Linux
+* Banana Pi M1 micro computer with GNU/Linux
 * 10 MHz oscillator EFRATOM LPRO-101
 * divider by 10^7
 
@@ -28,7 +28,7 @@ And of course power supplies for these devices.
 
 The Banana Pi M1 and the EFRATOM I could buy. The divider I had to develop by myself. I put this product at GitHub. You can find the source for this PC-board here
 
-[https://github.com/hans-mayer/teiler10e7](https://github.com/hans-mayer/teiler10e7)
+[GitHub: divider by 10^7](https://github.com/hans-mayer/teiler10e7)
 
 ## OS with 1PPS support
 
@@ -37,6 +37,80 @@ Even during the installation of my first GPS based NTP server I figured out this
 
 [Banana Pi compile kernel and header](/2016/01/01/bananapi-compile-kernel.html){:target="_blank"}
 
+Once you have done this successfully you can modify the kernel to use 1PPS. Details you can find here
+
+[Kernel with 1PPS support](/2017/06/12/kernel-with-1PPS.html){:target="_blank"}
+
+During my test I figured out that a second 1PPS driver would be useful. This driver can be loaded only once. So a second one has to be compiled. This is not a necessary step. But it makes the live easier, especially during the phase of adjusting the rubidium frequency standard. How to do you can find here at GitHub:
+
+[GitHub: pps2gpio - a second 1PPS](https://github.com/hans-mayer/pps2gpio){:target="_blank"}
+
+If done the drive must be loaded. A typical way is to add a line in file
+
+<pre>
+/etc/modules
+</pre>
+
+with the following content
+
+<pre>
+pps-gpio
+</pre>
+
+As you can see this is the default driver above, which I use if there is a GPS module installed. For the rubidium 1PPS I load the driver via a script in /etc/init.d
+
+<pre>
+if test -z "`lsmod | grep pps_2gpio`"
+  then
+    echo insmod pps-2gpio.ko gpio_pin=17 1>&2
+    insmod pps-2gpio.ko gpio_pin=17
+  else
+    echo pps-2gpio.ko already loaded 1>&2
+fi
+lsmod | grep pps
+</pre>
+
+This must be executed in the directory where you compile the driver source. Out put should be
+
+<pre>
+pps_2gpio               3376  1
+pps_gpio                3357  1
+pps_core               10107  4 pps_gpio,pps_2gpio
+</pre>
+
+As I said, output may be different, if you don't use pps_2gpio. Now you should test if 1PPS is really available. There is a tool called "ppstest". You can download at
+
+[GitHub: ppstest](https://github.com/ago/pps-tools.git){:target="_blank"}
+
+Running it, it should show you each second a timestamp.
+
+<pre>
+# ls -ld /dev/pps?
+crw------- 1 root root 242, 0 May 14 22:22 /dev/pps0
+crw------- 1 root root 242, 1 May 14 22:22 /dev/pps1
+
+# ppstest /dev/pps1
+trying PPS source "/dev/pps1"
+found PPS source "/dev/pps1"
+ok, found 1 source(s), now start fetching data...
+source 0 - assert 1497522635.000049542, sequence: 2711411 - clear  0.000000000, sequence: 0
+source 0 - assert 1497522636.000046069, sequence: 2711412 - clear  0.000000000, sequence: 0
+source 0 - assert 1497522637.000043472, sequence: 2711413 - clear  0.000000000, sequence: 0
+source 0 - assert 1497522638.000039958, sequence: 2711414 - clear  0.000000000, sequence: 0
+source 0 - assert 1497522639.000037235, sequence: 2711415 - clear  0.000000000, sequence: 0
+^C
+</pre>
+
+## Adjusting the EFRATOM rubidium standard.
+
+Yes, the rubidium frequency standard must be adjusted. It is a high precisely source. Much better than everthing else once it's running really at 10000000.00 MHz.
+
+Here some links:
+
+* [EFRATOM LPRO-101 adjusting](/2016/01/03/efratom-lpro-101-adjusting.html){:target="_blank"}
+* [my second Efratom LPRO-101](/2016/07/25/second-efratom.html){:target="_blank"}
+* [Stratum-1 NTP server ](/2017/06/11/stratum-0-server.html){:target="_blank"}
+* [EFRATOM LPRO-101 Pin 7 voltage vs. offset](/2016/01/31/efratom-lpro-101-pin7-voltage.html){:target="_blank"}
 
 
 ## More details
