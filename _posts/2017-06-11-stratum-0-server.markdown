@@ -28,7 +28,7 @@ And of course power supplies for these devices.
 
 The Banana Pi M1 and the EFRATOM I could buy. The divider I had to develop by myself. I put this product at GitHub. You can find the source for this PC-board here
 
-[GitHub: divider by 10^7](https://github.com/hans-mayer/teiler10e7)
+[GitHub: divider by 10^7](https://github.com/hans-mayer/teiler10e7){:target="_blank"}
 
 ## OS with 1PPS support
 
