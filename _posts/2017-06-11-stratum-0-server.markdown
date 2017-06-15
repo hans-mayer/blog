@@ -101,6 +101,8 @@ source 0 - assert 1497522639.000037235, sequence: 2711415 - clear  0.000000000, 
 ^C
 </pre>
 
+Not to get confused about the pin numbering of the GPIO here some documentation: [Banana Pi - GPIO - WiringBP](/2016/01/08/bananapi-gpio-wiringbp.html){:target="_blank"}
+
 ## Adjusting the EFRATOM rubidium standard.
 
 Yes, the rubidium frequency standard must be adjusted. It is a high precisely source. Much better than everthing else once it's running really at 10000000.00 MHz.
@@ -109,8 +111,11 @@ Here some links:
 
 * [EFRATOM LPRO-101 adjusting](/2016/01/03/efratom-lpro-101-adjusting.html){:target="_blank"}
 * [my second Efratom LPRO-101](/2016/07/25/second-efratom.html){:target="_blank"}
-* [Stratum-1 NTP server ](/2017/06/11/stratum-0-server.html){:target="_blank"}
 * [EFRATOM LPRO-101 Pin 7 voltage vs. offset](/2016/01/31/efratom-lpro-101-pin7-voltage.html){:target="_blank"}
+
+## Power supply
+
+Normally it's not necessary to speak about power supplies. The modern way is to use a switched mode power supply. With such a power supply I made some bad experience. It took me a lot of time to figure out what's going wrong, why is the time source not stable. Until I found a solution with a classic three-terminal positive-voltage regulator LM317. Maybe a low pass filter could also solve this issue.
 
 
 ## More details

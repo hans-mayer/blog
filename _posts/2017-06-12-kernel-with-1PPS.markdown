@@ -156,3 +156,8 @@ Finally save the new configuration. You can verfy the changes with the diff comm
 You could build a new kernel. But probably you need also a patch for this driver. It is from Chen Wei weichen302@gmail.com and you can find it here:
 
 [https://github.com/infinet/bananapi/blob/master/pps-over-gpio.patch](https://github.com/infinet/bananapi/blob/master/pps-over-gpio.patch){:target="_blank"}
+
+See also:
+
+* [Banana Pi compile kernel and header](/2016/01/01/bananapi-compile-kernel.html){:target="_blank"}
+* [Stratum-1 NTP Server with rubidium source](/2017/06/11/stratum-0-server.html){:target="_blank"}
