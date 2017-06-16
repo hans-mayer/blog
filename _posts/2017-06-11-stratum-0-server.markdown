@@ -118,6 +118,13 @@ Here some links:
 Normally it's not necessary to speak about power supplies. The modern way is to use a switched mode power supply. With such a power supply I made some bad experience. It took me a lot of time to figure out what's going wrong, why is the time source not stable. Until I found a solution with a classic three-terminal positive-voltage regulator LM317. Maybe a low pass filter could also solve this issue.
 
 
-## More details
+## Software and scripts
 
 Coming soon.
+
+
+## Case
+
+I had an old Sun Blade 100 workstation. From this I removed all the original electronic components. After that I mounted the EFRATOM LPRO-101 (left side), the Banana Pi M1 (right front) and the power supply (right back). With this I will not win a designer price but I am proud to build my own rubidium disciplined NTP server.
+
+![rubi0_case.png](/images/rubi0_case.png){: width="800px"}
