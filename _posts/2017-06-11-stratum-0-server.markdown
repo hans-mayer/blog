@@ -122,7 +122,7 @@ Normally it's not necessary to speak about power supplies. The modern way is to 
 
 Here you can find all necessary scripts and configuration files for this stratum-1 server.
 
-[GitHub: ppstest](https://github.com/hans-mayer/stratum1-scripts/){:target="_blank"}
+[GitHub: stratum1-scripts](https://github.com/hans-mayer/stratum1-scripts/){:target="_blank"}
 Coming soon.
 
 
