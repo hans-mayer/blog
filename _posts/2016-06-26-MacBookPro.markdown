@@ -29,4 +29,5 @@ Update history
 2017-01-25 10.12.3 macOS Sierra Update
 2017-03-28 10.12.4 macOS Sierra Update
 2017-05-16 10.12.5 macOS Sierra Update
+2017-07-28 10.12.6 macOS Sierra Update
 </pre>
