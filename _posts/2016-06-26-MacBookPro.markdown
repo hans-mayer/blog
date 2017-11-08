@@ -15,7 +15,7 @@ Technical details are:
 * 13" Retina display 2560 x 1600 Pixel
 * 16 GB Memory 1867 MHz DDR3
 * 256 GB SSD
-* OS X El Capitan Version 10.11.6 now macOS Sierra 10.12.5
+* OS X El Capitan Version 10.11.6 now macOS Sierra 10.13.1
 
 It's really an amazing device.
 
@@ -30,4 +30,5 @@ Update history
 2017-03-28 10.12.4 macOS Sierra Update
 2017-05-16 10.12.5 macOS Sierra Update
 2017-07-28 10.12.6 macOS Sierra Update
+2017-11-08 10.13.1 macOS High Sierra Update
 </pre>
