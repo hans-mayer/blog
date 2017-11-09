@@ -35,3 +35,9 @@ gem install jekyll
 gem install jekyll-sitemap
 jekyll server &
 </pre>
+
+And the same with iStats
+
+<pre>
+gem install iStats
+</pre>
