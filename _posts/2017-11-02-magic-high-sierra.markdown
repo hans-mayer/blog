@@ -29,8 +29,8 @@ After the upgrade I tried to update my blog with "jekyll". But jekyll didn't run
 <pre>
 brew update
 brew upgrade  
-brew install  ruby
-brew install  rubygems
+brew install ruby
+brew install rubygems
 gem install jekyll
 gem install jekyll-sitemap
 jekyll server &
@@ -40,4 +40,10 @@ And the same with iStats
 
 <pre>
 gem install iStats
+</pre>
+
+Oh no, original "telnet" is gone.
+
+<pre>
+brew install inetutils
 </pre>
