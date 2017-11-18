@@ -30,7 +30,7 @@ Denn was fängt man mit 2 entwerteten Karten als einzelner an ? Aber das sollte 
 Es kamen tatsächlich 2 Karten aus dem Automat.
 Die Erste hatte eine Größe, wie sie üblich für Fahrkarten sind, nämlich 84 x 49 mm.
 Die Zweite war dann doch mit 133 x 82 mm wesentlich größer.
-Aber dafür nur halb bedruckt.
+Aber dafür nur halb bedruckt. Flächenmäßig ist sie fast drei mal so groß.
 
 ![fahrkarte_gross.png](/images/fahrkarte_gross.png)
 
