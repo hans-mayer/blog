@@ -33,4 +33,5 @@ Update history
 2017-11-08 10.13.1 macOS High Sierra Update
 2017-11-30 Security Update 2017-001
 2017-12-12 10.13.2 macOS High Sierra Update
+2018-01-12 10.13.2 macOS High Sierra Supplemental Update
 </pre>
