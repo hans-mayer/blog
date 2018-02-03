@@ -17,7 +17,7 @@ Below you can see the offset between November 19th and 24th. The graph show an a
 
 We can clearly see that during the first 3 days offset is about zero and than it is much higher ( with a negative value ).
 
-If we do a average calculation of the first 3 days we get -5.8 micro seconds.
+If we do an average calculation of the first 3 days we get -5.8 micro seconds.
 
 ![offset_before.png](/images/plot_bev_offs_14414_before.png)
 
