@@ -35,9 +35,8 @@ Update history
 2017-12-12 10.13.2 macOS High Sierra Update
 2018-01-12 10.13.2 macOS High Sierra Supplemental Update
 2018-02-02 10.13.3 macOS High Sierra Update
+2018-02-26 10.13.3 macOS High Sierra Supplemental Update
 
 </pre>
 
-The system update log can be found at "About this MAC" -> "System Report" -> "Software" -> "Installations" 
-
-
+The system update log can be found at "About this MAC" -> "System Report" -> "Software" -> "Installations"
