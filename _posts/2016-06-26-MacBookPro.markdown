@@ -15,7 +15,7 @@ Technical details are:
 * 13" Retina display 2560 x 1600 Pixel
 * 16 GB Memory 1867 MHz DDR3
 * 256 GB SSD
-* OS X El Capitan Version 10.11.6 now macOS Mojave 10.14
+* OS X El Capitan Version 10.11.6 now macOS Mojave 10.14.1
 
 It's really an amazing device.
 
@@ -40,8 +40,9 @@ Update history
 2018-06-05 10.13.5 macOS High Sierra Update
 2018-07-10 10.13.6 macOS High Sierra Update
 2018-10-15 10.14 macOS Mojave
-
+2018-11-20 10.14.1 macOS Update
 
 </pre>
 
 The system update log can be found at "About this MAC" -> "System Report" -> "Software" -> "Installations"
+
