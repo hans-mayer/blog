@@ -12,9 +12,9 @@ Last week I got a new notebook. It's a MacBook Pro.
 Technical details are:
 
 * 3,1 GHz Dual-Core Intel Core i7 Prozessor
-* 13" Retina display 2560 x 1600 Pixel
+* 13" Retina display 2560 x 1600 Pixel replaced by a new one on guarantee
 * 16 GB Memory 1867 MHz DDR3
-* 256 GB SSD
+* original 256 GB SSD now upgraded to 480 GB SSD
 * OS X El Capitan Version 10.11.6 now macOS Mojave 10.14.6
 
 It's really an amazing device.
