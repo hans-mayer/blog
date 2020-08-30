@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="mayer">
+  <meta name="GENERATOR"
+ content="Mozilla/4.04 [en] (X11; I; SunOS 5.5.1 sun4m) [Netscape]">
+  <link rel="icon" href="/m16.png" type="image/png">
+  <title>blackberry 8800 - A1 mobilkom </title>
+</head>
+<body alink="#ff0000" bgcolor="#f5f5dc" link="#0000ff" text="#000000"
+ vlink="#01424a">
+<br>
+<br>
+<big style="font-weight: bold;"><big>blackberry 8800 - A1 mobilkom </big></big><br>
+<center><font size="+2"><br>
+</font>
+<div style="text-align: left;">diese seite beschreibt , wie man einen
+blackberry als modem nutzt, um mit dem notebook ins internet zu
+gelangen. <br>
+<br>
+in meinem fall:<br>
+RIM device blackberry 8800 mit v 4.2.1.101 ( kurz bb genannt ) <br>
+notebook ibm t42 mit windows 2000 ( kurz nb genannt ) <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ( bei XP sieht es sicherlich ganz
+anders aus )<br>
+A1 mobilkom service provider <br>
+<br>
+verbunden sind bb und nb mit einem usb-kabel. <br>
+<br>
+es gibt zwei moeglichkeiten, die config zu erfahren. <br>
+- man ruft bei a1 an ( tel 0800 664 111 ) und erfragt die konfiguration
+<br>
+das habe ich gemacht. ich bin zu sehr netten und hilfsbereiten damen
+gekommen, die mich dann schlussendlich auch zum erfolg gefuehrt haben,
+nachdem ich elend lang herumgegoogelt und yahood habe. <br>
+- oder man studiert diese seite. ( ohne erfolgsgarantie ) <br>
+<br>
+<br>
+</div>
+</center>
+now: step by step<br>
+<br>
+zuerst installiert man den auf der cd mitgelieferten
+bb-geraete-manager, praktischerwiese auch den desktop-manager<br>
+man kontrolliere, ob auch eine usb-verbindung da ist<br>
+<br>
+<span style="text-decoration: underline;"><img
+ alt="bb_devicemanager_handheld.jpg" src="bb_devicemanager_handheld.jpg"
+ style="width: 379px; height: 372px;"></span><br>
+<br>
+<br>
+ich starte den bb-device-manager nicht automatisch, sondern nur nach
+bedarf haendisch. <br>
+der info-reiter zeigt die versionen, die bei mir im einsatz sind. <br>
+<br>
+<img alt="bb_devicemanager_info.jpg" src="bb_devicemanager_info.jpg"
+ style="width: 379px; height: 372px;"><br>
+<br>
+<br>
+virtuelle com-ports kontrollieren<br>
+start -&gt; einstellungen -&gt; systemsteuerung -&gt; system - &gt;
+hardware -&gt; geraetemanager <br>
+<br>
+<img alt="geraete_manager.jpg" src="geraete_manager.jpg"
+ style="width: 334px; height: 240px;"><br>
+<br>
+man sollte 2 com-ports von rim haben. warum ? keine ahnung, habe ich
+aber auf anderen seiten auch gelesen. ich vermute, weil mein notebook 2
+usb-steckmoeglichkeiten hat. <br>
+in meinem fall sind es com-port nummer 9 und 10, koennte aber auch jede
+andere zahl sein. <br>
+<br>
+<br>
+nun ein neue dfue-verbindung bauen. <br>
+start -&gt; einstellungen -&gt; netzwerk_u_dfue_verbindungen -&gt; neue
+verbindung erstellen <br>
+<br>
+nach dem "willkommen" auf "weiter"<br>
+auswaehlen "in das internet einwaehlen"&nbsp; -&gt; weiter <br>
+"manuelle einrichtung der internetverbindung"&nbsp; -&gt; weiter <br>
+"verbindung ueber telephonltg u modem" -&gt; weiter&nbsp; <br>
+<br>
+modem auswaehlen <br>
+<br>
+<img alt="assistent_modem.jpg" src="assistent_modem.jpg"
+ style="width: 542px; height: 441px;"><br>
+<br>
+bei mir ist es das standardmodem nummer 5 - wieso ?&nbsp; hmm ... ? <br>
+4 netzwerkverbindungen hatte ich schon <br>
+angezeigt werden allerdings nur 3 ( vielleicht ein feature von kleinweich ) <br>
+<br>
+<img alt="assistenassistent_verbindung_1.jpgt_verbindung_1.jpg"
+ src="assistent_verbindung_1.jpg" style="width: 542px; height: 441px;"><br>
+<br>
+die rufnummer fuer a1 mobilkom lautet:&nbsp;&nbsp; *99***1# <br>
+<br>
+<br>
+<img alt="assistent_verbindung_2.jpg" src="assistent_verbindung_2.jpg"
+ style="width: 542px; height: 441px;"><br>
+<br>
+benutzername:&nbsp;&nbsp; ppp@a1plus.at <br>
+das kennwort lautet: &nbsp; ppp&nbsp; <br>
+<br>
+<img alt="assistent_verbindung_3.jpg" src="assistent_verbindung_3.jpg"
+ style="width: 542px; height: 441px;"><br>
+<br>
+<br>
+als namen habe ich "blackberry" gewaehlt, vielleicht etwas einfallslos.
+<br>
+<br>
+<img alt="assistent_konto.jpg" src="assistent_konto.jpg"
+ style="width: 542px; height: 441px;"><br>
+<br>
+e-mail-konto brauche ich keines <br>
+<br>
+-&gt; fertigstellen <br>
+<br>
+weitere einstellungen vornehmen<br>
+start -&gt; einstellungen -&gt; netzwerk_u_dfue_verbindungen -&gt;
+blackberry -&gt; rechte maustaste -&gt; eigenschaften <br>
+<br>
+<img alt="dfue_verbindung.jpg" src="dfue_verbindung.jpg"
+ style="width: 970px; height: 279px;"><br>
+<br>
+<br>
+<img alt="eigenschaften_allgemein.jpg" src="eigenschaften_allgemein.jpg"
+ style="width: 367px; height: 443px;"><img
+ alt="eigenschafeigenschaften_allgemein_konfigurieren.jpgten_allgemein_konfigurieren.jpg"
+ src="eigenschaften_allgemein_konfigurieren.jpg"
+ style="width: 384px; height: 402px;"><br>
+&nbsp; <br>
+<br>
+<img alt="eigenschaften_optionen.jpg" src="eigenschaften_optionen.jpg"
+ style="width: 367px; height: 443px;"><br>
+<br>
+<br>
+<br>
+folgende aenderung ist wichtig und nur pap verwenden <br>
+<br>
+<img alt="eigenschaften_sicherheit.jpg"
+ src="eigenschaften_sicherheit.jpg" style="width: 367px; height: 443px;"><img
+ alt="eigenschaften_sicherheit_einstellungen.jpg"
+ src="eigenschaften_sicherheit_einstellungen.jpg"
+ style="width: 374px; height: 435px;"><br>
+<br>
+<br>
+<br>
+<img alt="eigenschaften_netzwerk.jpg" src="eigenschaften_netzwerk.jpg"
+ style="width: 367px; height: 443px;"><img
+ alt="eigenschaften_netzwerk_einstellungen.jpg"
+ src="eigenschaften_netzwerk_einstellungen.jpg"
+ style="width: 324px; height: 140px;"><br>
+<br>
+auf meinem notebook ist eine firewall von checkpoint installiert<br>
+daher taucht auch ein ip-layer "check point securemote" auf, dieser
+wird ueblicherweise nicht vorhanden sein. <br>
+<br>
+<br>
+<img alt="eigenschaften_netzwerk_eingenschaften.jpg"
+ src="eigenschaften_netzwerk_eingenschaften.jpg"
+ style="width: 404px; height: 448px;"><br>
+<br>
+die domaennameserver der mobilkom:<br>
+<br>
+# nslookup -type=ns a1.net <br>
+Server:&nbsp; ns.yer.at<br>
+Address:&nbsp; 194.37.61.89<br>
+<br>
+Non-authoritative answer:<br>
+a1.net&nbsp; nameserver = ns2.a1.net<br>
+a1.net&nbsp; nameserver = ns3.a1.net<br>
+a1.net&nbsp; nameserver = ns1.a1.net<br>
+<br>
+Authoritative answers can be found from:<br>
+ns1.a1.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address =
+194.48.124.200<br>
+ns2.a1.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address =
+194.48.124.202<br>
+ns3.a1.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address =
+194.48.139.254<br>
+<br>
+<br>
+-&gt; erweitert <br>
+<br>
+<img alt="eigenschaften_netzwerk_eingenschaften_allgemein.jpg"
+ src="eigenschaften_netzwerk_eingenschaften_allgemein.jpg"
+ style="width: 404px; height: 481px;"><img
+ alt="eigenschaften_netzwerk_eingenschaften_dns.jpg"
+ src="eigenschaften_netzwerk_eingenschaften_dns.jpg"
+ style="width: 404px; height: 481px;"><br>
+<br>
+<br>
+wins spielt nicht wirklich eine rolle&nbsp; <br>
+<br>
+<img alt="eigenschaften_netzwerk_eingenschaften_optionen.jpg"
+ src="eigenschaften_netzwerk_eingenschaften_optionen.jpg"
+ style="width: 404px; height: 481px;"><img
+ alt="eigenschaften_netzwerk_eingenschaften_optionen_ipsicher.jpg"
+ src="eigenschaften_netzwerk_eingenschaften_optionen_ipsicher.jpg"
+ style="width: 384px; height: 295px;"><br>
+<br>
+<br>
+zuletzt den dial-string einstellen:<br>
+<br>
+start -&gt; einstellung -&gt; systemsteuerung -&gt;&nbsp;
+telephon_u_modemoptionen -&gt; modem <br>
+<br>
+<img alt="modem_opt.jpg" src="modem_opt.jpg"
+ style="width: 404px; height: 448px;"><br>
+<br>
+-&gt; eigenschaften -&gt; unter erweiterte optionen <br>
+<br>
+<img alt="modem_opt_allgemein.jpg" src="modem_opt_allgemein.jpg"
+ style="width: 344px; height: 435px;"><img
+ alt="modem_opt_erweiterte_opt.jpg" src="modem_opt_erweiterte_opt.jpg"
+ style="width: 344px; height: 435px;"><br>
+<br>
+der dialstring (alles kleinbuchstaben, kein space):&nbsp;
+at+cgdcont=1,"ip","a1.net" <br>
+<br>
+eventuell durchbooten <br>
+<br>
+nun die verbindung herstellen <br>
+start -&gt; einstellungen -&gt; netzwerk_u_dfue_verbindungen -&gt;
+blackberry -&gt; rechte maustaste -&gt; verbindung_herstellen <br>
+benutzername u kennwort sind bereits ausgefuellt. <br>
+<br>
+bei mir kommt nun die abfrage des bb-passworts ( geraetekennwort ) <br>
+<br>
+<img alt="waehlenwaehlen.jpg.jpg" src="waehlen.jpg"
+ style="width: 293px; height: 152px;"><br>
+<br>
+das sollte man nicht uebersehen, allzulange darf man nicht warten,
+hektik ist aber nicht angesagt. <br>
+wenn alles gut geht, kommt folgender schirm und keine fehlermeldung <br>
+ueber die status-abfrage sieht man empfangene/gesendete bytes <br>
+<br>
+<img alt="verbindung.jpg" src="verbindung.jpg"
+ style="width: 384px; height: 196px;"><img alt="verbindung_status.jpg"
+ src="verbindung_status.jpg" style="width: 344px; height: 344px;"><br>
+<br>
+<blockquote></blockquote>
+<p><font size="-2">created: 07/2008 </font><br>
+<font size="-2">date of last modification: 9/2008<br>
+</font></p>
+<p><font size="-2"><br>
+</font></p>
+<blockquote>
+  <p><font size="-2"><br>
+  </font></p>
+</blockquote>
+</body>
+</html>
