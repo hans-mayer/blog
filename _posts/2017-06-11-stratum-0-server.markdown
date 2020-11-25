@@ -105,7 +105,7 @@ Not to get confused about the pin numbering of the GPIO here some documentation:
 
 ## Adjusting the EFRATOM rubidium standard.
 
-Yes, the rubidium frequency standard must be adjusted. It is a high precisely source. Much better than everthing else once it's running really at 10000000.00 MHz.
+Yes, the rubidium frequency standard must be adjusted. It is a high precisely source. Much better than everthing else once it's running really at 10000000.00 Hz.
 
 Here some links:
 
