@@ -2,7 +2,7 @@
 layout: post
 title:  Strengstes Fahrverbot
 date:   2016-07-03 17:36:00 CET
-categories: dievers
+categories: divers
 ---
 
 Ein normales Fahrverbot ist anscheinend zu wenig. Radfahrer sind offensichtlich davon nicht betroffen. Daher bedarf es einer zweiten Verbotstafel. Und wie ist das mit den Anrainern ?
