@@ -42,4 +42,5 @@ Als Draufgabe gab es dann noch einen Beleg mit 82 x 67 mm Größe, der nicht zus
 
 ![fahrkarte_beleg.png](/images/fahrkarte_beleg.png)
 
-Wenn es dazu Fragen an mich gibt. Hier meine E-Mail Adresse: <oebb.fahrkartenautomat@ma.yer.at>
+Wenn es dazu Fragen an mich gibt. Hier meine E-Mail Adresse: <oebb.fahrkarten@ma.yer.at>
+
