@@ -3,7 +3,7 @@ title: hans mayer's weblog
 email: blog.02@ma.yer.at
 description: "here you can find this and that - probably most related to UNIX/Linux and network"
 baseurl: ""
-url: "http://blog.mayer.tv"
+url: "https://blog.mayer.tv"
 github_username:  hans-mayer
 
 # Build settings

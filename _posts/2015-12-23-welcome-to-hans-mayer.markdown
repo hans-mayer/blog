@@ -10,6 +10,6 @@ i will post new blogs if i think it will be useful for others.
 
 i use "jekyll" to generate this postings.
 
-many thanks to my son [Christian](http://blog.fox21.at/){:target="_blank"} who helped setting up this environment. 
+many thanks to my son [Christian](https://blog.fox21.at/){:target="_blank"} who helped setting up this environment. 
 
 
