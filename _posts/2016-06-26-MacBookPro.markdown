@@ -15,7 +15,7 @@ Technical details are:
 * 13" Retina display 2560 x 1600 Pixel replaced by a new one on guarantee
 * 16 GB Memory 1867 MHz DDR3
 * original 256 GB SSD now upgraded to 480 GB SSD
-* OS X El Capitan Version 10.11.6 now macOS Mojave 10.14.6
+* OS X El Capitan Version 10.11.6 now macOS Monterey 12.1
 
 It's really an amazing device.
 
@@ -24,13 +24,13 @@ Update history
 
 <pre>
 2016-07-18 10.11.6 OS X El Capitan Update
-2016-10-27 10.12.1 macOS Sierra Update
-2016-12-14 10.12.2 macOS 10.12.2 Update
+2016-10-27 10.12.1 macOS Sierra
+2016-12-14 10.12.2 macOS Sierra Update
 2017-01-25 10.12.3 macOS Sierra Update
 2017-03-28 10.12.4 macOS Sierra Update
 2017-05-16 10.12.5 macOS Sierra Update
 2017-07-28 10.12.6 macOS Sierra Update
-2017-11-08 10.13.1 macOS High Sierra Update
+2017-11-08 10.13.1 macOS High Sierra
 2017-11-30 Security Update 2017-001
 2017-12-12 10.13.2 macOS High Sierra Update
 2018-01-12 10.13.2 macOS High Sierra Supplemental Update
@@ -45,6 +45,7 @@ Update history
 2019-02-11 10.14.3 macOS Update
 2019-05-24 10.14.5 macOS Update
 2019-08-19 10.14.6 macOS Update
+2022-01-22 12.1 macOS Monterey
 
 </pre>
 
