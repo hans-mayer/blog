@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  GPSD NTP on Raspberry PI4 with Bullseye
+title:  GPSD and NTP on Raspberry PI4 with Debian OS 11.3 Bullseye
 date:   2022-06-19 11:07:00 CET
 categories:
 ---
@@ -14,6 +14,12 @@ After 6 years running a GPS disciplined NTP server on old hardware I thought it'
 2022-04-04-raspios-bullseye-arm64.img
 
 ```
+I used the GPS hat I already have since about 6 years.
+
+<img src="/images/pi4_with_gps.jpg" width="400">
+
+As you can see the vendor is M0UPU. You can buy the GPS modules at uputronics.com
+
 I decided to compile GPSD and NTPD by myself and not to use a possible available package. To do so a lot of packages are needed:
 
 ```
@@ -82,6 +88,16 @@ Add one line:
 pps-gpio
 ```
 
+I also stoppped hciuart
+
+`systemctl enable hciuart`
+
+I modified /etc/group to be sure not having permission issues:
+
+`dialout:x:20:admin,root,nobody`
+
+## reboot
+
 Now reboot the PI4 and check the logs. With
 
 `dmesg | egrep 'gpio|pps|AMA|serial|gps'`
@@ -104,6 +120,15 @@ you should see something like this:
 [    9.485911] pps pps1: source "/dev/ttyS0" added
 ```
 
+Check if the pps_gpio module is loaded
+
+```
+pi4:root# lsmod | grep pps_gpio
+pps_gpio               16384  2
+```
+
+`modinfo pps_gpio` gives also some information
+
 There are new devices
 
 ```
@@ -113,7 +138,7 @@ lrwxrwxrwx 1 root root      5 Jun 19 13:28 /dev/serial0 -> ttyS0
 lrwxrwxrwx 1 root root      7 Jun 19 13:28 /dev/serial1 -> ttyAMA0
 ```
 
-Checking pps0 one can run:
+Checking pps0 is useable. It could also be that it is pps1
 
 ```
 pi4:root# ppstest /dev/pps0
@@ -132,7 +157,7 @@ To see if data are received run
 
 `minicom -b 9600 -o -D /dev/serial0`
 
-You should see a lot of clear text data coming from the GPS module.
+You should see a lot of clear text data coming from the GPS module. Of course the speed could be a different. If you see some wired character then it's the wrong speed. In my case it's working with 9600 bd.
 
 Now it's time to start gpsd and see if it is working
 
@@ -187,3 +212,9 @@ o127.127.22.0    .PPS.            0 l    5   16  377    0.000   +0.001   0.001
 ```
 
 ### That's it.
+
+#### Just a word about NTP classic.
+
+As you can see  the current and latest version of NTP is very old. I am not sure how long it will be available. There are alternatives, for example ntpsec.
+
+But there is one reason. For this see my other blog https://blog.mayer.tv/2022/06/20/NTP-classic-with-.ntprc-file.html
