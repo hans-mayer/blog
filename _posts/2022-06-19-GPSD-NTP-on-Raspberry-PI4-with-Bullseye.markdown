@@ -18,7 +18,7 @@ I used the GPS hat I already have since about 6 years.
 
 <img src="/images/pi4_with_gps.jpg" width="400">
 
-As you can see the vendor is M0UPU. You can buy the GPS modules at uputronics.com
+As you can see the vendor is M0UPU. You can buy the GPS modules at uputronics.com <br> At that time an ublox MAX-M8Q was used as chip on the gps hat.
 
 I decided to compile GPSD and NTPD by myself and not to use a possible available package. To do so a lot of packages are needed:
 
@@ -39,6 +39,14 @@ But compiling is quite straight forward:
 
 `scons ; scons check ; scons install
 `
+
+If you decide later on to update to the latest version run:
+
+```
+git pull origin master --rebase
+scons --config=force
+
+```
 
 # NTPD
 
@@ -90,7 +98,7 @@ pps-gpio
 
 I also stoppped hciuart
 
-`systemctl enable hciuart`
+`systemctl disable hciuart`
 
 I modified /etc/group to be sure not having permission issues:
 
@@ -198,7 +206,7 @@ fudge 127.127.28.0 refid GPS
 fudge 127.127.28.0 time1 +0.15 flag4 1 # coarse processing delay offset
 ```
 
-The time parameter you have to adjust for your situation. And of course several other configuration lines are necessary. If ntp.conf is ready start the deamon.
+The time parameter "time1" you have to adjust for your situation. And of course several other configuration lines are necessary. If ntp.conf is ready start the deamon.
 
 After some time you should see:
 
