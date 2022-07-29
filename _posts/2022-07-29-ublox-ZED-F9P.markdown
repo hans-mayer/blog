@@ -19,3 +19,17 @@ The board is from uputronics. It is mounted on a Raspberry PI4. Not to loose the
 Very important for the module from uputronics. The side with the electronic parts must be face up. The delivered 40-pin connector must be plugged on the bottom side (face down).
 
 As antenna I use the recommended multi-band active gnss antenna HAB-ANN-MB-00-00 with SMA Connector.
+
+Details:
+
+```
+UBX-MON-VER:
+  swVersion EXT CORE 1.00 (f10c36)
+  hwVersion 00190000
+  extension ROM BASE 0x118B2060
+  extension FWVER=HPG 1.13
+  extension PROTVER=27.12
+  extension MOD=ZED-F9P
+  extension GPS;GLO;GAL;BDS
+  extension SBAS;QZSS
+```
