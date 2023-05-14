@@ -1,0 +1,71 @@
+---
+layout: post
+title:  Z-test
+date:   2023-05-14 09:59:00 CET
+categories: software
+---
+
+### A statistical test as a simple bash script
+
+#### ztest_ksh
+
+```
+#!/usr/bin/env bash
+
+# Thu 11 May 2023 06:06:33 PM CEST - mayer
+
+
+
+# https://www.cliffsnotes.com/study-guides/statistics/univariate-inferential-tests/two-sample-z-test-for-comparing-two-means
+# http://homework.uoregon.edu/pub/class/es202/ztest.html
+
+
+if test $# -ne 6
+  then
+    echo usage: $0 mean1 deviation1 size1 mean2 deviation2 size2
+    exit 1
+fi
+
+# convert for example 1.14776e-06 to 0.00000114776000000000 for DC
+M1=`echo $1 | awk '{ printf ( "%0.20f\n" , $1 ) }'`
+D1=`echo $2 | awk '{ printf ( "%0.20f\n" , $1 ) }'`
+S1=`echo $3 | awk '{ printf ( "%0.20f\n" , $1 ) }'`
+M2=`echo $4 | awk '{ printf ( "%0.20f\n" , $1 ) }'`
+D2=`echo $5 | awk '{ printf ( "%0.20f\n" , $1 ) }'`
+S2=`echo $6 | awk '{ printf ( "%0.20f\n" , $1 ) }'`
+
+
+dc <<< "15k $M1 $M2 - $D1 $D1  * $S1 / $D2 $D2 * $S2 / + v / p" | \
+	awk '{ printf ( "%.2g\n" , $1 ) }'
+
+
+dc <<< "15k $M1 $M2 - $D1 $D1  * $S1 / $D2 $D2 * $S2 / + v / p" | \
+awk '{ printf ( "%.2g\n" , $1 < 0 ? -$1 : $1  ) }' | \
+awk '{ if ( $1 < 2.0 ) print ( "probes are the same " )
+else
+  {
+    if ( $1 < 2.5 ) print ( "probes are marginally different " )
+      else
+        {
+          if ( $1 < 3.0 ) print ( "probes are significant different " )
+            else
+              {
+                 print ( "probes highly significant different " )
+              }
+        }
+  }
+}'  
+
+
+```
+
+#### Example
+
+```
+# ztest_ksh 287.126750000000 0.202184 4  287.320500000000 0.202184 6
+1.5
+probes are the same
+
+```
+
+see also: [wikipedia](https://en.wikipedia.org/wiki/Z-test)
