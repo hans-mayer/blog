@@ -40,9 +40,9 @@ I have done this for 6 days each 24 hours and got the following result:
 {: .tablelines}
 
 I calculated the distance between any of these results and it was not bigger than 37.2 cm. <br>
-One can say that all results are within a circle of about 20 cm.
+One can say that all results are within a circle of about 20 cm radius.
 <br><br>
-the next test was to use "dynModel 2". ( 2 = stationary )
+The next test was to use "dynModel 2". ( 2 = stationary )
 <br>
 
 | day config4                | lat            | lon            | AltHAE    | CEP50   | CEP99   | EP50    | EP99   |
