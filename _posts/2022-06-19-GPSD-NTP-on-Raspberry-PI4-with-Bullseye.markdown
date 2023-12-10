@@ -14,7 +14,7 @@ After 6 years running a GPS disciplined NTP server on old hardware I thought it'
 2022-04-04-raspios-bullseye-arm64.img
 
 ```
-I used the GPS hat I already have since about 6 years.
+I used the GPS-hat I already have since about 6 years.
 
 <img src="/images/pi4_with_gps.jpg" width="400">
 
@@ -50,7 +50,7 @@ scons --config=force
 
 # NTPD
 
-For NTP I took the tar ball from ntp.org [http://www.ntp.org/downloads.html](http://www.ntp.org/downloads.html). Currently the latest version is 4.2.8p15
+For NTP I took the tar ball from ntp.org [http://www.ntp.org/downloads.html](http://www.ntp.org/downloads.html). Currently the latest version is 4.2.8p17
 With the following commands compilation was easy
 
 ```
@@ -146,7 +146,7 @@ lrwxrwxrwx 1 root root      5 Jun 19 13:28 /dev/serial0 -> ttyS0
 lrwxrwxrwx 1 root root      7 Jun 19 13:28 /dev/serial1 -> ttyAMA0
 ```
 
-Checking pps0 is useable. It could also be that it is pps1
+Checking pps0 is useable. It could also be that it is pps1. Of course a GPS-hat must be connected now. 
 
 ```
 pi4:root# ppstest /dev/pps0
