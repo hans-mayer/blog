@@ -6,7 +6,7 @@ permalink: /search/
 
 
 <form method="GET" action="https://www.google.com/search">
-<a href="https://www.google.com/"><img border="0" src="/images/Logo_40wht.gif" alt="Google" /></a>
+<a href="https://www.google.com/" target="_blank"><img border="0" src="/images/Logo_40wht.gif" alt="Google" /></a>
 
 <p> <input type="text" name="q" size="31" maxlength="255" /> <input type="submit" name="btnG" value="Google search" /></p>
     <p> <input type="hidden" name="domains" value="https://blog.mayer.tv" /> <input type="hidden" name="ie" value="iso-8859-1" /> <input type="hidden" name="oe" value="iso-8859-1" />

@@ -7,7 +7,8 @@ categories:
 
 Keine Angst, es folgt nicht jeden Tag ein neuer Blog mit "Mein x-tes PHP Programm". 
 
-Ich habe eine kleine sqlite3 DB, in der ich die Niederschlagswerte eintrage. Das habe ich bis dato mit einem Shell Script gemacht. Begeistert von meinem ersten Erlebnis mit OpenAI und aider.chat möchte ich nun eine Webanwendung dafür machen. 
+Ich habe eine kleine sqlite3 DB, in der ich die Niederschlagswerte eintrage. Das habe ich bis dato mit einem Shell Script gemacht. Begeistert von meinem [ersten Erlebnis](/2025/04/15/mein-erstes-PHP-Progamm.html){:target="_blank"} 
+ mit OpenAI und aider.chat möchte ich nun eine Webanwendung dafür machen. 
 
 Ich setze mich also hin und fange an zu beschreiben:
 <pre><code>
@@ -26,7 +27,7 @@ Ich erhalte ein File "webapp.php" das ich auf den Webserver als index.php ablege
 
 ![erster versuch](/images/regenmeter1.png)
 
-Sieht ja schon mal gut aus. Allerdings funktioniert die Eingabe nicht. Was ich nicht bedacht habe ist die Tatsache, dass der PDO Treiber Schreibrecht auf das File UND auf das Directory haben will. Ich erstelle ein Unterverzeichnis, verschieben die DB und passe die Berechtigungen an. Außerdem gefällt mir der Aufbau nicht ganz. Das teile ich aider.chat mit:
+Sieht ja schon mal gut aus. Allerdings funktionierte die Eingabe nicht. Was ich nicht bedacht habe, ist die Tatsache, dass der PDO Treiber Schreibrecht auf das File UND auf das Directory haben will. Ich erstelle also ein Unterverzeichnis, verschieben die DB und passe die Berechtigungen an. Außerdem gefällt mir der Aufbau nicht ganz. Das teile ich aider.chat mit:
 
 <pre><code>
 > Die Überschrift in BlockB soll lauten "Regen in den letzten 5 Monaten". Das Datenbankfile 'regenmeter.sqlite3' soll sich im Unterv
@@ -40,7 +41,7 @@ File wieder kopiert und getestet:
 
 Ja, und es funktioniert auch die Eingabe. Ich habe dann noch ein paar Kleinigkeiten ändern lassen, damit es auch auf Smartphones gut lesbar ist. Aber im Prinzip hat es mit 2 Anweisungen funktioniert. 
 
-Insgesamt habe ich dafür ca 1 1/2 Stunden dafür gebraucht. Wenn ich mich erst in PHP einlesen hätte müssen um so ein Programm zu schreiben, hätte ich ein Vielfaches der Zeit dafür benötigt. 
+Insgesamt habe ich dafür ca 1 1/2 Stunden gebraucht. Wenn ich mich erst in PHP einlesen hätte müssen, um so ein Programm zu schreiben, hätte ich ein Vielfaches der Zeit dafür benötigt. 
 
 Und was hat es gekostet ? Wieder 0.01 USD abgebucht bis zum zweiten Versuch, final dann 0.02 USD. 
 
@@ -48,6 +49,6 @@ Einziger Wermutstropfen, es sind nicht die letzten 5 Monate, sondern die letzten
 
 `SELECT strftime("%Y-%m", timestamp) as month, SUM(menge) as total FROM regenmeter WHERE timestamp >= datetime("now", "-5 months") GROUP BY month ; `
 
-Aber das wollte ich dann nicht mehr ändern, denn ein halbes Jahr Übersicht ist auch OK. 
+Aber das wollte ich dann nicht mehr ändern, denn ein halbes Jahr Übersicht ist auch OK. Man könnte natürlich auch die Headerline anpassen. Aber diese "aufwändig geschriebene" App ist nicht öffentlich verfügbar und sie wird ohnehin nur von mir verwendet. 
 
 [Link zu meinem ersten PHP Programm](/2025/04/15/mein-erstes-PHP-Progamm.html){:target="_blank"} 
