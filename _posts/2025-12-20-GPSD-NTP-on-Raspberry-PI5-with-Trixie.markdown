@@ -22,12 +22,12 @@ I used the GPS-hat I already have since years.
 
 As you can see the vendor is M0UPU. I bought this GPS modules at uputronics.com <br> This is not available anymore. At that time an ublox MAX-M8Q was used as chip on the gps HAT.
 
-I decided to compile GPSD and NTPD by myself and not to use a possible available package. As it was a brand new installation a lot of packages are needed:
+I decided to compile GPSD and NTPD by myself and not to use an available package. As it was a brand new installation a lot of packages are needed:
 
 # NTPD
 
 For NTP I took NTPsec from https://gitlab.com/NTPsec/ntpsec <br>
-As first step I installed the official package from OS with `apt-get install ntpsec ntpsec-doc ntpsec-ntpdate` <br>
+As first step I installed the official package from OS with <br>`apt-get install ntpsec ntpsec-doc ntpsec-ntpdate` <br>
 With this I got the necessary scripts to start which I had to change only slightly for the self compiled version. <br> 
 Additional the following packages were needed: git, m4, m4-doc, bison, bison-doc 
 
@@ -44,7 +44,7 @@ For the further usage it's important to set $PYTHONPATH correct. In my case
 
 `export PYTHONPATH=/usr/local/lib/python3.13/site-packages/ `
 
-With `ntp.conf` from the package one can test if ntpd works well. 
+With `ntp.conf` from the package one can test if ntpd works well, but in the moment not as stratum 1 service. 
 
 <br>
 
@@ -61,7 +61,7 @@ But gpsd needs a lot of additional packages:
  python3-serial python3-cairo:arm64 python3-gi-cairo libqt6network6 libqt6networkauth6 
  qt6-networkauth-dev libncurses-dev libgtk-3-dev
 ```
-For testing the following packages are usefull: minicom , ppstest 
+For testing the following packages are additional useful: minicom , ppstest 
 
 For complete documentation I want to refer to the Internet
 
@@ -103,6 +103,8 @@ Strip away which makes troubles. Then it looks like this
 root=PARTUUID=e20c853e-02 rootfstype=ext4 fsck.repair=yes rootwait
 ```
 
+There is still the console on the HDMI port available.
+
 ## /boot/firmware/config.txt
 
 Add a line in the global block:
@@ -129,7 +131,7 @@ Create a new file `/etc/modules-load.d/pps-gpio.conf` with one line:
 pps-gpio
 ```
 
-I modified /etc/group to be sure not having permission issues. User nobody is important as gpsd is running as nobody. 
+I modified /etc/group to be sure not having permission issues. User `nobody` is important as gpsd is running as nobody. 
 
 `dialout:x:20:admin,root,nobody`
 
@@ -224,7 +226,7 @@ Now it's time for ntpd
 The relevant part in /etc/ntpsec/ntp.conf is the following
 
 ```
-# pps needs another server as peer
+# pps needs at least one server to get the time
 # for easy start I take another stratum-1 in my network
 server 192.168.241.190 minpoll 4 maxpoll 4 prefer
 
@@ -233,7 +235,7 @@ server 127.127.22.0 minpoll 4 maxpoll 4
 fudge 127.127.22.0 refid PPS time1 0.000500
 fudge 127.127.22.0 flag3 1 flag4 1  # enable kernel PLL/FLL clock discipline and clockstats
 
-# gpsd shared memory clock
+# gpsd shared memory clock, if 192.168.241.190 this will jump in
 server 127.127.28.0 minpoll 4 maxpoll 4 # PPS requires at least one preferred peer
 fudge 127.127.28.0 refid GPS
 fudge 127.127.28.0 time1 +0.15 flag4 1 # coarse processing delay offset
