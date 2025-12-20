@@ -235,7 +235,7 @@ server 127.127.22.0 minpoll 4 maxpoll 4
 fudge 127.127.22.0 refid PPS time1 0.000500
 fudge 127.127.22.0 flag3 1 flag4 1  # enable kernel PLL/FLL clock discipline and clockstats
 
-# gpsd shared memory clock, if 192.168.241.190 this will jump in
+# gpsd shared memory clock, if 192.168.241.190 fails this will jump in
 server 127.127.28.0 minpoll 4 maxpoll 4 # PPS requires at least one preferred peer
 fudge 127.127.28.0 refid GPS
 fudge 127.127.28.0 time1 +0.15 flag4 1 # coarse processing delay offset
