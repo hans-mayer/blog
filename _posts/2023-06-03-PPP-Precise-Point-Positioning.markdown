@@ -7,7 +7,7 @@ categories: gps
 
 I was fascinated about this article [https://gpsd.gitlab.io/gpsd/ppp-howto.html](https://gpsd.gitlab.io/gpsd/ppp-howto.html){:target="_blank"}
 Therefore I tried it.<br>
-I own a ZED-F9P from U-blox with a fix mounted antenna on the roof of my house.
+I own a ZED-F9P from U-blox with a fix mounted antenna on the top of the roof of my house.
 <br><br>
 I was interested in the method of averaging.
 The steps for a 24 hour average result are quite easy, assuming one has ["gpsd"](https://gitlab.com/gpsd/gpsd){:target="_blank"} and all these tools installed.
@@ -59,3 +59,6 @@ The next test was to use "dynModel 2". ( 2 = stationary )
 
 I expected better results. But this wasn't the case. <br>
 The maximum distance between these results was 22.2 cm. Between all 12 measurements it is 40 cm. But the distance for these averaged values for config1 and config4 is only 2.4 cm.
+
+![results](/images/gnss_position_avg.png)
+
