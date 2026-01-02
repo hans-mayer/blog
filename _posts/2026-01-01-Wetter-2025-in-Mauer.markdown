@@ -5,9 +5,9 @@ date:   2026-01-01 16:55:00 CET
 categories: 
 ---
 
-# Temperatur
+## Temperatur
 
-## Die fünf heißesten Tage im Jahr 2025 
+### Die fünf heißesten Tage im Jahr 2025 
 
 | &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
 |------------------------------------|--------------------------------|
@@ -17,8 +17,10 @@ categories:
 | &nbsp;&nbsp;2025-08-14&nbsp;&nbsp; | &nbsp;&nbsp;35.0&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-08-13&nbsp;&nbsp; | &nbsp;&nbsp;34.7&nbsp;&nbsp;   |
 
+![temp_2025-07-03.png](/images/temp_2025-07-03.png)
 
-## Die fünf kältesten Tage im Jahr 2025 
+
+### Die fünf kältesten Tage im Jahr 2025 
 
 | &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;minT&nbsp;&nbsp;   |
 |------------------------------------|--------------------------------|
@@ -28,7 +30,10 @@ categories:
 | &nbsp;&nbsp;2025-11-24&nbsp;&nbsp; | &nbsp;&nbsp;-5.5&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-11-23&nbsp;&nbsp; | &nbsp;&nbsp;-5.4&nbsp;&nbsp;   |
 
-## Fünf Tage mit geringster Tageserwärmung 
+![temp_2025-02-19.png](/images/temp_2025-02-19.png)
+
+
+### Fünf Tage mit geringster Tageserwärmung 
 
 | &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;Delta&nbsp;&nbsp;   |
 |------------------------------------|--------------------------------|--------------------------------|---------------------------------|
@@ -38,7 +43,7 @@ categories:
 | &nbsp;&nbsp;2025-12-23&nbsp;&nbsp; | &nbsp;&nbsp;3.5&nbsp;&nbsp;    | &nbsp;&nbsp;2.5&nbsp;&nbsp;    | &nbsp;&nbsp;1.0&nbsp;&nbsp;     |
 | &nbsp;&nbsp;2025-01-18&nbsp;&nbsp; | &nbsp;&nbsp;-0.1&nbsp;&nbsp;   | &nbsp;&nbsp;-1.3&nbsp;&nbsp;   | &nbsp;&nbsp;1.2&nbsp;&nbsp;     |
 
-## Fünf Tage mit höchster Tageserwärmung 
+### Fünf Tage mit höchster Tageserwärmung 
 
 | &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;Delta&nbsp;&nbsp;   |
 |------------------------------------|-------------------------------:|-------------------------------:|--------------------------------:|
@@ -48,7 +53,7 @@ categories:
 | &nbsp;&nbsp;2025-05-14&nbsp;&nbsp; | &nbsp;&nbsp;24.2&nbsp;&nbsp;   | &nbsp;&nbsp;6.1&nbsp;&nbsp;    | &nbsp;&nbsp;18.1&nbsp;&nbsp;    |
 | &nbsp;&nbsp;2025-07-02&nbsp;&nbsp; | &nbsp;&nbsp;34.3&nbsp;&nbsp;   | &nbsp;&nbsp;16.2&nbsp;&nbsp;   | &nbsp;&nbsp;18.1&nbsp;&nbsp;    |
 
-## Insgesamt gab es 7 Frosttage 
+### Insgesamt gab es 7 Frosttage 
 
 | &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
 |------------------------------------|--------------------------------|--------------------------------|
@@ -60,7 +65,9 @@ categories:
 | &nbsp;&nbsp;2025-01-21&nbsp;&nbsp; | &nbsp;&nbsp;-2.4&nbsp;&nbsp;   | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-01-22&nbsp;&nbsp; | &nbsp;&nbsp;-1.8&nbsp;&nbsp;   | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   |
 
-## Insgesamt gab es 10 Hitzetage 
+### Insgesamt gab es 10 Tropennächte 
+
+Die Temperatur fällt nicht unter 20 °C 
 
 | &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
 |------------------------------------|--------------------------------|--------------------------------|
@@ -75,8 +82,53 @@ categories:
 | &nbsp;&nbsp;2025-08-17&nbsp;&nbsp; | &nbsp;&nbsp;20.2&nbsp;&nbsp;   | &nbsp;&nbsp;27.8&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-08-29&nbsp;&nbsp; | &nbsp;&nbsp;20.7&nbsp;&nbsp;   | &nbsp;&nbsp;28.5&nbsp;&nbsp;   |
 
+### Insgesamt gab es 39 Hitzetage 
 
-## Monatsübersicht 2025 
+Die Tageshöchstwerte klettern über 30 °C
+
+| &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
+|------------------------------------|--------------------------------|--------------------------------|
+| &nbsp;&nbsp;2025-05-03&nbsp;&nbsp; | &nbsp;&nbsp;13.2&nbsp;&nbsp;   | &nbsp;&nbsp;30.3&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-05-31&nbsp;&nbsp; | &nbsp;&nbsp;13.0&nbsp;&nbsp;   | &nbsp;&nbsp;31.0&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-01&nbsp;&nbsp; | &nbsp;&nbsp;15.6&nbsp;&nbsp;   | &nbsp;&nbsp;31.2&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-05&nbsp;&nbsp; | &nbsp;&nbsp;19.4&nbsp;&nbsp;   | &nbsp;&nbsp;30.4&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-06&nbsp;&nbsp; | &nbsp;&nbsp;16.5&nbsp;&nbsp;   | &nbsp;&nbsp;30.7&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-07&nbsp;&nbsp; | &nbsp;&nbsp;17.8&nbsp;&nbsp;   | &nbsp;&nbsp;30.3&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-15&nbsp;&nbsp; | &nbsp;&nbsp;13.8&nbsp;&nbsp;   | &nbsp;&nbsp;31.3&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-18&nbsp;&nbsp; | &nbsp;&nbsp;15.3&nbsp;&nbsp;   | &nbsp;&nbsp;30.5&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-19&nbsp;&nbsp; | &nbsp;&nbsp;18.5&nbsp;&nbsp;   | &nbsp;&nbsp;31.7&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-22&nbsp;&nbsp; | &nbsp;&nbsp;13.1&nbsp;&nbsp;   | &nbsp;&nbsp;31.7&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-23&nbsp;&nbsp; | &nbsp;&nbsp;16.1&nbsp;&nbsp;   | &nbsp;&nbsp;34.1&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-24&nbsp;&nbsp; | &nbsp;&nbsp;19.1&nbsp;&nbsp;   | &nbsp;&nbsp;30.5&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-25&nbsp;&nbsp; | &nbsp;&nbsp;18.4&nbsp;&nbsp;   | &nbsp;&nbsp;33.6&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-26&nbsp;&nbsp; | &nbsp;&nbsp;20.4&nbsp;&nbsp;   | &nbsp;&nbsp;36.2&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-27&nbsp;&nbsp; | &nbsp;&nbsp;21.3&nbsp;&nbsp;   | &nbsp;&nbsp;30.9&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-29&nbsp;&nbsp; | &nbsp;&nbsp;23.0&nbsp;&nbsp;   | &nbsp;&nbsp;34.0&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-06-30&nbsp;&nbsp; | &nbsp;&nbsp;21.9&nbsp;&nbsp;   | &nbsp;&nbsp;32.8&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-01&nbsp;&nbsp; | &nbsp;&nbsp;17.3&nbsp;&nbsp;   | &nbsp;&nbsp;32.6&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-02&nbsp;&nbsp; | &nbsp;&nbsp;16.2&nbsp;&nbsp;   | &nbsp;&nbsp;34.3&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-03&nbsp;&nbsp; | &nbsp;&nbsp;20.7&nbsp;&nbsp;   | &nbsp;&nbsp;38.0&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-05&nbsp;&nbsp; | &nbsp;&nbsp;15.8&nbsp;&nbsp;   | &nbsp;&nbsp;31.3&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-06&nbsp;&nbsp; | &nbsp;&nbsp;19.1&nbsp;&nbsp;   | &nbsp;&nbsp;34.5&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-13&nbsp;&nbsp; | &nbsp;&nbsp;13.8&nbsp;&nbsp;   | &nbsp;&nbsp;30.7&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-14&nbsp;&nbsp; | &nbsp;&nbsp;16.3&nbsp;&nbsp;   | &nbsp;&nbsp;31.9&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-15&nbsp;&nbsp; | &nbsp;&nbsp;20.1&nbsp;&nbsp;   | &nbsp;&nbsp;31.1&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-20&nbsp;&nbsp; | &nbsp;&nbsp;18.9&nbsp;&nbsp;   | &nbsp;&nbsp;33.4&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-21&nbsp;&nbsp; | &nbsp;&nbsp;17.7&nbsp;&nbsp;   | &nbsp;&nbsp;31.9&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-24&nbsp;&nbsp; | &nbsp;&nbsp;19.0&nbsp;&nbsp;   | &nbsp;&nbsp;30.3&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-08&nbsp;&nbsp; | &nbsp;&nbsp;15.7&nbsp;&nbsp;   | &nbsp;&nbsp;33.8&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-09&nbsp;&nbsp; | &nbsp;&nbsp;19.8&nbsp;&nbsp;   | &nbsp;&nbsp;34.5&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-10&nbsp;&nbsp; | &nbsp;&nbsp;19.5&nbsp;&nbsp;   | &nbsp;&nbsp;34.5&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-12&nbsp;&nbsp; | &nbsp;&nbsp;15.4&nbsp;&nbsp;   | &nbsp;&nbsp;30.9&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-13&nbsp;&nbsp; | &nbsp;&nbsp;17.5&nbsp;&nbsp;   | &nbsp;&nbsp;34.7&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-14&nbsp;&nbsp; | &nbsp;&nbsp;19.1&nbsp;&nbsp;   | &nbsp;&nbsp;35.0&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-15&nbsp;&nbsp; | &nbsp;&nbsp;18.4&nbsp;&nbsp;   | &nbsp;&nbsp;35.5&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-16&nbsp;&nbsp; | &nbsp;&nbsp;21.1&nbsp;&nbsp;   | &nbsp;&nbsp;33.7&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-20&nbsp;&nbsp; | &nbsp;&nbsp;15.9&nbsp;&nbsp;   | &nbsp;&nbsp;31.4&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-28&nbsp;&nbsp; | &nbsp;&nbsp;15.3&nbsp;&nbsp;   | &nbsp;&nbsp;32.9&nbsp;&nbsp;   |
+
+
+### Monatsübersicht 2025 
 
 | &nbsp;&nbsp;Nr&nbsp;&nbsp;   | &nbsp;&nbsp;Monat&nbsp;&nbsp;     | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;avgT&nbsp;&nbsp;   |
 |------------------------------|-----------------------------------|-------------------------------:|-------------------------------:|-------------------------------:|
@@ -93,7 +145,7 @@ categories:
 | &nbsp;&nbsp;11&nbsp;&nbsp;   | &nbsp;&nbsp;November&nbsp;&nbsp;  | &nbsp;&nbsp;-5.5&nbsp;&nbsp;   | &nbsp;&nbsp;15.8&nbsp;&nbsp;   | &nbsp;&nbsp;5.00&nbsp;&nbsp;   |
 | &nbsp;&nbsp;12&nbsp;&nbsp;   | &nbsp;&nbsp;Dezember&nbsp;&nbsp;  | &nbsp;&nbsp;-3.2&nbsp;&nbsp;   | &nbsp;&nbsp;11.9&nbsp;&nbsp;   | &nbsp;&nbsp;2.61&nbsp;&nbsp;   |
 
-## Jahreszusammenfassung 2025 
+### Jahreszusammenfassung 2025 
 
 | &nbsp;&nbsp;Jahr&nbsp;&nbsp;   | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;avgT&nbsp;&nbsp;   | &nbsp;&nbsp;Messwerte&nbsp;&nbsp;   |
 |--------------------------------|--------------------------------|--------------------------------|--------------------------------|-------------------------------------|
