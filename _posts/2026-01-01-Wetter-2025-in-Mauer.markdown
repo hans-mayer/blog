@@ -1,9 +1,12 @@
 ---
 layout: post
 title:  Wetter 2025 in Wien Mauer
-date:   2026-01-01 16:55:00 CET
+date:   2026-01-01 00:00:00 CET
 categories: 
 ---
+
+Wien 23. Bezirk Liesing, Ortsteil: Mauer <BR>
+Position: 48° 8' 57.1" N, 16° 17' 2.1" E
 
 ## Temperatur
 
@@ -36,12 +39,14 @@ categories:
 ### Fünf Tage mit geringster Tageserwärmung 
 
 | &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;Delta&nbsp;&nbsp;   |
-|------------------------------------|--------------------------------|--------------------------------|---------------------------------|
+|------------------------------------|-------------------------------:|-------------------------------:|--------------------------------:|
 | &nbsp;&nbsp;2025-01-22&nbsp;&nbsp; | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   | &nbsp;&nbsp;-1.8&nbsp;&nbsp;   | &nbsp;&nbsp;0.7&nbsp;&nbsp;     |
 | &nbsp;&nbsp;2025-12-16&nbsp;&nbsp; | &nbsp;&nbsp;0.8&nbsp;&nbsp;    | &nbsp;&nbsp;0.0&nbsp;&nbsp;    | &nbsp;&nbsp;0.8&nbsp;&nbsp;     |
 | &nbsp;&nbsp;2025-11-13&nbsp;&nbsp; | &nbsp;&nbsp;4.5&nbsp;&nbsp;    | &nbsp;&nbsp;3.6&nbsp;&nbsp;    | &nbsp;&nbsp;0.9&nbsp;&nbsp;     |
 | &nbsp;&nbsp;2025-12-23&nbsp;&nbsp; | &nbsp;&nbsp;3.5&nbsp;&nbsp;    | &nbsp;&nbsp;2.5&nbsp;&nbsp;    | &nbsp;&nbsp;1.0&nbsp;&nbsp;     |
 | &nbsp;&nbsp;2025-01-18&nbsp;&nbsp; | &nbsp;&nbsp;-0.1&nbsp;&nbsp;   | &nbsp;&nbsp;-1.3&nbsp;&nbsp;   | &nbsp;&nbsp;1.2&nbsp;&nbsp;     |
+
+![temp_2025-01-22.png](/images/temp_2025-01-22.png)
 
 ### Fünf Tage mit höchster Tageserwärmung 
 
@@ -52,6 +57,8 @@ categories:
 | &nbsp;&nbsp;2025-03-07&nbsp;&nbsp; | &nbsp;&nbsp;20.1&nbsp;&nbsp;   | &nbsp;&nbsp;2.0&nbsp;&nbsp;    | &nbsp;&nbsp;18.1&nbsp;&nbsp;    |
 | &nbsp;&nbsp;2025-05-14&nbsp;&nbsp; | &nbsp;&nbsp;24.2&nbsp;&nbsp;   | &nbsp;&nbsp;6.1&nbsp;&nbsp;    | &nbsp;&nbsp;18.1&nbsp;&nbsp;    |
 | &nbsp;&nbsp;2025-07-02&nbsp;&nbsp; | &nbsp;&nbsp;34.3&nbsp;&nbsp;   | &nbsp;&nbsp;16.2&nbsp;&nbsp;   | &nbsp;&nbsp;18.1&nbsp;&nbsp;    |
+
+![temp_2025-03-06.png](/images/temp_2025-03-06.png)
 
 ### Insgesamt gab es 7 Frosttage 
 
@@ -82,7 +89,7 @@ Die Temperatur fällt nicht unter 20 °C
 | &nbsp;&nbsp;2025-08-17&nbsp;&nbsp; | &nbsp;&nbsp;20.2&nbsp;&nbsp;   | &nbsp;&nbsp;27.8&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-08-29&nbsp;&nbsp; | &nbsp;&nbsp;20.7&nbsp;&nbsp;   | &nbsp;&nbsp;28.5&nbsp;&nbsp;   |
 
-### Insgesamt gab es 39 Hitzetage 
+### Insgesamt gab es 38 Hitzetage 
 
 Die Tageshöchstwerte klettern über 30 °C
 
@@ -145,10 +152,31 @@ Die Tageshöchstwerte klettern über 30 °C
 | &nbsp;&nbsp;11&nbsp;&nbsp;   | &nbsp;&nbsp;November&nbsp;&nbsp;  | &nbsp;&nbsp;-5.5&nbsp;&nbsp;   | &nbsp;&nbsp;15.8&nbsp;&nbsp;   | &nbsp;&nbsp;5.00&nbsp;&nbsp;   |
 | &nbsp;&nbsp;12&nbsp;&nbsp;   | &nbsp;&nbsp;Dezember&nbsp;&nbsp;  | &nbsp;&nbsp;-3.2&nbsp;&nbsp;   | &nbsp;&nbsp;11.9&nbsp;&nbsp;   | &nbsp;&nbsp;2.61&nbsp;&nbsp;   |
 
+![temp_jahr_2025.png](/images/temp_jahr_2025.png)
+
 ### Jahreszusammenfassung 2025 
 
 | &nbsp;&nbsp;Jahr&nbsp;&nbsp;   | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;avgT&nbsp;&nbsp;   | &nbsp;&nbsp;Messwerte&nbsp;&nbsp;   |
 |--------------------------------|--------------------------------|--------------------------------|--------------------------------|-------------------------------------|
 | &nbsp;&nbsp;2025&nbsp;&nbsp;   | &nbsp;&nbsp;-8.4&nbsp;&nbsp;   | &nbsp;&nbsp;38.0&nbsp;&nbsp;   | &nbsp;&nbsp;11.79&nbsp;&nbsp;  | &nbsp;&nbsp;525451&nbsp;&nbsp;      |
 
+
+## Niederschläge 
+
+1 mm Niederschlag entspricht 1 Liter pro Quadratmeter 
+
+| &nbsp;&nbsp;Monat&nbsp;&nbsp;   | &nbsp;&nbsp;mm&nbsp;&nbsp;    |
+|---------------------------------|------------------------------:|
+| &nbsp;&nbsp;2025-01&nbsp;&nbsp; | &nbsp;&nbsp;4.5&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-02&nbsp;&nbsp; | &nbsp;&nbsp;2.0&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-03&nbsp;&nbsp; | &nbsp;&nbsp;66.5&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2025-04&nbsp;&nbsp; | &nbsp;&nbsp;37.3&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2025-05&nbsp;&nbsp; | &nbsp;&nbsp;42.0&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2025-06&nbsp;&nbsp; | &nbsp;&nbsp;68.8&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2025-07&nbsp;&nbsp; | &nbsp;&nbsp;99.2&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2025-08&nbsp;&nbsp; | &nbsp;&nbsp;33.1&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2025-09&nbsp;&nbsp; | &nbsp;&nbsp;101.6&nbsp;&nbsp; |
+| &nbsp;&nbsp;2025-10&nbsp;&nbsp; | &nbsp;&nbsp;32.0&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2025-11&nbsp;&nbsp; | &nbsp;&nbsp;47.0&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2025-12&nbsp;&nbsp; | &nbsp;&nbsp;24.0&nbsp;&nbsp;  |
 
