@@ -6,9 +6,12 @@ categories:
 ---
 
 Wien 23. Bezirk Liesing, Ortsteil: Mauer <BR>
-Position: 48° 8' 57.1" N, 16° 17' 2.1" E
+Position: 48° 8' 57.1" N, 16° 17' 2.1" E <BR>
+Meeresniveau: 235 m ü. A. 
 
-## Temperatur
+<BR>
+
+## <span style="color:blue"> Temperatur </span>
 
 ### Die fünf heißesten Tage im Jahr 2025 
 
@@ -61,6 +64,8 @@ Position: 48° 8' 57.1" N, 16° 17' 2.1" E
 ![temp_2025-03-06.png](/images/temp_2025-03-06.png)
 
 ### Insgesamt gab es 7 Frosttage 
+
+Die Temperatur bleibt unter 0° Celsius 
 
 | &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
 |------------------------------------|--------------------------------|--------------------------------|
@@ -134,6 +139,15 @@ Die Tageshöchstwerte klettern über 30 °C
 | &nbsp;&nbsp;2025-08-20&nbsp;&nbsp; | &nbsp;&nbsp;15.9&nbsp;&nbsp;   | &nbsp;&nbsp;31.4&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-08-28&nbsp;&nbsp; | &nbsp;&nbsp;15.3&nbsp;&nbsp;   | &nbsp;&nbsp;32.9&nbsp;&nbsp;   |
 
+### Anzahl der Hitzetage mit über 30 Grad pro Monat 
+
+| &nbsp;&nbsp;Monat&nbsp;&nbsp;   | &nbsp;&nbsp;Anzahl&nbsp;&nbsp;   |
+|---------------------------------|---------------------------------:|
+| &nbsp;&nbsp;Mai&nbsp;&nbsp;     | &nbsp;&nbsp;2&nbsp;&nbsp;        |
+| &nbsp;&nbsp;Juni&nbsp;&nbsp;    | &nbsp;&nbsp;15&nbsp;&nbsp;       |
+| &nbsp;&nbsp;Juli&nbsp;&nbsp;    | &nbsp;&nbsp;11&nbsp;&nbsp;       |
+| &nbsp;&nbsp;August&nbsp;&nbsp;  | &nbsp;&nbsp;10&nbsp;&nbsp;       |
+
 
 ### Monatsübersicht 2025 
 
@@ -154,14 +168,17 @@ Die Tageshöchstwerte klettern über 30 °C
 
 ![temp_jahr_2025.png](/images/temp_jahr_2025.png)
 
+![temp_woche_2025.png](/images/temp_woche_2025.png)
+
 ### Jahreszusammenfassung 2025 
 
 | &nbsp;&nbsp;Jahr&nbsp;&nbsp;   | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;avgT&nbsp;&nbsp;   | &nbsp;&nbsp;Messwerte&nbsp;&nbsp;   |
 |--------------------------------|--------------------------------|--------------------------------|--------------------------------|-------------------------------------|
 | &nbsp;&nbsp;2025&nbsp;&nbsp;   | &nbsp;&nbsp;-8.4&nbsp;&nbsp;   | &nbsp;&nbsp;38.0&nbsp;&nbsp;   | &nbsp;&nbsp;11.79&nbsp;&nbsp;  | &nbsp;&nbsp;525451&nbsp;&nbsp;      |
 
+<BR>
 
-## Niederschläge 
+## <span style="color:blue"> Niederschläge </span>
 
 1 mm Niederschlag entspricht 1 Liter pro Quadratmeter 
 
