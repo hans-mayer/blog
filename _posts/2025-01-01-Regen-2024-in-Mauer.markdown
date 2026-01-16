@@ -1,0 +1,33 @@
+---
+layout: post
+title:  Niederschläge 2024 in Wien Mauer
+date:   2025-01-01 00:00:00 CET
+categories: 
+---
+
+Wien 23. Bezirk Liesing, Ortsteil: Mauer <BR>
+Position: 48° 8' 57.1" N, 16° 17' 2.1" E <BR>
+Meeresniveau: 235 m ü. A. 
+
+<BR>
+
+## <span style="color:blue"> Niederschläge </span>
+
+1 mm Niederschlag entspricht 1 Liter pro Quadratmeter 
+
+| &nbsp;&nbsp;Monat&nbsp;&nbsp;   | &nbsp;&nbsp;mm&nbsp;&nbsp;    |
+|---------------------------------|------------------------------:|
+| &nbsp;&nbsp;2024-01&nbsp;&nbsp; | &nbsp;&nbsp;49.0&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-02&nbsp;&nbsp; | &nbsp;&nbsp;17.0&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-03&nbsp;&nbsp; | &nbsp;&nbsp;50.7&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-04&nbsp;&nbsp; | &nbsp;&nbsp;45.7&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-05&nbsp;&nbsp; | &nbsp;&nbsp;80.4&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-06&nbsp;&nbsp; | &nbsp;&nbsp;45.2&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-07&nbsp;&nbsp; | &nbsp;&nbsp;16.0&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-08&nbsp;&nbsp; | &nbsp;&nbsp;44.5&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-09&nbsp;&nbsp; | &nbsp;&nbsp;245.5&nbsp;&nbsp; |
+| &nbsp;&nbsp;2024-10&nbsp;&nbsp; | &nbsp;&nbsp;40.5&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-11&nbsp;&nbsp; | &nbsp;&nbsp;12.0&nbsp;&nbsp;  |
+| &nbsp;&nbsp;2024-12&nbsp;&nbsp; | &nbsp;&nbsp;25.0&nbsp;&nbsp;  |
+
+
