@@ -63,9 +63,9 @@ Meeresniveau: 235 m ü. A.
 
 ![temp_2025-03-06.png](/images/temp_2025-03-06.png)
 
-### Insgesamt gab es 7 Frosttage 
+### Insgesamt gab es 7 Eistage 
 
-Die Temperatur bleibt unter 0° Celsius 
+Die Temperatur bleibt den ganzen Tag unter 0° Celsius 
 
 | &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
 |------------------------------------|--------------------------------|--------------------------------|
@@ -76,6 +76,86 @@ Die Temperatur bleibt unter 0° Celsius
 | &nbsp;&nbsp;2025-01-20&nbsp;&nbsp; | &nbsp;&nbsp;-3.0&nbsp;&nbsp;   | &nbsp;&nbsp;-1.7&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-01-21&nbsp;&nbsp; | &nbsp;&nbsp;-2.4&nbsp;&nbsp;   | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-01-22&nbsp;&nbsp; | &nbsp;&nbsp;-1.8&nbsp;&nbsp;   | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   |
+
+### Insgesamt gab es 63 Frosttage
+
+Die Temperatur fällt unter den Gefrierpunkt 
+
+| &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
+|------------------------------------|--------------------------------|-------------------------------:|
+| &nbsp;&nbsp;2025-01-01&nbsp;&nbsp; | &nbsp;&nbsp;-3.8&nbsp;&nbsp;   | &nbsp;&nbsp;-2.0&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-01-02&nbsp;&nbsp; | &nbsp;&nbsp;-4.6&nbsp;&nbsp;   | &nbsp;&nbsp;-1.2&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-01-03&nbsp;&nbsp; | &nbsp;&nbsp;-1.2&nbsp;&nbsp;   | &nbsp;&nbsp;4.2&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-04&nbsp;&nbsp; | &nbsp;&nbsp;-0.7&nbsp;&nbsp;   | &nbsp;&nbsp;3.0&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-05&nbsp;&nbsp; | &nbsp;&nbsp;-2.9&nbsp;&nbsp;   | &nbsp;&nbsp;0.1&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-07&nbsp;&nbsp; | &nbsp;&nbsp;-0.3&nbsp;&nbsp;   | &nbsp;&nbsp;6.3&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-12&nbsp;&nbsp; | &nbsp;&nbsp;-0.6&nbsp;&nbsp;   | &nbsp;&nbsp;2.0&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-13&nbsp;&nbsp; | &nbsp;&nbsp;-0.7&nbsp;&nbsp;   | &nbsp;&nbsp;1.2&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-14&nbsp;&nbsp; | &nbsp;&nbsp;-3.6&nbsp;&nbsp;   | &nbsp;&nbsp;2.0&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-15&nbsp;&nbsp; | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   | &nbsp;&nbsp;2.1&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-17&nbsp;&nbsp; | &nbsp;&nbsp;-0.1&nbsp;&nbsp;   | &nbsp;&nbsp;3.5&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-18&nbsp;&nbsp; | &nbsp;&nbsp;-1.3&nbsp;&nbsp;   | &nbsp;&nbsp;-0.1&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-01-19&nbsp;&nbsp; | &nbsp;&nbsp;-2.8&nbsp;&nbsp;   | &nbsp;&nbsp;-1.0&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-01-20&nbsp;&nbsp; | &nbsp;&nbsp;-3.0&nbsp;&nbsp;   | &nbsp;&nbsp;-1.7&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-01-21&nbsp;&nbsp; | &nbsp;&nbsp;-2.4&nbsp;&nbsp;   | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-01-22&nbsp;&nbsp; | &nbsp;&nbsp;-1.8&nbsp;&nbsp;   | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-01-23&nbsp;&nbsp; | &nbsp;&nbsp;-1.3&nbsp;&nbsp;   | &nbsp;&nbsp;4.3&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-24&nbsp;&nbsp; | &nbsp;&nbsp;-1.6&nbsp;&nbsp;   | &nbsp;&nbsp;7.7&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-01-30&nbsp;&nbsp; | &nbsp;&nbsp;-0.9&nbsp;&nbsp;   | &nbsp;&nbsp;11.6&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-01-31&nbsp;&nbsp; | &nbsp;&nbsp;-0.9&nbsp;&nbsp;   | &nbsp;&nbsp;8.6&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-01&nbsp;&nbsp; | &nbsp;&nbsp;-1.4&nbsp;&nbsp;   | &nbsp;&nbsp;4.8&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-03&nbsp;&nbsp; | &nbsp;&nbsp;-2.6&nbsp;&nbsp;   | &nbsp;&nbsp;5.0&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-04&nbsp;&nbsp; | &nbsp;&nbsp;-4.4&nbsp;&nbsp;   | &nbsp;&nbsp;5.0&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-05&nbsp;&nbsp; | &nbsp;&nbsp;-4.5&nbsp;&nbsp;   | &nbsp;&nbsp;6.6&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-08&nbsp;&nbsp; | &nbsp;&nbsp;-0.1&nbsp;&nbsp;   | &nbsp;&nbsp;5.1&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-10&nbsp;&nbsp; | &nbsp;&nbsp;-0.1&nbsp;&nbsp;   | &nbsp;&nbsp;7.2&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-11&nbsp;&nbsp; | &nbsp;&nbsp;-2.8&nbsp;&nbsp;   | &nbsp;&nbsp;6.6&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-12&nbsp;&nbsp; | &nbsp;&nbsp;-0.3&nbsp;&nbsp;   | &nbsp;&nbsp;3.2&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-13&nbsp;&nbsp; | &nbsp;&nbsp;-0.3&nbsp;&nbsp;   | &nbsp;&nbsp;2.4&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-15&nbsp;&nbsp; | &nbsp;&nbsp;-1.8&nbsp;&nbsp;   | &nbsp;&nbsp;2.5&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-16&nbsp;&nbsp; | &nbsp;&nbsp;-1.5&nbsp;&nbsp;   | &nbsp;&nbsp;2.0&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-17&nbsp;&nbsp; | &nbsp;&nbsp;-5.9&nbsp;&nbsp;   | &nbsp;&nbsp;2.2&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-18&nbsp;&nbsp; | &nbsp;&nbsp;-3.9&nbsp;&nbsp;   | &nbsp;&nbsp;2.5&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-19&nbsp;&nbsp; | &nbsp;&nbsp;-8.4&nbsp;&nbsp;   | &nbsp;&nbsp;3.6&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-20&nbsp;&nbsp; | &nbsp;&nbsp;-7.0&nbsp;&nbsp;   | &nbsp;&nbsp;5.6&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-21&nbsp;&nbsp; | &nbsp;&nbsp;-2.8&nbsp;&nbsp;   | &nbsp;&nbsp;5.0&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-22&nbsp;&nbsp; | &nbsp;&nbsp;-1.6&nbsp;&nbsp;   | &nbsp;&nbsp;7.5&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-02-23&nbsp;&nbsp; | &nbsp;&nbsp;-3.1&nbsp;&nbsp;   | &nbsp;&nbsp;2.1&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-03-03&nbsp;&nbsp; | &nbsp;&nbsp;-1.2&nbsp;&nbsp;   | &nbsp;&nbsp;12.4&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-03-04&nbsp;&nbsp; | &nbsp;&nbsp;-1.0&nbsp;&nbsp;   | &nbsp;&nbsp;13.1&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-03-05&nbsp;&nbsp; | &nbsp;&nbsp;-0.7&nbsp;&nbsp;   | &nbsp;&nbsp;14.6&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-03-06&nbsp;&nbsp; | &nbsp;&nbsp;-0.3&nbsp;&nbsp;   | &nbsp;&nbsp;20.8&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-03-18&nbsp;&nbsp; | &nbsp;&nbsp;-2.7&nbsp;&nbsp;   | &nbsp;&nbsp;7.6&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-03-19&nbsp;&nbsp; | &nbsp;&nbsp;-3.8&nbsp;&nbsp;   | &nbsp;&nbsp;12.4&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-03-20&nbsp;&nbsp; | &nbsp;&nbsp;-2.1&nbsp;&nbsp;   | &nbsp;&nbsp;13.9&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-11-18&nbsp;&nbsp; | &nbsp;&nbsp;-0.9&nbsp;&nbsp;   | &nbsp;&nbsp;6.4&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-11-19&nbsp;&nbsp; | &nbsp;&nbsp;-3.1&nbsp;&nbsp;   | &nbsp;&nbsp;4.2&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-11-20&nbsp;&nbsp; | &nbsp;&nbsp;-1.5&nbsp;&nbsp;   | &nbsp;&nbsp;4.6&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-11-22&nbsp;&nbsp; | &nbsp;&nbsp;-1.2&nbsp;&nbsp;   | &nbsp;&nbsp;1.8&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-11-23&nbsp;&nbsp; | &nbsp;&nbsp;-5.4&nbsp;&nbsp;   | &nbsp;&nbsp;1.3&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-11-24&nbsp;&nbsp; | &nbsp;&nbsp;-5.5&nbsp;&nbsp;   | &nbsp;&nbsp;1.1&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-11-27&nbsp;&nbsp; | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   | &nbsp;&nbsp;4.1&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-11-28&nbsp;&nbsp; | &nbsp;&nbsp;-1.6&nbsp;&nbsp;   | &nbsp;&nbsp;4.8&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-11-29&nbsp;&nbsp; | &nbsp;&nbsp;-3.3&nbsp;&nbsp;   | &nbsp;&nbsp;4.8&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-12-15&nbsp;&nbsp; | &nbsp;&nbsp;-0.6&nbsp;&nbsp;   | &nbsp;&nbsp;1.3&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-12-24&nbsp;&nbsp; | &nbsp;&nbsp;-0.3&nbsp;&nbsp;   | &nbsp;&nbsp;2.5&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-12-25&nbsp;&nbsp; | &nbsp;&nbsp;-1.3&nbsp;&nbsp;   | &nbsp;&nbsp;0.3&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-12-26&nbsp;&nbsp; | &nbsp;&nbsp;-1.4&nbsp;&nbsp;   | &nbsp;&nbsp;2.3&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-12-27&nbsp;&nbsp; | &nbsp;&nbsp;-2.1&nbsp;&nbsp;   | &nbsp;&nbsp;5.1&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-12-28&nbsp;&nbsp; | &nbsp;&nbsp;-0.2&nbsp;&nbsp;   | &nbsp;&nbsp;4.3&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-12-29&nbsp;&nbsp; | &nbsp;&nbsp;-1.4&nbsp;&nbsp;   | &nbsp;&nbsp;5.1&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-12-30&nbsp;&nbsp; | &nbsp;&nbsp;-1.0&nbsp;&nbsp;   | &nbsp;&nbsp;1.9&nbsp;&nbsp;    |
+| &nbsp;&nbsp;2025-12-31&nbsp;&nbsp; | &nbsp;&nbsp;-3.2&nbsp;&nbsp;   | &nbsp;&nbsp;0.7&nbsp;&nbsp;    |
+
+### Anzahl der Frosttage pro Monat
+
+| &nbsp;&nbsp;Monat&nbsp;&nbsp;    | &nbsp;&nbsp;Anzahl&nbsp;&nbsp;   |
+|:---------------------------------|---------------------------------:|
+| &nbsp;&nbsp;Januar&nbsp;&nbsp;   | &nbsp;&nbsp;20&nbsp;&nbsp;       |
+| &nbsp;&nbsp;Februar&nbsp;&nbsp;  | &nbsp;&nbsp;18&nbsp;&nbsp;       |
+| &nbsp;&nbsp;März&nbsp;&nbsp;     | &nbsp;&nbsp;7&nbsp;&nbsp;        |
+| &nbsp;&nbsp;November&nbsp;&nbsp; | &nbsp;&nbsp;9&nbsp;&nbsp;        |
+| &nbsp;&nbsp;Dezember&nbsp;&nbsp; | &nbsp;&nbsp;9&nbsp;&nbsp;        |
 
 ### Insgesamt gab es 10 Tropennächte 
 
