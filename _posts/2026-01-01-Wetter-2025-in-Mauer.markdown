@@ -147,6 +147,17 @@ Die Temperatur fällt unter den Gefrierpunkt
 | &nbsp;&nbsp;2025-12-30&nbsp;&nbsp; | &nbsp;&nbsp;-1.0&nbsp;&nbsp;   | &nbsp;&nbsp;1.9&nbsp;&nbsp;    |
 | &nbsp;&nbsp;2025-12-31&nbsp;&nbsp; | &nbsp;&nbsp;-3.2&nbsp;&nbsp;   | &nbsp;&nbsp;0.7&nbsp;&nbsp;    |
 
+### Letzter und erster Frosttag 
+
+| &nbsp;&nbsp;letzterFrosttag&nbsp;&nbsp;   | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
+|-------------------------------------------|--------------------------------|--------------------------------|
+| &nbsp;&nbsp;2025-03-20&nbsp;&nbsp;        | &nbsp;&nbsp;-2.1&nbsp;&nbsp;   | &nbsp;&nbsp;13.9&nbsp;&nbsp;   |
+
+| &nbsp;&nbsp;ersterFrosttag&nbsp;&nbsp;   | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
+|------------------------------------------|--------------------------------|--------------------------------|
+| &nbsp;&nbsp;2025-11-18&nbsp;&nbsp;       | &nbsp;&nbsp;-0.9&nbsp;&nbsp;   | &nbsp;&nbsp;6.4&nbsp;&nbsp;    |
+
+
 ### Anzahl der Frosttage pro Monat
 
 | &nbsp;&nbsp;Monat&nbsp;&nbsp;    | &nbsp;&nbsp;Anzahl&nbsp;&nbsp;   |
@@ -276,4 +287,7 @@ Die Tageshöchstwerte klettern über 30 °C
 | &nbsp;&nbsp;2025-10&nbsp;&nbsp; | &nbsp;&nbsp;32.0&nbsp;&nbsp;  |
 | &nbsp;&nbsp;2025-11&nbsp;&nbsp; | &nbsp;&nbsp;47.0&nbsp;&nbsp;  |
 | &nbsp;&nbsp;2025-12&nbsp;&nbsp; | &nbsp;&nbsp;24.0&nbsp;&nbsp;  |
+
+Siehe auch: [Niederschläge 2024](/2025/01/01/Regen-2024-in-Mauer.html){:target="_blank"} 
+
 

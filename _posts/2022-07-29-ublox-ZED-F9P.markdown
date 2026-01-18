@@ -22,17 +22,19 @@ As antenna I use the recommended multi-band active gnss antenna HAB-ANN-MB-00-00
 
 Some details:
 
-`export UBXOPTS="-P 27.12"`
+`export UBXOPTS="-P 27.50"`
+
+This is the version I update end of 2025.
 
 `ubxtool -p MON-VER  localhost:gpsd:/dev/serial0`
 
 ```
 UBX-MON-VER:
-  swVersion EXT CORE 1.00 (f10c36)
+  swVersion EXT CORE 1.00 (9e1716)
   hwVersion 00190000
   extension ROM BASE 0x118B2060
-  extension FWVER=HPG 1.13
-  extension PROTVER=27.12
+  extension FWVER=HPG 1.51
+  extension PROTVER=27.50
   extension MOD=ZED-F9P
   extension GPS;GLO;GAL;BDS
   extension SBAS;QZSS
@@ -67,3 +69,38 @@ UBX-CFG-GNSS:
   gnssId 6 TrkCh  8 maxTrCh 12 reserved 0 Flags x11110001
    GLONASS L1 L2 enabled
 ```
+
+The above command is deprecated. This should be preferred:
+
+`ubxtool -g CFG-SIGNAL localhost:gpsd:/dev/serial0 | sed -n -e '/^UBX-CFG-VALGET:/,/^$/ p' | awk -v RS= 'NR==1'`
+
+```
+UBX-CFG-VALGET:
+ version 1 layer 0 position 0
+  layers (ram)
+    item CFG-SIGNAL-GPS_L1CA_ENA/0x10310001 val 1
+    item CFG-SIGNAL-GPS_L2C_ENA/0x10310003 val 1
+    item CFG-SIGNAL-SBAS_L1CA_ENA/0x10310005 val 1
+    item CFG-SIGNAL-GAL_E1_ENA/0x10310007 val 1
+    item CFG-SIGNAL-GAL_E5B_ENA/0x1031000a val 1
+    item CFG-SIGNAL-BDS_B1_ENA/0x1031000d val 1
+    item CFG-SIGNAL-BDS_B2_ENA/0x1031000e val 1
+    item CFG-SIGNAL-QZSS_L1CA_ENA/0x10310012 val 0
+    item CFG-SIGNAL-QZSS_L1S_ENA/0x10310014 val 0
+    item CFG-SIGNAL-QZSS_L2C_ENA/0x10310015 val 0
+    item CFG-SIGNAL-GLO_L1_ENA/0x10310018 val 1
+    item CFG-SIGNAL-GLO_L2_ENA/0x1031001a val 1
+    item CFG-SIGNAL-GPS_ENA/0x1031001f val 1
+    item CFG-SIGNAL-SBAS_ENA/0x10310020 val 1
+    item CFG-SIGNAL-GAL_ENA/0x10310021 val 1
+    item CFG-SIGNAL-BDS_ENA/0x10310022 val 1
+    item CFG-SIGNAL-QZSS_ENA/0x10310024 val 0
+    item CFG-SIGNAL-GLO_ENA/0x10310025 val 1
+    item CFG-SIGNAL-39/0x10310027 val 1
+```
+
+Each individual satellite can be disabled or enabled. For example QZSS disabled in RAM layer:
+
+`ubxtool -z CFG-SIGNAL-QZSS_ENA,0,1 localhost:gpsd:/dev/serial0` 
+
+

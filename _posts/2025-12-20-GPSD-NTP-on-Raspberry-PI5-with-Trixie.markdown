@@ -26,7 +26,7 @@ I decided to compile GPSD and NTPD by myself and not to use an available package
 
 # NTPD
 
-For NTP I took NTPsec from https://gitlab.com/NTPsec/ntpsec <br>
+For NTP I took NTPsec from [https://gitlab.com/NTPsec/ntpsec](https://gitlab.com/NTPsec/ntpsec){:target="_blank"} <br>
 As first step I installed the official package from OS with <br>`apt-get install ntpsec ntpsec-doc ntpsec-ntpdate` <br>
 With this I got the necessary scripts to start which I had to change only slightly for the self compiled version. <br> 
 Additional the following packages were needed: git, m4, m4-doc, bison, bison-doc 
@@ -52,7 +52,7 @@ With `ntp.conf` from the package one can test if ntpd works well, but in the mom
 
 To run a GNSS disciplined stratum 1 NTP server the gpsd package is not necessary. What we need is a 1PPS ( one puls per second ) which we get from the gps HAT with the available drivers from the OS. But the gpsd package with all its tools makes the life easier. 
 
-You can find the source here: https://gitlab.com/gpsd/gpsd 
+You can find the source here: [https://gitlab.com/gpsd/gpsd](https://gitlab.com/gpsd/gpsd){:target="_blank"} 
 
 But gpsd needs a lot of additional packages:
 
