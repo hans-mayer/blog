@@ -6,7 +6,7 @@ categories:
 ---
 
 
-# OS installation
+## OS installation
 
 I decided to buy a Raspberry Pi5. <br>
 I installed this image
@@ -24,7 +24,7 @@ As you can see the vendor is M0UPU. I bought this GPS modules at uputronics.com 
 
 I decided to compile GPSD and NTPD by myself and not to use an available package. As it was a brand new installation a lot of packages are needed:
 
-# NTPD
+## NTPD
 
 For NTP I took NTPsec from [https://gitlab.com/NTPsec/ntpsec](https://gitlab.com/NTPsec/ntpsec){:target="_blank"} <br>
 As first step I installed the official package from OS with <br>`apt-get install ntpsec ntpsec-doc ntpsec-ntpdate` <br>
@@ -48,7 +48,7 @@ With `ntp.conf` from the package one can test if ntpd works well, but in the mom
 
 <br>
 
-# GPSD
+## GPSD
 
 To run a GNSS disciplined stratum 1 NTP server the gpsd package is not necessary. What we need is a 1PPS ( one puls per second ) which we get from the gps HAT with the available drivers from the OS. But the gpsd package with all its tools makes the life easier. 
 
@@ -84,12 +84,11 @@ scons --config=force
 ```
 
 
-
-# OS configuration
+## OS configuration
 
 To make it runnable some minor changes are necessary in the system. And this is maybe the most tricky part.
 
-## /boot/firmware/cmdline.txt
+### /boot/firmware/cmdline.txt
 
 This was the original content:
 
@@ -105,7 +104,7 @@ root=PARTUUID=e20c853e-02 rootfstype=ext4 fsck.repair=yes rootwait
 
 There is still the console on the HDMI port available.
 
-## /boot/firmware/config.txt
+### /boot/firmware/config.txt
 
 Add a line in the global block:
 
@@ -123,7 +122,7 @@ enable_uart=1
 If your HAT delivers the 1PPS on a different gpiopin then you have to change the number of course. <br>
 For a detailed list see [bananapi-gpio-wiringbp](/2016/01/08/bananapi-gpio-wiringbp.html){:target="_blank"} 
 
-## modules
+### modules
 
 Create a new file `/etc/modules-load.d/pps-gpio.conf` with one line:
 
@@ -135,7 +134,17 @@ I modified /etc/group to be sure not having permission issues. User `nobody` is 
 
 `dialout:x:20:admin,root,nobody`
 
-## reboot
+### ttyS0.service
+
+To ensure that a getty or login process isn't taken this device it should be deactivated
+
+```
+systemctl stop    serial-getty@ttyS0.service
+systemctl disable serial-getty@ttyS0.service
+systemctl mask    serial-getty@ttyS0.service
+```
+
+### reboot
 
 Now reboot the Pi5 and check the logs. With
 
@@ -193,7 +202,7 @@ To see if data are received run
 
 `minicom -b 9600 -o -D /dev/serial0`
 
-You should see a lot of clear text data coming from the GPS module. Of course the speed could be a different. If you see some wired character then it's the wrong speed. In my case it's working with 9600 bd. Typical baud rates are: 9600, 38400 or 115200 bd.
+You should see a lot of clear text data coming from the GPS module. Of course the speed could be a different. If you see some wired character then it's the wrong speed. In my case it's working with 9600 bd. Typical baud rates are: 9600, 38400 or 115200 bd. But also possible 230400 or 460800 for newer GNSS receiver. 
 
 Now it's time to start gpsd and see if it is working
 
