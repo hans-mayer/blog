@@ -77,6 +77,13 @@ Die Temperatur bleibt den ganzen Tag unter 0° Celsius
 | &nbsp;&nbsp;2025-01-21&nbsp;&nbsp; | &nbsp;&nbsp;-2.4&nbsp;&nbsp;   | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-01-22&nbsp;&nbsp; | &nbsp;&nbsp;-1.8&nbsp;&nbsp;   | &nbsp;&nbsp;-1.1&nbsp;&nbsp;   |
 
+### Längste Periode an Eistagen
+
+| &nbsp;&nbsp;von&nbsp;&nbsp;        | &nbsp;&nbsp;bis&nbsp;&nbsp;        | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;avgT&nbsp;&nbsp;   | &nbsp;&nbsp;Tage&nbsp;&nbsp;   |
+|------------------------------------|------------------------------------|--------------------------------|--------------------------------|--------------------------------|--------------------------------|
+| &nbsp;&nbsp;2025-01-18&nbsp;&nbsp; | &nbsp;&nbsp;2025-01-22&nbsp;&nbsp; | &nbsp;&nbsp;-3.0&nbsp;&nbsp;   | &nbsp;&nbsp;-0.1&nbsp;&nbsp;   | &nbsp;&nbsp;-1.70&nbsp;&nbsp;  | &nbsp;&nbsp;5&nbsp;&nbsp;      |
+
+
 ### Insgesamt gab es 63 Frosttage
 
 Die Temperatur fällt unter den Gefrierpunkt 
@@ -239,18 +246,24 @@ Die Tageshöchstwerte klettern über 30 °C
 | &nbsp;&nbsp;Juli&nbsp;&nbsp;    | &nbsp;&nbsp;11&nbsp;&nbsp;       |
 | &nbsp;&nbsp;August&nbsp;&nbsp;  | &nbsp;&nbsp;10&nbsp;&nbsp;       |
 
+### Längste Periode an Hitzetagen
+
+| &nbsp;&nbsp;von&nbsp;&nbsp;        | &nbsp;&nbsp;bis&nbsp;&nbsp;        | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;avgT&nbsp;&nbsp;   | &nbsp;&nbsp;Tage&nbsp;&nbsp;   |
+|------------------------------------|------------------------------------|--------------------------------|--------------------------------|--------------------------------|--------------------------------|
+| &nbsp;&nbsp;2025-06-22&nbsp;&nbsp; | &nbsp;&nbsp;2025-06-27&nbsp;&nbsp; | &nbsp;&nbsp;13.1&nbsp;&nbsp;   | &nbsp;&nbsp;36.2&nbsp;&nbsp;   | &nbsp;&nbsp;24.96&nbsp;&nbsp;  | &nbsp;&nbsp;6&nbsp;&nbsp;      |
+
 
 ### Monatsübersicht 2025 
 
 | &nbsp;&nbsp;Nr&nbsp;&nbsp;   | &nbsp;&nbsp;Monat&nbsp;&nbsp;     | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;avgT&nbsp;&nbsp;   |
 |------------------------------|-----------------------------------|-------------------------------:|-------------------------------:|-------------------------------:|
-| &nbsp;&nbsp;1&nbsp;&nbsp;    | &nbsp;&nbsp;Januar&nbsp;&nbsp;    | &nbsp;&nbsp;-4.6&nbsp;&nbsp;   | &nbsp;&nbsp;15.0&nbsp;&nbsp;   | &nbsp;&nbsp;1.65&nbsp;&nbsp;   |
-| &nbsp;&nbsp;2&nbsp;&nbsp;    | &nbsp;&nbsp;Februar&nbsp;&nbsp;   | &nbsp;&nbsp;-8.4&nbsp;&nbsp;   | &nbsp;&nbsp;13.5&nbsp;&nbsp;   | &nbsp;&nbsp;1.78&nbsp;&nbsp;   |
+| &nbsp;&nbsp;1&nbsp;&nbsp;    | &nbsp;&nbsp;Januar&nbsp;&nbsp;    | &nbsp;&nbsp;-4.6&nbsp;&nbsp;   | &nbsp;&nbsp;15.0&nbsp;&nbsp;   | &nbsp;&nbsp;**1.65**&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2&nbsp;&nbsp;    | &nbsp;&nbsp;Februar&nbsp;&nbsp;   | &nbsp;&nbsp;**-8.4**&nbsp;&nbsp;   | &nbsp;&nbsp;13.5&nbsp;&nbsp;   | &nbsp;&nbsp;1.78&nbsp;&nbsp;   |
 | &nbsp;&nbsp;3&nbsp;&nbsp;    | &nbsp;&nbsp;März&nbsp;&nbsp;      | &nbsp;&nbsp;-3.8&nbsp;&nbsp;   | &nbsp;&nbsp;20.8&nbsp;&nbsp;   | &nbsp;&nbsp;7.94&nbsp;&nbsp;   |
 | &nbsp;&nbsp;4&nbsp;&nbsp;    | &nbsp;&nbsp;April&nbsp;&nbsp;     | &nbsp;&nbsp;0.6&nbsp;&nbsp;    | &nbsp;&nbsp;26.6&nbsp;&nbsp;   | &nbsp;&nbsp;13.18&nbsp;&nbsp;  |
 | &nbsp;&nbsp;5&nbsp;&nbsp;    | &nbsp;&nbsp;Mai&nbsp;&nbsp;       | &nbsp;&nbsp;5.0&nbsp;&nbsp;    | &nbsp;&nbsp;31.0&nbsp;&nbsp;   | &nbsp;&nbsp;14.75&nbsp;&nbsp;  |
-| &nbsp;&nbsp;6&nbsp;&nbsp;    | &nbsp;&nbsp;Juni&nbsp;&nbsp;      | &nbsp;&nbsp;11.0&nbsp;&nbsp;   | &nbsp;&nbsp;36.2&nbsp;&nbsp;   | &nbsp;&nbsp;22.48&nbsp;&nbsp;  |
-| &nbsp;&nbsp;7&nbsp;&nbsp;    | &nbsp;&nbsp;Juli&nbsp;&nbsp;      | &nbsp;&nbsp;12.4&nbsp;&nbsp;   | &nbsp;&nbsp;38.0&nbsp;&nbsp;   | &nbsp;&nbsp;21.49&nbsp;&nbsp;  |
+| &nbsp;&nbsp;6&nbsp;&nbsp;    | &nbsp;&nbsp;Juni&nbsp;&nbsp;      | &nbsp;&nbsp;11.0&nbsp;&nbsp;   | &nbsp;&nbsp;36.2&nbsp;&nbsp;   | &nbsp;&nbsp;**22.48**&nbsp;&nbsp;  |
+| &nbsp;&nbsp;7&nbsp;&nbsp;    | &nbsp;&nbsp;Juli&nbsp;&nbsp;      | &nbsp;&nbsp;12.4&nbsp;&nbsp;   | &nbsp;&nbsp;**38.0**&nbsp;&nbsp;   | &nbsp;&nbsp;21.49&nbsp;&nbsp;  |
 | &nbsp;&nbsp;8&nbsp;&nbsp;    | &nbsp;&nbsp;August&nbsp;&nbsp;    | &nbsp;&nbsp;11.5&nbsp;&nbsp;   | &nbsp;&nbsp;35.5&nbsp;&nbsp;   | &nbsp;&nbsp;22.05&nbsp;&nbsp;  |
 | &nbsp;&nbsp;9&nbsp;&nbsp;    | &nbsp;&nbsp;September&nbsp;&nbsp; | &nbsp;&nbsp;6.1&nbsp;&nbsp;    | &nbsp;&nbsp;29.6&nbsp;&nbsp;   | &nbsp;&nbsp;17.33&nbsp;&nbsp;  |
 | &nbsp;&nbsp;10&nbsp;&nbsp;   | &nbsp;&nbsp;Oktober&nbsp;&nbsp;   | &nbsp;&nbsp;0.3&nbsp;&nbsp;    | &nbsp;&nbsp;18.3&nbsp;&nbsp;   | &nbsp;&nbsp;10.64&nbsp;&nbsp;  |
