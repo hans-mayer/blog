@@ -96,7 +96,7 @@ I run this scenario over several days. And this is the result
 | &nbsp;&nbsp;result2026041020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.149286842099&nbsp;&nbsp; | &nbsp;&nbsp;16.283835050953&nbsp;&nbsp; |
 | &nbsp;&nbsp;average&nbsp;&nbsp;                 | &nbsp;&nbsp;48.149286811309&nbsp;&nbsp; | &nbsp;&nbsp;16.283835274668&nbsp;&nbsp; |
 
-All results are within a diameter of 26 mm. <br>
+All results are within a circle with a radius of 26 mm. The maximum distance between 2 points is 46 mm. <br>
 But when I compare this result with the result I got using gpsrinex (Method 2) then there is an offset of about 77 cm. 
 Comparing this with the averaging method 1 I see an offset of 1.09 meters. 
 
