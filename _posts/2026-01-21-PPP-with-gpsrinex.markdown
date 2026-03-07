@@ -30,22 +30,31 @@ This is the final result
         padding: 2px;
         }
 </style>
-
-| &nbsp;&nbsp;date&nbsp;&nbsp;                  | &nbsp;&nbsp;latitude&nbsp;&nbsp;        | &nbsp;&nbsp;longitude&nbsp;&nbsp;       |
-| ----------------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-| &nbsp;&nbsp;gpsrinex2023117170821&nbsp;&nbsp; | &nbsp;&nbsp;48.14929225833&nbsp;&nbsp;  | &nbsp;&nbsp;16.28384379721&nbsp;&nbsp;  |
-| &nbsp;&nbsp;gpsrinex2025322205923&nbsp;&nbsp; | &nbsp;&nbsp;48.14929171666&nbsp;&nbsp;  | &nbsp;&nbsp;16.28384437221&nbsp;&nbsp;  |
-| &nbsp;&nbsp;gpsrinex2025323171908&nbsp;&nbsp; | &nbsp;&nbsp;48.14928167499&nbsp;&nbsp;  | &nbsp;&nbsp;16.28384415555&nbsp;&nbsp;  |
-| &nbsp;&nbsp;gpsrinex2025323203540&nbsp;&nbsp; | &nbsp;&nbsp;48.14929222499&nbsp;&nbsp;  | &nbsp;&nbsp;16.28384461388&nbsp;&nbsp;  |
-| &nbsp;&nbsp;gpsrinex2025324091707&nbsp;&nbsp; | &nbsp;&nbsp;48.14929101388&nbsp;&nbsp;  | &nbsp;&nbsp;16.28384304444&nbsp;&nbsp;  |
-| &nbsp;&nbsp;gpsrinex2025327220019&nbsp;&nbsp; | &nbsp;&nbsp;48.14929243888&nbsp;&nbsp;  | &nbsp;&nbsp;16.28384382777&nbsp;&nbsp;  |
-| &nbsp;&nbsp;gpsrinex2025330191355&nbsp;&nbsp; | &nbsp;&nbsp;48.14929198610&nbsp;&nbsp;  | &nbsp;&nbsp;16.28384486110&nbsp;&nbsp;  |
-| &nbsp;&nbsp;average&nbsp;&nbsp;               | &nbsp;&nbsp;48.149291939807&nbsp;&nbsp; | &nbsp;&nbsp;16.283844086102&nbsp;&nbsp; |
+| &nbsp;&nbsp;date&nbsp;&nbsp;          | &nbsp;&nbsp;latitude&nbsp;&nbsp;        | &nbsp;&nbsp;longitude&nbsp;&nbsp;       | &nbsp;&nbsp;high&nbsp;&nbsp;             |
+|---------------------------------------|-----------------------------------------|-----------------------------------------|------------------------------------------|
+| &nbsp;&nbsp;2023117170821&nbsp;&nbsp; | &nbsp;&nbsp;48.1492922571&nbsp;&nbsp;   | &nbsp;&nbsp;16.2838437976&nbsp;&nbsp;   | &nbsp;&nbsp;286.6270&nbsp;&nbsp;         |
+| &nbsp;&nbsp;2025322205923&nbsp;&nbsp; | &nbsp;&nbsp;48.1492917165&nbsp;&nbsp;   | &nbsp;&nbsp;16.2838443722&nbsp;&nbsp;   | &nbsp;&nbsp;287.0627&nbsp;&nbsp;         |
+| &nbsp;&nbsp;2025323203540&nbsp;&nbsp; | &nbsp;&nbsp;48.1492922225&nbsp;&nbsp;   | &nbsp;&nbsp;16.2838446130&nbsp;&nbsp;   | &nbsp;&nbsp;286.7583&nbsp;&nbsp;         |
+| &nbsp;&nbsp;2025324091707&nbsp;&nbsp; | &nbsp;&nbsp;48.1492910139&nbsp;&nbsp;   | &nbsp;&nbsp;16.2838430433&nbsp;&nbsp;   | &nbsp;&nbsp;286.9125&nbsp;&nbsp;         |
+| &nbsp;&nbsp;2025327220019&nbsp;&nbsp; | &nbsp;&nbsp;48.1492924369&nbsp;&nbsp;   | &nbsp;&nbsp;16.2838438271&nbsp;&nbsp;   | &nbsp;&nbsp;286.7396&nbsp;&nbsp;         |
+| &nbsp;&nbsp;2025330191355&nbsp;&nbsp; | &nbsp;&nbsp;48.1492919858&nbsp;&nbsp;   | &nbsp;&nbsp;16.2838448611&nbsp;&nbsp;   | &nbsp;&nbsp;286.8052&nbsp;&nbsp;         |
+| &nbsp;&nbsp;average&nbsp;&nbsp;       | &nbsp;&nbsp;48.1492919387&nbsp;&nbsp; | &nbsp;&nbsp;16.2838440857&nbsp;&nbsp; | &nbsp;&nbsp;286.817&nbsp;&nbsp; |
 {: .tablelines}
 
-If I compare this result with the result of "averaging" then there is a gap of about 47 cm. 
+<pre>N: 48 8 57.45097  E: 16 17 1.83870  H: 286.817 m 
+X: 4092523.2481   Y: 1195484.9891   Z: 4728181.4834 
+</pre>
 
-This is the result as graph without the outlier in line 3 at 2025323171908
+If I compare this result with the result of "averaging" then there is a gap of about 47 cm in direction 156 deg South-Southeast (SSE) 
+
+This is the result as graph 
 
 ![gnss_position_gpsrinex](/images/gnss_position_gpsrinex.png)
+
+Now using the [ETRF/ITRF Coordinate Transformation Tool ECTT](https://www.epncb.oma.be/_productsservices/coord_trans/index.php){:target="_blank"} to convert from ITRF2020 ( over ITRF2000 ) to ETRF2000 for epoche 2026.0 I get
+
+<pre>4092523.9026 1195484.3949 4728181.0565
+48.1492862849 16.2838339544 286.8070
+48 8 57.430625640  16 17 1.8022358400
+</pre>
 
