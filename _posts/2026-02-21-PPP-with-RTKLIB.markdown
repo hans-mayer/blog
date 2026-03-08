@@ -84,21 +84,33 @@ Instead of using the GUI with `rtkpost_qt` it's also possible to use the command
 
 I run this scenario over several days. And this is the result
 
-| &nbsp;&nbsp;date&nbsp;&nbsp;                    | &nbsp;&nbsp;longitude&nbsp;&nbsp;       | &nbsp;&nbsp;latitude&nbsp;&nbsp;        |
-|-------------------------------------------------|-----------------------------------------|-----------------------------------------|
-| &nbsp;&nbsp;result2026031081521.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.149286929965&nbsp;&nbsp; | &nbsp;&nbsp;16.283835338478&nbsp;&nbsp; |
-| &nbsp;&nbsp;result2026035020026.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.149286770863&nbsp;&nbsp; | &nbsp;&nbsp;16.283834924148&nbsp;&nbsp; |
-| &nbsp;&nbsp;result2026036020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.149286798081&nbsp;&nbsp; | &nbsp;&nbsp;16.283835460302&nbsp;&nbsp; |
-| &nbsp;&nbsp;result2026037020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.149286919252&nbsp;&nbsp; | &nbsp;&nbsp;16.283835496834&nbsp;&nbsp; |
-| &nbsp;&nbsp;result2026038020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.149286670760&nbsp;&nbsp; | &nbsp;&nbsp;16.283835066090&nbsp;&nbsp; |
-| &nbsp;&nbsp;result2026039020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.149286846305&nbsp;&nbsp; | &nbsp;&nbsp;16.283835422324&nbsp;&nbsp; |
-| &nbsp;&nbsp;result2026040020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.149286713159&nbsp;&nbsp; | &nbsp;&nbsp;16.283835438211&nbsp;&nbsp; |
-| &nbsp;&nbsp;result2026041020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.149286842099&nbsp;&nbsp; | &nbsp;&nbsp;16.283835050953&nbsp;&nbsp; |
-| &nbsp;&nbsp;average&nbsp;&nbsp;                 | &nbsp;&nbsp;48.149286811309&nbsp;&nbsp; | &nbsp;&nbsp;16.283835274668&nbsp;&nbsp; |
+<style>
+.tablelines table, .tablelines td, .tablelines th {
+        border: 1px solid black;
+        padding: 2px;
+        }
+</style>
+| &nbsp;&nbsp;date&nbsp;&nbsp;                    | &nbsp;&nbsp;longitude&nbsp;&nbsp;      | &nbsp;&nbsp;latitude&nbsp;&nbsp;       | &nbsp;&nbsp;high&nbsp;&nbsp;            |
+|-------------------------------------------------|----------------------------------------|----------------------------------------|-----------------------------------------|
+| &nbsp;&nbsp;result2026031081521.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.14928692997&nbsp;&nbsp; | &nbsp;&nbsp;16.28383533848&nbsp;&nbsp; | &nbsp;&nbsp;286.24190831482&nbsp;&nbsp; |
+| &nbsp;&nbsp;result2026035020026.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.14928677086&nbsp;&nbsp; | &nbsp;&nbsp;16.28383492415&nbsp;&nbsp; | &nbsp;&nbsp;286.22960926852&nbsp;&nbsp; |
+| &nbsp;&nbsp;result2026036020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.14928679808&nbsp;&nbsp; | &nbsp;&nbsp;16.28383546030&nbsp;&nbsp; | &nbsp;&nbsp;286.25004589815&nbsp;&nbsp; |
+| &nbsp;&nbsp;result2026037020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.14928691925&nbsp;&nbsp; | &nbsp;&nbsp;16.28383549683&nbsp;&nbsp; | &nbsp;&nbsp;286.25375274075&nbsp;&nbsp; |
+| &nbsp;&nbsp;result2026038020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.14928667076&nbsp;&nbsp; | &nbsp;&nbsp;16.28383506609&nbsp;&nbsp; | &nbsp;&nbsp;286.26456416667&nbsp;&nbsp; |
+| &nbsp;&nbsp;result2026039020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.14928684631&nbsp;&nbsp; | &nbsp;&nbsp;16.28383542232&nbsp;&nbsp; | &nbsp;&nbsp;286.27070575001&nbsp;&nbsp; |
+| &nbsp;&nbsp;result2026040020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.14928671316&nbsp;&nbsp; | &nbsp;&nbsp;16.28383543821&nbsp;&nbsp; | &nbsp;&nbsp;286.23612560186&nbsp;&nbsp; |
+| &nbsp;&nbsp;result2026041020000.pos&nbsp;&nbsp; | &nbsp;&nbsp;48.14928684210&nbsp;&nbsp; | &nbsp;&nbsp;16.28383505095&nbsp;&nbsp; | &nbsp;&nbsp;286.26883948147&nbsp;&nbsp; |
+| &nbsp;&nbsp;average&nbsp;&nbsp;                 | &nbsp;&nbsp;48.14928681131&nbsp;&nbsp; | &nbsp;&nbsp;16.28383527467&nbsp;&nbsp; | &nbsp;&nbsp;286.25194390275&nbsp;&nbsp; |
+{: .tablelines}
+
+<pre>4092523.4777 1195484.3731 4728180.6821
+48.14928681131 16.28383527467 286.251
+48 8 57.43252071  16 17 1.80698881
+</pre>
 
 All results are within a circle with a radius of 26 mm. The maximum distance between 2 points is 46 mm. <br>
-But when I compare this result with the result I got using gpsrinex (Method 2) then there is an offset of about 77 cm. 
-Comparing this with the averaging method 1 I see an offset of 1.09 meters. 
+But when I compare this result with the result I got using gpsrinex (Method 2) then there is an offset of about 87 cm bevor the coordination transformation was applied but only 11 cm after the coordination transformation was applied. <br>
+Comparing this with the averaging method 1 I see an offset of 1.1 meters. 
 
 
 
