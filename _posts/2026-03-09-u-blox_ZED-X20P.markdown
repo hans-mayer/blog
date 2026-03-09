@@ -1,0 +1,39 @@
+---
+layout: post
+title:  u-blox ZED-X20P
+date:   2026-03-09 17:47:00 CET
+categories: 
+---
+
+
+Some days ago I got the new ZED-X20P from manufacturer u-blox. <br>
+I bought this device from DigiKey as redistributor for sparkfun. 
+
+MON-VER gives the following information
+
+<pre># ubxtool  -p MON-VER 
+UBX-MON-VER:
+  swVersion EXT HPG 2.02 (43e74c)
+  hwVersion 000B0000
+  extension ROM BASE 0x00A9D329
+  extension FWVER=HPG 2.02
+  extension PROTVER=50.10
+  extension MOD=ZED-X20P
+  extension GPS;GAL;BDS
+  extension SBAS;QZSS
+  extension NAVIC
+</pre>
+
+As you can see this pHAT from sparkfun has a submodul with the ZED-X20P
+
+![zed-x20p_2.png](/images/zed-x20p_2.png)
+
+This pHat is mounted on a Raspberry Pi5. <br>
+The submodule is connect with a very short antenna cable to the pHAT. Below there is the 5V/3A USB power connector. 
+
+![zed-x20p_1.png](/images/zed-x20p_1.png)
+
+Since some years I own a [u-blox ZED-F9P](/2022/07/29/ublox-ZED-F9P.html){:target="_blank"} too. But now I am happy that I can do some experiments with the latest family of GNSS receivers from u-blox. 
+
+
+
