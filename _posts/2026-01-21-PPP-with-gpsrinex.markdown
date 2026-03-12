@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  PPP with gpsrinex
+title:  PPP with gpsrinex, CSRS-PPP and ECTT 
 date:   2026-01-21 17:31:00 CET
 categories: gps 
 ---
 
 In my previous blog [PPP Precise Point Positioning](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} 3 years ago I used the method "averaging" to get a precise position. 
 
-This time I used [this Canadian service](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php){:target="_blank"} for post-processing the data. 
+This time I used [this Canadian service CSRS-PPP](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php){:target="_blank"} for post-processing the data. 
 
 So I prepared my GNSS receiver ZEF-F9P for this job. This is well documented in the man page for "gpsrinex". 
 
@@ -16,11 +16,11 @@ So I run over several days commands like this: <BR>
 This would collect the information for a period of 12 hours. <BR>
 2025322205923 means: year 2025 day number 322 of this year at 20:59:23 h
 
-If this job is finished it's theoretical possible to upload this file immediately to the [Canadian service](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php){:target="_blank"}. But then you get a result as product type "ultra fast". If you wait a day or so it's "fast" and if you wait more than a week you get the "final" version. Because it takes some time for them to get all the correction data to make a qualitativ high post processing with my collected data. 
+If this job is finished it's theoretical possible to upload this file immediately to the [Canadian service](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php){:target="_blank"}. But then you get a result as product type "ultra rapid". If you wait two days or so it's "rapid" and if you wait more than two weeks you get the "final" version. Because it takes some time for them to get all the correction data to make a qualitativ high post processing with my collected data. 
 
 If one submits this file one will get the result per e-mail. This e-mail may take several hours but it could also be available after several minutes. It depends on how much requests are in the queue. 
 
-As processing mode I selected "Static" and "ITRF" 
+As processing mode I selected "Static" and "ITRF" (International Terrestrial Reference Frame)
 
 This is the final result
 
