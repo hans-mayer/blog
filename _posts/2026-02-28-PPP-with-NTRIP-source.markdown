@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  PPP with NTRIP source
+title:  PPP with NTRIP source for u-blox GNSS receiver over gpsd
 date:   2026-02-28 18:32:00 CET
 categories: 
 ---
@@ -8,13 +8,13 @@ categories:
 This is now my fourth attempt to get an exact position (Precise Point Positioning) of my fixed mounted GNSS antenna at the roof of my house. 
 You can find the methods I used previously in my blogs here: <br> 
 (1) [PPP - Precise Point Positioning](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} <br>
-(2) [PPP with gpsrinex](/2026/01/21/PPP-with-gpsrinex.html){:target="_blank"} <br>
-(3) [PPP with RTKlib](/2026/02/21/PPP-with-RTKLIB.html){:target="_blank"} <br>
+(2) [PPP with gpsrinex, CSRS-PPP and ECTT](/2026/01/21/PPP-with-gpsrinex.html){:target="_blank"} <br>
+(3) [PPP with RTKlib and local correction](/2026/02/21/PPP-with-RTKLIB.html){:target="_blank"} <br>
 
 As GNSS receiver I used again my [u-blox ZED-F9P](/2022/07/29/ublox-ZED-F9P.html){:target="_blank"} <br>
 to manage this device I use the [gpsd](https://gitlab.com/gpsd/gpsd){:target="_blank"} package. 
 
-The method is quite simple. Feed RTCM date as a NTRIP stream (Networked Transport of RTCM via Internet Protocol) to the GNSS receiver. 
+The method is quite simple. Feed RTCM date as a NTRIP ( Networked Transport of RTCM via Internet Protocol ) stream to the GNSS receiver. 
 To do so, one must use any NTRIP caster. There are several available for free and of course also some commercial. In any case you have to register as you need username and password. 
 
 As I am using the gpsd package I use the daemon gpsd itself to do this job. <br>
@@ -24,7 +24,7 @@ This can be achieved by 2 different methods <br>
 
 So what we need is username, password, the DNS name or IP address of the caster, the port number which is in almost all cases 2101 and the mountpoint. All mountpoints for a caster can be found at the caster itself and you should use one which is very close to you. 
 
-To be sure the my ZED-F9P is well configured I run some checks 
+To be sure that my ZED-F9P is well configured I run some checks.
 
 <pre>
   ubxtool -g CFG-UART1INPROT-RTCM3X | grep CFG-UART1INPROT-RTCM3X 
@@ -73,7 +73,9 @@ I start gpspipe
 
 and I collect the data with 
 
-<pre>DAT=`date '+%j%H%M00'`
+<pre>
+SEC=3600
+DAT=`date '+%j%H%M00'`
 timeout $SEC nc 127.0.0.1 10001 | grep --line-buffered -aE "GGA|GST" > $MP/messung_$DAT.nmea </pre>
 
 $SEC is the time in seconds how long I want to collect the data. One hour is normally good enough. $MP is the mountpoint selected in the ntrip-URL. If all is fine I extract the position data from the file with this script
