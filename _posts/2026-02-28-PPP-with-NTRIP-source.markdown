@@ -83,3 +83,50 @@ $SEC is the time in seconds how long I want to collect the data. One hour is nor
 `nmea2pos.bash $MP/messung_$DAT`
 
 This will create a file `$MP/messung_$DAT.pos` which can be viewed with `rtkplot-qt`. 
+
+I run this scenario over several times. And this is the result
+
+<style>
+.tablelines table, .tablelines td, .tablelines th {
+        border: 1px solid black;
+        padding: 2px;
+        }
+</style>
+| &nbsp;&nbsp;date&nbsp;&nbsp;              | &nbsp;&nbsp;latitude&nbsp;&nbsp;       | &nbsp;&nbsp;longitude&nbsp;&nbsp;      | &nbsp;&nbsp;altitude&nbsp;&nbsp;        |
+|-------------------------------------------|----------------------------------------|----------------------------------------|-----------------------------------------|
+| &nbsp;&nbsp;messung_049220424&nbsp;&nbsp; | &nbsp;&nbsp;48.14928668858&nbsp;&nbsp; | &nbsp;&nbsp;16.28383489981&nbsp;&nbsp; | &nbsp;&nbsp;286.34149647059&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_049220558&nbsp;&nbsp; | &nbsp;&nbsp;48.14928651058&nbsp;&nbsp; | &nbsp;&nbsp;16.28383491739&nbsp;&nbsp; | &nbsp;&nbsp;286.34408541973&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_049224529&nbsp;&nbsp; | &nbsp;&nbsp;48.14928646948&nbsp;&nbsp; | &nbsp;&nbsp;16.28383476017&nbsp;&nbsp; | &nbsp;&nbsp;286.32093080357&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_051190411&nbsp;&nbsp; | &nbsp;&nbsp;48.14928674470&nbsp;&nbsp; | &nbsp;&nbsp;16.28383504772&nbsp;&nbsp; | &nbsp;&nbsp;286.35412230216&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_053164800&nbsp;&nbsp; | &nbsp;&nbsp;48.14928685024&nbsp;&nbsp; | &nbsp;&nbsp;16.28383472580&nbsp;&nbsp; | &nbsp;&nbsp;286.29313600000&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_053164900&nbsp;&nbsp; | &nbsp;&nbsp;48.14928721850&nbsp;&nbsp; | &nbsp;&nbsp;16.28383476294&nbsp;&nbsp; | &nbsp;&nbsp;286.34042372881&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_053170600&nbsp;&nbsp; | &nbsp;&nbsp;48.14928712056&nbsp;&nbsp; | &nbsp;&nbsp;16.28383469769&nbsp;&nbsp; | &nbsp;&nbsp;286.35376422764&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_053171700&nbsp;&nbsp; | &nbsp;&nbsp;48.14928646645&nbsp;&nbsp; | &nbsp;&nbsp;16.28383503276&nbsp;&nbsp; | &nbsp;&nbsp;286.33033740831&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_053182000&nbsp;&nbsp; | &nbsp;&nbsp;48.14928761124&nbsp;&nbsp; | &nbsp;&nbsp;16.28383548462&nbsp;&nbsp; | &nbsp;&nbsp;286.31665768194&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_053184700&nbsp;&nbsp; | &nbsp;&nbsp;48.14928675778&nbsp;&nbsp; | &nbsp;&nbsp;16.28383470345&nbsp;&nbsp; | &nbsp;&nbsp;286.25878328474&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_056172800&nbsp;&nbsp; | &nbsp;&nbsp;48.14928653393&nbsp;&nbsp; | &nbsp;&nbsp;16.28383432340&nbsp;&nbsp; | &nbsp;&nbsp;286.44596396396&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_056173000&nbsp;&nbsp; | &nbsp;&nbsp;48.14928641814&nbsp;&nbsp; | &nbsp;&nbsp;16.28383453253&nbsp;&nbsp; | &nbsp;&nbsp;286.46528272251&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_056174600&nbsp;&nbsp; | &nbsp;&nbsp;48.14928641787&nbsp;&nbsp; | &nbsp;&nbsp;16.28383439221&nbsp;&nbsp; | &nbsp;&nbsp;286.44075187970&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_056174700&nbsp;&nbsp; | &nbsp;&nbsp;48.14928635164&nbsp;&nbsp; | &nbsp;&nbsp;16.28383422094&nbsp;&nbsp; | &nbsp;&nbsp;286.38687192983&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_056203500&nbsp;&nbsp; | &nbsp;&nbsp;48.14928663041&nbsp;&nbsp; | &nbsp;&nbsp;16.28383471765&nbsp;&nbsp; | &nbsp;&nbsp;286.38973867596&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_057102300&nbsp;&nbsp; | &nbsp;&nbsp;48.14928749432&nbsp;&nbsp; | &nbsp;&nbsp;16.28383523683&nbsp;&nbsp; | &nbsp;&nbsp;286.41764218009&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_057113100&nbsp;&nbsp; | &nbsp;&nbsp;48.14928616931&nbsp;&nbsp; | &nbsp;&nbsp;16.28383569321&nbsp;&nbsp; | &nbsp;&nbsp;286.21828049137&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_057172000&nbsp;&nbsp; | &nbsp;&nbsp;48.14928643937&nbsp;&nbsp; | &nbsp;&nbsp;16.28383441440&nbsp;&nbsp; | &nbsp;&nbsp;286.37522851677&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_064192300&nbsp;&nbsp; | &nbsp;&nbsp;48.14928611437&nbsp;&nbsp; | &nbsp;&nbsp;16.28383541068&nbsp;&nbsp; | &nbsp;&nbsp;286.39431147541&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_064193000&nbsp;&nbsp; | &nbsp;&nbsp;48.14928626123&nbsp;&nbsp; | &nbsp;&nbsp;16.28383493320&nbsp;&nbsp; | &nbsp;&nbsp;286.45333041958&nbsp;&nbsp; |
+| &nbsp;&nbsp;messung_065185800&nbsp;&nbsp; | &nbsp;&nbsp;48.14928580792&nbsp;&nbsp; | &nbsp;&nbsp;16.28383442479&nbsp;&nbsp; | &nbsp;&nbsp;286.43519302326&nbsp;&nbsp; |
+| &nbsp;&nbsp;average&nbsp;&nbsp;           | &nbsp;&nbsp;48.14928662270&nbsp;&nbsp; | &nbsp;&nbsp;16.28383482534&nbsp;&nbsp; | &nbsp;&nbsp;286.36553964790&nbsp;&nbsp; |
+{: .tablelines}
+
+<pre>
+4092523.5748 1195484.3667 4728180.7527
+48.14928662270 16.28383482534 286.3655
+48 8 57.43184172000  16 17 1.80537122400
+</pre>
+
+The maximum distance to the average point is 13.5 cm. The maximum distance between 2 measuring points is 21.5 cm. 
+
+Takeing the average value and calculating the distance to method (2) we get an offset of 6.8 cm. 
+Distance to method (3) is 3.9 cm. 
+
+A commandline tool to [transform ecef wgs84](https://github.com/hans-mayer/transform_ecef_wgs84){:target="_blank"} data.
