@@ -5,8 +5,8 @@ date:   2026-03-09 18:35:00 CET
 categories: 
 ---
 
-This post will just describe how to setup a second interface (UART2) on a Raspberry Pi4 and Pi5 with Debian 13 (trixie). <br>
-A detailed description how to prepare a Raspberry Pi4 and Pi5 can be found here: <br>
+This post will just describe how to setup a second interface on a Raspberry Pi4 and Pi5 with Debian 13 (trixie) for the second interface on the GNSS receiver called UART2. <br>
+A detailed description how to prepare a Raspberry Pi4 and Pi5 for `gpsd` and `ntpd` can be found here: <br>
 [GPSD on Raspberry Pi5 with Debian Trixie](/2025/12/20/GPSD-NTP-on-Raspberry-PI5-with-Trixie.html){:target="_blank"} <br>
 [GPSD on Raspberry Pi4 with Debian Bullseye](/2022/06/19/GPSD-NTP-on-Raspberry-PI4-with-Bullseye.html){:target="_blank"}
 

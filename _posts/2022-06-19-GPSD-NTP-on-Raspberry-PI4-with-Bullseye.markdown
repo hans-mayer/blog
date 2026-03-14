@@ -12,7 +12,6 @@ After 6 years running a GPS disciplined NTP server on old hardware I thought it'
 
 ```
 2022-04-04-raspios-bullseye-arm64.img
-
 ```
 I used the GPS-hat I already have since about 6 years.
 
@@ -24,7 +23,6 @@ I decided to compile GPSD and NTPD by myself and not to use a possible available
 
 ```
 scons libncurses5 libncurses5-dev ncurses-doc python3-matplotlib python3-matplotlib-dbg pps-tools libusb-1.0-0 libusb-1.0-0-dev libusb-1.0-doc asciidoctor asciidoctor-doc cu minicom libgtk-3-dev gtk+-3.0 python3-gi-cairo libcap-dev ksh
-
 ```
 
 # GPSD
@@ -45,7 +43,6 @@ If you decide later on to update to the latest version run:
 ```
 git pull origin master --rebase
 scons --config=force
-
 ```
 
 # NTPD
@@ -57,7 +54,6 @@ With the following commands compilation was easy
 export CC=gcc
 ./configure  '--with-sntp' '--enable-RAWDCF' --enable-SHM --enable-ATOM -enable-NMEA '--enable-autokey' '--enable-simulator' --with-crypto --enable-clockctl --enable-linuxcaps
 make
-
 ```
 
 # OS configuration
@@ -70,14 +66,12 @@ This was the original content:
 
 ```
 console=serial0,115200 console=tty1 root=PARTUUID=09abe25e-02 rootfstype=ext4 fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles
-
 ```
 Strip away which makes troubles. Then it looks like this
 
 
 ```
 root=PARTUUID=09abe25e-02 rootfstype=ext4 fsck.repair=yes rootwait quiet splash
-
 ```
 ## /boot/config.txt
 
