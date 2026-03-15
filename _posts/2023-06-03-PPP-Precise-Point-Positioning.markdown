@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  PPP - Precise Point Positioning
+title:  PPP - Precise Point Positioning with averaging
 date:   2023-06-03 18:15:00 CET
 categories: gps
 ---

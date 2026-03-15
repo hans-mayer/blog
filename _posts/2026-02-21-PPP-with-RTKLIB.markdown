@@ -7,8 +7,8 @@ categories:
 
 This is now my third attempt to get an exact position of my fixed mounted GNSS antenna at the roof of my house. 
 You can find the methods I used previously in my blogs here: <br> 
-(1) [PPP - Precise Point Positioning](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} <br>
-(2) [PPP with gpsrinex and CSRS-PPP](/2026/01/21/PPP-with-gpsrinex.html){:target="_blank"}
+(1) [PPP - Precise Point Positioning with averaging](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} <br>
+(2) [PPP with gpsrinex and CSRS-PPP and ECIT](/2026/01/21/PPP-with-gpsrinex.html){:target="_blank"}
 
 As GNSS receiver I used again my [u-blox ZED-F9P](/2022/07/29/ublox-ZED-F9P.html){:target="_blank"} <br>
 to manage this device I use the [gpsd](https://gitlab.com/gpsd/gpsd){:target="_blank"} package. 

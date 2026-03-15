@@ -5,7 +5,7 @@ date:   2026-01-21 17:31:00 CET
 categories: gps 
 ---
 
-In my previous blog [PPP Precise Point Positioning](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} 3 years ago I used the method "averaging" to get a precise position. 
+In my previous blog [PPP Precise Point Positioning with averaging](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} 3 years ago I used the method "averaging" to get a precise position. 
 
 This time I used [this Canadian service CSRS-PPP](https://webapp.csrs-scrs.nrcan-rncan.gc.ca/geod/tools-outils/ppp.php){:target="_blank"} for post-processing the data. 
 

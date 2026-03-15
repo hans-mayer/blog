@@ -7,7 +7,7 @@ categories:
 
 This is now my fourth attempt to get an exact position (Precise Point Positioning) of my fixed mounted GNSS antenna at the roof of my house. 
 You can find the methods I used previously in my blogs here: <br> 
-(1) [PPP - Precise Point Positioning](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} <br>
+(1) [PPP - Precise Point Positioning with averaging](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} <br>
 (2) [PPP with gpsrinex, CSRS-PPP and ECTT](/2026/01/21/PPP-with-gpsrinex.html){:target="_blank"} <br>
 (3) [PPP with RTKlib and local correction](/2026/02/21/PPP-with-RTKLIB.html){:target="_blank"} <br>
 
