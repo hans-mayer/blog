@@ -65,4 +65,42 @@ Even I can see 40 or more satellites normally only 14 of them are used for calcu
 
 Press the `O` button to define an output stream if you want to document the results. 
 
+I have done this several times and this is the result
+
+<style>
+.tablelines table, .tablelines td, .tablelines th {
+        border: 1px solid black;
+        padding: 2px;
+        }
+</style>
+| &nbsp;&nbsp;date&nbsp;&nbsp;                  | &nbsp;&nbsp;latitude&nbsp;&nbsp;       | &nbsp;&nbsp;longitude&nbsp;&nbsp;      | &nbsp;&nbsp;altitude&nbsp;&nbsp;        |
+|-----------------------------------------------|----------------------------------------|----------------------------------------|-----------------------------------------|
+| &nbsp;&nbsp;TRF200AUT0_0309120300&nbsp;&nbsp; | &nbsp;&nbsp;48.14928606302&nbsp;&nbsp; | &nbsp;&nbsp;16.28383433228&nbsp;&nbsp; | &nbsp;&nbsp;286.40506914692&nbsp;&nbsp; |
+| &nbsp;&nbsp;TRF200AUT0_0309134300&nbsp;&nbsp; | &nbsp;&nbsp;48.14928580935&nbsp;&nbsp; | &nbsp;&nbsp;16.28383415321&nbsp;&nbsp; | &nbsp;&nbsp;286.48471173372&nbsp;&nbsp; |
+| &nbsp;&nbsp;TRF200AUT0_0309151800&nbsp;&nbsp; | &nbsp;&nbsp;48.14928595710&nbsp;&nbsp; | &nbsp;&nbsp;16.28383435701&nbsp;&nbsp; | &nbsp;&nbsp;286.45548243359&nbsp;&nbsp; |
+| &nbsp;&nbsp;TRF200AUT0_0309183400&nbsp;&nbsp; | &nbsp;&nbsp;48.14928600921&nbsp;&nbsp; | &nbsp;&nbsp;16.28383449567&nbsp;&nbsp; | &nbsp;&nbsp;286.53004319113&nbsp;&nbsp; |
+| &nbsp;&nbsp;TRF200AUT0_0310140400&nbsp;&nbsp; | &nbsp;&nbsp;48.14928578354&nbsp;&nbsp; | &nbsp;&nbsp;16.28383411977&nbsp;&nbsp; | &nbsp;&nbsp;286.46952323780&nbsp;&nbsp; |
+| &nbsp;&nbsp;TRF200AUT0_0310172500&nbsp;&nbsp; | &nbsp;&nbsp;48.14928596503&nbsp;&nbsp; | &nbsp;&nbsp;16.28383407456&nbsp;&nbsp; | &nbsp;&nbsp;286.48586886361&nbsp;&nbsp; |
+| &nbsp;&nbsp;average&nbsp;&nbsp;               | &nbsp;&nbsp;48.14928593121&nbsp;&nbsp; | &nbsp;&nbsp;16.28383425542&nbsp;&nbsp; | &nbsp;&nbsp;286.47178310113&nbsp;&nbsp; |
+{: .tablelines}
+
+The points are all within of 23 mm away from the average value. 
+
+<pre>
+4092523.7097    1195484.3619    4728180.7806
+48.14928593121  16.28383425542  286.471
+48 8 57.42935   16 17 1.80331
+</pre>
+
+Takeing the average value and calculating the distance to method (2) we get an offset of 4.5 cm. Distance to method (3) is 12.4 cm. Distance to method (4) is 8.8 cm.
+
+Below the is a plot of one of these traces done with rtkplot_qt 
+
+![plot20260310rtknavi](/images/plot20260310rtknavi.png)
+
+As we can see there are 71.4% of all points with Q = 1 that is status "FIX". I took only those point for the calculation of the average value. The area is about 
+5 times 6 cm. 
+
+Tools at github: <br>
+A commandline tool to [transform ecef wgs84](https://github.com/hans-mayer/transform_ecef_wgs84){:target="_blank"} data. <br>
 

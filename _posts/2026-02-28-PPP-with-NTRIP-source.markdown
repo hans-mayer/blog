@@ -119,15 +119,22 @@ I run this scenario over several times. And this is the result
 {: .tablelines}
 
 <pre>
-4092523.5748 1195484.3667 4728180.7527
-48.14928662270 16.28383482534 286.3655
-48 8 57.43184172000  16 17 1.80537122400
+4092523.5748    1195484.3667    4728180.7527
+48.14928662270  16.28383482534  286.3655
+48 8 57.43184   16 17 1.80537
 </pre>
 
 The maximum distance to the average point is 13.5 cm. The maximum distance between 2 measuring points is 21.5 cm. 
 
 Takeing the average value and calculating the distance to method (2) we get an offset of 6.8 cm. 
 Distance to method (3) is 3.9 cm. 
+
+Below the is a plot of one of these traces done with rtkplot_qt 
+
+![plot20260226ublox](/images/plot20260226ublox.png)
+
+As we can see there are 71.4% of all points with Q = 1 that is status "FIX". I took only those point for the calculation of the average value. The area is about 
+5 times 6 cm. 
 
 Tools at github: <br>
 A commandline tool to [transform ecef wgs84](https://github.com/hans-mayer/transform_ecef_wgs84){:target="_blank"} data. <br>

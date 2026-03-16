@@ -104,9 +104,10 @@ I run this scenario over several days. And this is the result
 | &nbsp;&nbsp;average&nbsp;&nbsp;                 | &nbsp;&nbsp;48.14928681131&nbsp;&nbsp; | &nbsp;&nbsp;16.28383527467&nbsp;&nbsp; | &nbsp;&nbsp;286.25194390275&nbsp;&nbsp; |
 {: .tablelines}
 
-<pre>4092523.4777 1195484.3731 4728180.6821
-48.14928681131 16.28383527467 286.251
-48 8 57.43252071  16 17 1.80698881
+<pre>
+4092523.4777    1195484.3731    4728180.6821
+48.14928681131  16.28383527467  286.251
+48 8 57.43252   16 17 1.80698
 </pre>
 
 All results are within a circle with a radius of 26 mm. The maximum distance between 2 points is 46 mm. <br>

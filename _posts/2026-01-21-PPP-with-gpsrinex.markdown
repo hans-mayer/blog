@@ -53,9 +53,10 @@ This is the result as graph
 
 Now using the [ETRF/ITRF Coordinate Transformation Tool ECTT](https://www.epncb.oma.be/_productsservices/coord_trans/index.php){:target="_blank"} to convert from ITRF2020 ( over ITRF2000 ) to ETRF2000 for epoche 2026.0 I get
 
-<pre>4092523.9026 1195484.3949 4728181.0565
-48.1492862849 16.2838339544 286.8070
-48 8 57.430625640  16 17 1.8022358400
+<pre>
+4092523.9026   1195484.3949   4728181.0565
+48.1492862849  16.2838339544  286.8070
+48 8 57.43062  16 17 1.80223
 </pre>
 
 
