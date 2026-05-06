@@ -2,7 +2,7 @@
 layout: post
 title:  PPP - Precise Point Positioning with averaging
 date:   2023-06-03 18:15:00 CET
-categories: gps
+categories: GNSS
 ---
 
 I was fascinated about this article [https://gpsd.gitlab.io/gpsd/ppp-howto.html](https://gpsd.gitlab.io/gpsd/ppp-howto.html){:target="_blank"}

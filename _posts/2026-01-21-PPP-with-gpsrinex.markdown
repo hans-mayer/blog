@@ -2,7 +2,7 @@
 layout: post
 title:  PPP with gpsrinex, CSRS-PPP and ECTT 
 date:   2026-01-21 17:31:00 CET
-categories: gps 
+categories: GNSS
 ---
 
 In my previous blog [PPP Precise Point Positioning with averaging](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} 3 years ago I used the method "averaging" to get a precise position. 

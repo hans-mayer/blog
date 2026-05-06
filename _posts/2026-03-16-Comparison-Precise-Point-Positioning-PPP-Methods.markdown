@@ -2,7 +2,7 @@
 layout: post
 title:  Comparison Precise Point Positioning (PPP) Methods
 date:   2026-03-16 14:02:00 CET
-categories: 
+categories: GNSS
 ---
 
 # Comprehensive Comparison: Precise Point Positioning (PPP) Methods

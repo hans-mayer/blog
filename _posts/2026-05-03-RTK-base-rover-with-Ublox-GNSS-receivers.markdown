@@ -2,20 +2,21 @@
 layout: post
 title:  RTK - base/rover with U-blox GNSS receivers
 date:   2026-05-03 16:47:00 CET
-categories: 
+categories: GNSS
 ---
 
 
 After some tests with Precise Point Positioning ( see below 1-5 ) and in detailed with (4) I describe this time a setup with a base station sending RTCM (Radio Technical Commission for Maritime Services) data to a rover station. For both ( base and rover ) I use Raspberry Pi's with a GNSS pi-hat with the latest Debian OS trixie Version 13 and the latest Version of [https://gitlab.com/gpsd/gpsd](https://gitlab.com/gpsd/gpsd){:target="_blank"}. I also use [github.com/rtklibexplorer/RTKLIB](https://github.com/rtklibexplorer/RTKLIB){:target="_blank"} written by Jens Reimann. It's not necessary to have this tool on these servers. Most of the time I use this from a third server as well as the gpsd package where I use "ubxtool" remotely. 
 
-Base station is a Raspberry Pi5 with a ZED-X20P from U-blox. The pi-hat is from sparkfun. <br>
-Rover is a Raspberry Pi4 with a ZED-F9P from U-blox. The pi-hat is from uputronics. 
-
+Base station is a Raspberry Pi5 with a [ZED-X20P](/2026/03/09/u-blox_ZED-X20P.html){:target="_blank"} from U-blox. The pi-hat is from sparkfun. <br>
+Rover is a Raspberry Pi4 with a [ZED-F9P](/2022/07/29/ublox-ZED-F9P.html){:target="_blank"} from U-blox. The pi-hat is from uputronics. <BR>
+OS is in both cases Debian 13 (trixie)
+ 
 In both cases I use the second interface UART2 to communicate between base and rover for the RTCM traffic. How to setup I described in [second interface for u-blox receiver](/2026/03/09/second-interface-for-u-blox-receiver-on-pi4-and-pi5.html){:target="_blank"}
 
 In advance I want to say that this combination with ZED-X20P and ZED-F9P is not perfect but possible. The reasons are multiple: ZED-F9P can handle only the L1 and L2 band. ZED-X20P is designed for L1/L2/L5/E6/B3/L. Another reason is that ZED-X20P cannot handle GLONASS (Globalnaja nawigazionnaja sputnikowaja sistema) at the moment. (And maybe never) And the Navigation Indian Constellation (NavIC) can only be used by ZED-X20P. Independant of that I don't see any Indian satellite here in Vienna ( 48N 16E ). Therefore there are left 3 GNSS: GPS, Galileo and BeiDou as least common multiple and common source. 
 
-Below you can find 2 scripts. The first one is to setup the base station which is a little bit more laborious. The second one is for the rover. These scripts require certain prerequisites. For example there is a server with hostname "base" and "rover" or at least an DNS CNAME for it. SSH should be possible with password. 
+Below you can find 2 scripts. The first one is to setup the base station which is a little bit more laborious. The second one is for the rover. These scripts require certain prerequisites. For example there is a server with hostname "base" and "rover" or at least an DNS CNAME for it. SSH should be possible without password. 
 
 functubxtool_ksh defines a function "ubxtool" like this 
 
@@ -370,6 +371,79 @@ esac
 
 </pre>
 
+## Usage 
+
+### setup_initial 
+
+### nmea_pipe
+
+After setting up base and rover it will take some time to get a precision position with status `Fixed`. Worst case is one hour in my situation. But typically it takes 10 minutes or a little bit more. Running command `setup_rover_sh nmea_pipe` will create a gpspipe with `socat EXEC:gpspipe -r TCP-LISTEN:10001,reuseaddr,fork`. Running `rtkplot_qt &` and connecting to this port 10001 will show you the current possition at the rover. 
+
+![rover for a short period](/images/rover_short_2026.png)
+
+The graph above shows the measurement for a short period of time. Each dot symbols a second. As we can see almost all dots are within a circle of 5 mm radius. If I move the rover antenna for example 3 cm away from the current possition then a new cloud of dots will be create in a distance of 3 cm from the old one. If the antenna is moved further away - for example one meter - then the status "Fixed" is lost and falls back to "Floating". 
+ 
+
+![rover for a longer period](/images/rover_long_2026.png)
+
+The example above shows a longer period of time and we can see that all dots are in a square of 3 x 3 cm. <br> <br>
+
+### sat_used 
+
+With option `sat_used` will give you the information how many satellites are used. A typical output could be this: 
+
+```
+only GPS, Galileo and BeiDou are counted
+Status:    carrSoln (Fixed)
+                    satellites total seen :  38
+                                      GPS :  11  Galileo: 11  BeiDou: 16
+                          satellites used :  26
+                                      GPS :  10  Galileo: 6  BeiDou: 10
+     satellites used with rtcm coorection :  26
+  satellites with pseudorange corrections :  26
+satellites with carrier range corrections :  21
+                                      GPS :  7  Galileo: 6  BeiDou: 8
+```
+
+In the example above we see a status fixed. I have never seen more than 25 satellites with carrier range corrections. Maybe this is a limitation from the U-blox receiver or there are never more than 25 satellites available with the needed requirements. <br>
+There are 3 states possible 
+
+```
+    carrSoln (None)
+    carrSoln (Floating)
+    carrSoln (Fixed)
+```
+Status "None" is only visible short time after power on. Fixed is of course our goal. <BR>
+
+### raw_pipe 
+
+Using option `raw_pipe` will create a second gpspipe. This will allow to use `str2str -in tcpcli://rover:10002 -out file://log_%Y%m%d%h%M.ubx` which logs the data to file. Than it's possible to exctract data in a future process. 
+
+### navpvt 
+
+navpvt show the output of command "ubxtool -p NAV-PVT"
+
+```
+UBX-NAV-PVT:
+  iTOW 576850000 time 2026/05/02 16:13:52 valid x37
+  tAcc 24 nano 341196 fixType 3 flags x83 flags2 xea
+  numSV 29 lon 162837865 lat 481492049 height 277494
+  hMSL 235357 hAcc 15 vAcc 24
+  velNED 2 2 16 gSpeed 3 headMot 24410926
+  sAcc 131 headAcc 18000000 pDOP 119 flags3 x4 reserved0 x334c2e2c
+  headVeh 0 magDec 0 magAcc 0
+    valid (validDate ValidTime fullyResolved)
+    fixType (3D)
+    flags (gnssFixOK, diffSoln, Carrier Phase fixed,)
+    flags2 (confirmedAvai confirmedDate confirmedTime)
+    psmState (Not Active)
+    carrSoln (Fixed)
+    flags3 () lastCorrectionAge 2
+```
+
+## some internal links 
+
+These are some possibilities to look for a precise point position. Definitelly one needs to have one exact position for the base station in a rover/base setup. 
 
 (1) [PPP - Precise Point Positioning with averaging](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} <br>
 (2) [PPP with gpsrinex, CSRS-PPP and ECTT](/2026/01/21/PPP-with-gpsrinex.html){:target="_blank"} <br>

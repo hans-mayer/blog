@@ -2,7 +2,7 @@
 layout: post
 title:  PPP with RTKLIB and local correction
 date:   2026-02-21 13:43:00 CET
-categories: 
+categories: GNSS
 ---
 
 This is now my third attempt to get an exact position of my fixed mounted GNSS antenna at the roof of my house. 

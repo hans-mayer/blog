@@ -2,7 +2,7 @@
 layout: post
 title:  PPP with NTRIP source and rtknavi_qt to compute
 date:   2026-03-15 11:13:00 CET
-categories: 
+categories: GNSS
 ---
 
 

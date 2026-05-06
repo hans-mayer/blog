@@ -2,7 +2,7 @@
 layout: post
 title:  PPP with NTRIP source for u-blox GNSS receiver over gpsd
 date:   2026-02-28 18:32:00 CET
-categories: 
+categories: GNSS
 ---
 
 This is now my fourth attempt to get an exact position (Precise Point Positioning) of my fixed mounted GNSS antenna at the roof of my house. 
