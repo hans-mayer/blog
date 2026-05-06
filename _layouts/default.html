@@ -15,5 +15,28 @@
 
     {% include footer.html %}
 
+document.querySelectorAll('pre').forEach((block) => {
+    // Erstelle den Button
+    const button = document.createElement('button');
+    button.innerText = 'Copy';
+    button.className = 'copy-code-button';
+
+    // Positioniere den Button im Container
+    block.appendChild(button);
+
+    button.addEventListener('click', async () => {
+        // Suche den Code (entweder direkt im pre oder im verschachtelten code-tag)
+        const text = block.querySelector('code') ? block.querySelector('code').innerText : block.innerText;
+        
+        await navigator.clipboard.writeText(text);
+
+        // Feedback geben
+        button.innerText = 'Copied!';
+        setTimeout(() => {
+            button.innerText = 'Copy';
+        }, 2000);
+    });
+});
+
     </body>
 </html>
