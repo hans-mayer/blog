@@ -31,13 +31,37 @@ This is to avoid to add each time "rover:gpsd:/dev/serial0" as aditional argumen
 <pre>
 #!/usr/bin/env bash 
 
+# ident setup_base_sh 
+# Wed May  6 05:26:22 PM CEST 2026 - mayer 
+
 . functubxtool_ksh base
 
-# ident setup_base_sh 
+ntrip(){
+
+  logger -p user.debug "setup_base_sh ntrip with argument $1  " 
+  
+  case "$1" in 
+    stop ) 
+        # kill a possible running str2str 
+        ssh base pkill str2str 
+        ;; 
+    start ) 
+        # start a new one - this is the communication to the rover for RTCM traffic 
+        ssh base "str2str -in serial://ttyAMA3:921600:8:n:1:off -out tcpsvr://:42101 --deamon"
+        ;;
+    status ) 
+        ssh base 'pgrep -a -f "str2str -in serial://ttyAMA3:921600:8:n:1:off -out tcpsvr://:42101 --deamon"' 
+        ;;
+    "" ) 
+        ntrip stop ; ntrip start 
+        ;;
+  esac 
+}
+
 
 setup_initial(){ 
 
-  # Setup Script for u-blox Base (X20P)
+  # Setup Script for u-blox (ZED-X20P) base station 
   logger -p user.debug "setup_base_sh setup_initial " 
   # this is the initial setup to prepare the base sation for it function 
   
@@ -59,11 +83,12 @@ setup_initial(){
   # make sure that no Survey-In is running 
   ubxtool -z CFG-TMODE-MODE,0 | grep UBX-ACK-ACK:
   
-  # reference cooridnates set to ECEF
+  # reference coordinates set to ECEF
   ubxtool -z CFG-TMODE-POS_TYPE,0 | grep UBX-ACK-ACK:
   
   # position of the base station , unit is cm 
   # 48.1493013022 16.2838442507 288.08 
+  # make sure that there is the exact position of the base station 
   ubxtool -z CFG-TMODE-ECEF_X,409252331 | grep UBX-ACK-ACK:
   ubxtool -z CFG-TMODE-ECEF_Y,119548502 | grep UBX-ACK-ACK:
   ubxtool -z CFG-TMODE-ECEF_Z,472818312 | grep UBX-ACK-ACK:
@@ -79,57 +104,67 @@ setup_initial(){
   for msg in 1005 1077 1087 1097 1124 1127 ; do
     ubxtool -z CFG-MSGOUT-RTCM_3X_TYPE${msg}_UART2,1  | grep UBX-ACK-ACK:
   done
-  ubxtool -z CFG-MSGOUT-RTCM_3X_TYPE1230_USB,5 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-MSGOUT-RTCM_3X_TYPE1230_UART2,5 | grep UBX-ACK-ACK:
   
   # FIXED MODE schalten
   ubxtool -z CFG-TMODE-MODE,2 | grep UBX-ACK-ACK:
 
-  ubxtool -z  CFG-SIGNAL-PLAN,1 | grep UBX-ACK-ACK:
+  # necessary as the rover (ZED-F9P) can only bands L1 and L2 
+  ubxtool -z CFG-SIGNAL-PLAN,1 | grep UBX-ACK-ACK:
     
-  ubxtool -z  CFG-SIGNAL-GPS_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-SBAS_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GAL_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-BDS_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-QZSS_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GLO_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-NAVIC_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-BDS_B2A_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GPS_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-SBAS_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GAL_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-BDS_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-QZSS_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GLO_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-NAVIC_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-BDS_B2A_ENA,1 | grep UBX-ACK-ACK:
   
-  ubxtool -z  CFG-SIGNAL-GPS_L1CA_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GPS_L2C_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GPS_L5_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-SBAS_L1CA_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GAL_E1_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GAL_E5A_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GAL_E5B_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GAL_E6_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-BDS_B1_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-BDS_B2_ENA,1 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-BDS_B1C_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-BDS_B3_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-QZSS_L1CA_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-QZSS_L1S_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-QZSS_L2C_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-QZSS_L5_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GLO_L1_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-GLO_L2_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z  CFG-SIGNAL-NAVIC_L5_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GPS_L1CA_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GPS_L2C_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GPS_L5_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-SBAS_L1CA_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GAL_E1_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GAL_E5A_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GAL_E5B_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GAL_E6_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-BDS_B1_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-BDS_B2_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-BDS_B1C_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-BDS_B3_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-QZSS_L1CA_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-QZSS_L1S_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-QZSS_L2C_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-QZSS_L5_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GLO_L1_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-GLO_L2_ENA,0 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-NAVIC_L5_ENA,0 | grep UBX-ACK-ACK:
 
-  # kill a possible running process 
-  ssh base pkill str2str 
-  # send the RTCM date to the rover 
-  ssh base "str2str -in serial://ttyAMA3:921600:8:n:1:off -out tcpsvr://:42101 --deamon"
+  ntrip 
 
 }  
   
+help(){
+  echo "usage: $0 help | setup_initial | ntrip " 
+  echo "          help  ...  this help "
+  echo "          setup_initial ... this will initialise the base station " 
+  echo '          ntrip start | stop | status | "" '
+  echo "                to manage the communication with the base station with a str2str process "
+  echo "                without argument it will restart the str2str process " 
+  exit 1 
+}
+
 usage(){ 
-  echo "usage: $0 setup_initial " 
+  echo "usage: $0 help | setup_initial | ntrip " 
   exit 1 
 } 
 
 
 case "$1" in 
   setup_initial ) setup_initial ;; 
+  ntrip ) ntrip $2 ;; 
+  help ) help ;; 
   * ) usage ;; 
 esac 
 
@@ -143,9 +178,32 @@ esac
 #!/usr/bin/env bash 
 
 # ident setup_rover_sh 
+# Wed May  6 05:26:22 PM CEST 2026 - mayer 
 
 . functubxtool_ksh rover
 
+
+ntrip(){
+
+  logger -p user.debug "setup_rover_sh ntrip with argument $1  " 
+  case "$1" in 
+    stop ) 
+  	# kill a possible running str2str 
+  	# ssh rover pkill str2str 
+	ssh rover 'pkill -f "str2str -in tcpcli://base:42101 -out serial://ttyAMA5:921600:8:n:1:off --deamon"'
+	;; 
+    start ) 
+  	# start a new one - this is the communication to the base for RTCM traffic 
+  	ssh rover "str2str -in tcpcli://base:42101 -out serial://ttyAMA5:921600:8:n:1:off --deamon"
+	;;
+    status ) 
+	ssh rover 'pgrep -a -f "str2str -in tcpcli://base:42101 -out serial://ttyAMA5:921600:8:n:1:off --deamon"'
+	;;
+    "" ) 
+	ntrip stop ; ntrip start 
+	;;
+  esac 
+}
 
 setup_initial(){ 
   
@@ -171,28 +229,28 @@ setup_initial(){
   ubxtool -z CFG-UART2INPROT-RTCM3X,1  | grep UBX-ACK-ACK: 
   
   # disable not usable GNSS 
-  ubxtool -z  CFG-SIGNAL-SBAS_ENA,0
-  ubxtool -z  CFG-SIGNAL-QZSS_ENA,0
-  ubxtool -z  CFG-SIGNAL-GLO_ENA,0
+  ubxtool -z  CFG-SIGNAL-SBAS_ENA,0 | grep UBX-ACK-ACK: 
+  ubxtool -z  CFG-SIGNAL-QZSS_ENA,0 | grep UBX-ACK-ACK: 
+  ubxtool -z  CFG-SIGNAL-GLO_ENA,0 | grep UBX-ACK-ACK: 
   
-  ubxtool -z  CFG-SIGNAL-SBAS_L1CA_ENA,0
-  ubxtool -z  CFG-SIGNAL-QZSS_L1CA_ENA,0
-  ubxtool -z  CFG-SIGNAL-QZSS_L1S_ENA,0
-  ubxtool -z  CFG-SIGNAL-QZSS_L2C_ENA,0
-  ubxtool -z  CFG-SIGNAL-GLO_L1_ENA,0
-  ubxtool -z  CFG-SIGNAL-GLO_L2_ENA,0
+  ubxtool -z  CFG-SIGNAL-SBAS_L1CA_ENA,0 | grep UBX-ACK-ACK: 
+  ubxtool -z  CFG-SIGNAL-QZSS_L1CA_ENA,0 | grep UBX-ACK-ACK: 
+  ubxtool -z  CFG-SIGNAL-QZSS_L1S_ENA,0 | grep UBX-ACK-ACK: 
+  ubxtool -z  CFG-SIGNAL-QZSS_L2C_ENA,0 | grep UBX-ACK-ACK: 
+  ubxtool -z  CFG-SIGNAL-GLO_L1_ENA,0 | grep UBX-ACK-ACK: 
+  ubxtool -z  CFG-SIGNAL-GLO_L2_ENA,0 | grep UBX-ACK-ACK: 
 
-  # kill a possible running str2str 
-  ssh rover pkill str2str 
-  
-  # start a new one - this is the communication to the base for RTCM traffic 
-  ssh rover "str2str -in tcpcli://192.168.241.93:42101 -out serial://ttyAMA5:921600:8:n:1:off --deamon"
+  ntrip 
   
   ubxtool -z CFG-MSGOUT-UBX_RXM_RTCM_UART1,1 | grep UBX-ACK-ACK:
   
   # set high precision mode 
+  # The accuracy is only as good as that of the base station. 
   ubxtool -z CFG-NMEA-HIGHPREC,1 | grep UBX-ACK-ACK: 
+  ubxtool -z CFG-MSGOUT-UBX_NAV_HPPOSLLH_UART1,1 | grep UBX-ACK-ACK: 
 
+  # don't restart gpsd after initialization 
+  # this is one of the parameters changed at start or use option -p --passive for gpsd restart 
   ubxtool -z CFG-MSGOUT-NMEA_ID_GGA_UART1,1  | grep UBX-ACK-ACK:  
 
 }
@@ -210,7 +268,10 @@ nmea_pipe(){
     start )  
   	# start a gpspipe for monitoring with rtkplot_qt / option -r is NMEA output 
   	ssh rover nohup "socat EXEC:'gpspipe -r' TCP-LISTEN:10001,reuseaddr,fork  > /dev/null 2>&1 & disown " 
-	echo pipe ready at port 10001 
+	echo pipe ready for rtkplot_qt as TCP Client , server rover at port 10001 and solution format NMEA0183 
+ 	;;
+    status )  
+	ssh rover 'pgrep -a -f "socat EXEC:gpspipe -r TCP-LISTEN:10001,reuseaddr,fork"'
  	;;
     "" ) 
 	nmea_pipe stop ; nmea_pipe start 
@@ -230,8 +291,10 @@ raw_pipe(){
     start ) 
   	# start a gpspipe for logging with strsvr_qt or str2str 
   	ssh rover nohup "socat EXEC:'gpspipe -RB' TCP-LISTEN:10002,reuseaddr,fork  > /dev/null 2>&1 & disown " 
-
   	echo for example its possible to start now: str2str -in tcpcli://rover:10002 -out file://log_%Y%m%d%h%M.ubx
+	;;
+    status ) 
+  	ssh rover "pgrep -a -f 'socat EXEC:gpspipe -RB TCP-LISTEN:10002,reuseaddr,fork'"
 	;;
     "" )
 	raw_pipe stop ; raw_pipe start 
@@ -239,28 +302,57 @@ raw_pipe(){
   esac 
 }
 
-sat_used(){
-
-  logger -p user.debug "setup_rover_sh sat_used " 
-
-  # NAVSAT=`ubxtool -p NAV-SAT -v 2 | sed -n -e '/^UBX-NAV-SAT:/,/^$/ p' | awk -v RS= 'NR==2'  | grep -B 2 -A 2  -i rtcm | egrep 'flags'`
-  NAVSAT=`ubxtool -p NAV-SAT -v 2 | sed -n -e '/^UBX-NAV-SAT:/,/^$/ p' | awk -v RS= 'NR==2' ` 
-  echo "                    satellites total seen :  " `echo "$NAVSAT" | grep -c gnssId `
-  echo "                          satellites used :  " `echo "$NAVSAT" | grep 'flags(' | grep -c svUsed `
-  echo "     satellites used with rtcm coorection :  " `echo "$NAVSAT" | grep -c rtcm `
-  echo "  satellites with pseudorange corrections :  " `echo "$NAVSAT" | grep -c prCorrUsed `
-  echo "satellites with carrier range corrections :  " `echo "$NAVSAT" | grep -c crCorrUsed `
-  SYST=`echo "$NAVSAT" | grep  -B 2 crCorrUsed | grep gnssId  | awk '{ print ( $2 ) }' | uniq -c`
-  echo $SYST | awk '{ print ( "GPS: " $1 "  Galileo: " $3  "  BeiDou: " $5 ) }' 
-}
 
 navpvt(){
   logger -p user.debug "setup_rover_sh navpvt " 
   ubxtool -p NAV-PVT -v 2 | sed -n -e '/^UBX-NAV-PVT:/,/^$/ p' | awk -v RS= 'NR==2' 
 }
 
+
+sat_used(){
+
+  logger -p user.debug "setup_rover_sh sat_used " 
+
+  # NAVSAT=`ubxtool -p NAV-SAT -v 2 | sed -n -e '/^UBX-NAV-SAT:/,/^$/ p' | awk -v RS= 'NR==2'  | grep -B 2 -A 2  -i rtcm | egrep 'flags'`
+
+  echo only GPS, Galileo and BeiDou are counted 
+  echo -e -n Status: ; navpvt | grep carrSoln
+  NAVSAT=`ubxtool -p NAV-SAT -v 2 | sed -n -e '/^UBX-NAV-SAT:/,/^$/ p' | awk -v RS= 'NR==2' ` 
+
+  echo "                    satellites total seen : " `echo "$NAVSAT" | grep -c gnssId `
+
+  SYST=`echo "$NAVSAT" | grep gnssId  | awk '{ print ( $2 ) }' | uniq -c`
+  echo $SYST | awk '{ print ( "                                      GPS :  "  $1 "  Galileo: " $3  "  BeiDou: " $5 ) }' 
+
+  echo "                          satellites used : " `echo "$NAVSAT" | grep 'flags(' | grep -c svUsed `
+
+  SYST=`echo "$NAVSAT" | grep  -B 2 svUsed | grep gnssId  | awk '{ print ( $2 ) }' | uniq -c`
+  echo $SYST | awk '{ print ( "                                      GPS :  "  $1 "  Galileo: " $3  "  BeiDou: " $5 ) }' 
+
+  echo "     satellites used with rtcm coorection : " `echo "$NAVSAT" | grep -c rtcm `
+  echo "  satellites with pseudorange corrections : " `echo "$NAVSAT" | grep -c prCorrUsed `
+
+  echo "satellites with carrier range corrections : " `echo "$NAVSAT" | grep -c crCorrUsed `
+  SYST=`echo "$NAVSAT" | grep  -B 2 crCorrUsed | grep gnssId  | awk '{ print ( $2 ) }' | uniq -c`
+  echo $SYST | awk '{ print ( "                                      GPS :  "  $1 "  Galileo: " $3  "  BeiDou: " $5 ) }' 
+}
+
+help(){ 
+  echo "usage: $0 help | setup_initial | nmea_pipe | raw_pipe | sat_used | navpvt | ntrip " 
+  echo "          help  ... this help " 
+  echo "          setup_initial ... this will initialise the base station " 
+  echo "          nmea_pipe ... this will create a gpspipe with NMEA protocol listen on port 10001 "
+  echo "          raw_pipe ... this will create a gpspipe with raw data listen on port 10002 "
+  echo "          sat_used ... will show the used satellites based on ubxtool -p NAV-SAT command "
+  echo "          navpvt ... will show the status based on ubxtool -p NAV-PVT command "
+  echo '          ntrip start | stop | status | "" '
+  echo "                to manage the communication with the base station with a str2str process "
+  echo "                without argument it will restart the str2str process " 
+  exit 1 
+} 
+
 usage(){ 
-  echo "usage: $0 setup_initial | nmea_pipe | raw_pipe | sat_used | navpvt " 
+  echo "usage: $0 help | setup_initial | nmea_pipe | raw_pipe | sat_used | navpvt | ntrip " 
   exit 1 
 } 
 
@@ -271,6 +363,8 @@ case "$1" in
   raw_pipe ) raw_pipe "$2" ;; 
   sat_used ) sat_used ;; 
   navpvt ) navpvt ;; 
+  ntrip ) ntrip "$2" ;; 
+  help ) help ;; 
   * ) usage ;; 
 esac 
 
