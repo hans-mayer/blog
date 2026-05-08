@@ -6,21 +6,21 @@ categories: GNSS
 ---
 
 
-After some tests with Precise Point Positioning ( see below 1-5 ) and in detailed with (4) I describe this time a setup with a base station sending RTCM (Radio Technical Commission for Maritime Services) data to a rover station. For both ( base and rover ) I use Raspberry Pi's with a GNSS pi-hat with the latest Debian OS trixie Version 13 and the latest Version of [https://gitlab.com/gpsd/gpsd](https://gitlab.com/gpsd/gpsd){:target="_blank"}. I also use [github.com/rtklibexplorer/RTKLIB](https://github.com/rtklibexplorer/RTKLIB){:target="_blank"} written by Jens Reimann. It's not necessary to have this tool on these servers. Most of the time I use this from a third server as well as the gpsd package where I use "ubxtool" remotely. 
+After some tests with Precise Point Positioning ( see below 1-5 ) and in detailed with (4) I describe this time a setup with a base station sending RTCM (Radio Technical Commission for Maritime Services) data to a rover station. For both ( base and rover ) I use Raspberry Pi's with a GNSS pi-hat with the latest Debian OS trixie Version 13 and the latest Version of [https://gitlab.com/gpsd/gpsd](https://gitlab.com/gpsd/gpsd){:target="_blank"}. I also use [github.com/rtklibexplorer/RTKLIB](https://github.com/rtklibexplorer/RTKLIB){:target="_blank"} written by Jens Reimann. It's not necessary to have this tool on these servers. Most most of the time, I run it from a third server, using 'ubxtool' to interact with the gpsd instances remotely.
 
 Base station is a Raspberry Pi5 with a [ZED-X20P](/2026/03/09/u-blox_ZED-X20P.html){:target="_blank"} from U-blox. The pi-hat is from sparkfun. <br>
 Rover is a Raspberry Pi4 with a [ZED-F9P](/2022/07/29/ublox-ZED-F9P.html){:target="_blank"} from U-blox. The pi-hat is from uputronics. <BR>
 OS is in both cases Debian 13 (trixie)
 
 Antennas <br>
-For X20P I use the antenna HAB-ANN-MB2 fix mounted on the top of my roof of my house. <br>
+For X20P I use the antenna HAB-ANN-MB2 permanently roof-mounted with a clear sky view. <br>
 F9P is using the HAB-ANN-MB-00-00 antenna of course mobile in the garden. To place it on a metal plate is an advantage.
  
 In both cases I use the second interface UART2 to communicate between base and rover for the RTCM traffic. How to setup I described in [second interface for u-blox receiver](/2026/03/09/second-interface-for-u-blox-receiver-on-pi4-and-pi5.html){:target="_blank"}
 
 In advance I want to say that this combination with ZED-X20P and ZED-F9P is not perfect but possible. The reasons are multiple: ZED-F9P can handle only the L1 and L2 band. ZED-X20P is designed for L1/L2/L5/E6/B3/L. Another reason is that ZED-X20P cannot handle GLONASS (Globalnaja nawigazionnaja sputnikowaja sistema) at the moment (and potentially never due to hardware/firmware focus or political situations). And the Navigation Indian Constellation (NavIC) can only be used by ZED-X20P. Independent of that I don't see any Indian satellite here in Vienna ( 48N 16E ). Therefore there are left 3 GNSS: GPS, Galileo and BeiDou as lowest common denominator and common source. 
 
-Below you can find 2 scripts: `setup_base_sh` and `setup_rover_sh`. The first one is to setup the base station which is a little bit more laborious. The second one is for the rover. These scripts require certain prerequisites. For example there are servers with hostname "base" and "rover" or at least an DNS CNAME for it. SSH should be possible without password. 
+Below you can find 2 scripts: `setup_base_sh` and `setup_rover_sh`. The first one is to setup the base station which is a little bit more complex. The second one is for the rover. These scripts require certain prerequisites. For example there are servers with hostname "base" and "rover" or at least an DNS CNAME for it. SSH should be possible without password. 
 
 functubxtool_ksh defines a function "ubxtool" like this 
 
@@ -29,7 +29,7 @@ functubxtool_ksh defines a function "ubxtool" like this
     /usr/local/bin/ubxtool $@ rover:gpsd:/dev/serial0 
 </pre>
 
-This is to avoid to add each time "rover:gpsd:/dev/serial0" as aditional argument 
+This is to avoid to add each time "rover:gpsd:/dev/serial0" as additional argument 
 
 ## setup_base_sh 
 
@@ -177,7 +177,7 @@ esac
 
 <br>
 
-Some hints on the base station setup. The unit for ECEF mode is in cm. Most tools, also like mine [transform ecef wgs84](https://github.com/hans-mayer/transform_ecef_wgs84){:target="_blank"}, are using meters as unit. Another important setup is to disable CFG-SIGNAL-BDS_B1C_ENA and CFG-SIGNAL-BDS_B3_ENA. As long as I had these signals enabled I couldn't see any BeiDou satellites to be used for RTCM correction.
+Some hints on the base station setup. The unit of measurement for ECEF mode is centimeters. Note that most tools like mine [transform ecef wgs84](https://github.com/hans-mayer/transform_ecef_wgs84){:target="_blank"} use meters instead. Another important setup is to disable CFG-SIGNAL-BDS_B1C_ENA and CFG-SIGNAL-BDS_B3_ENA. As long as these signals were enabled, I was unable to achieve BeiDou-based RTCM corrections.
 
 <br>
 
@@ -383,7 +383,7 @@ esac
 
 ### setup_initial 
 
-Both scripts setup_base_sh and setup_rover_sh has to be run with this option. If this is done a communication between setup_base_sh and setup_rover_sh is established and a "Fixed" solution should be possible soon. 
+Both scripts setup_base_sh and setup_rover_sh has to be run with this option. If this is done a communication between setup_base_sh and setup_rover_sh is established and a "Fixed" solution should be reached within a short time.
 
 <br>
 
@@ -395,7 +395,7 @@ After setting up base and rover it will take some time to get a precision positi
 
 ![rover for a short period](/images/rover_short_2026.png)
 
-The graph above shows the measurement for a short period of time. Each dot symbols a second. As we can see almost all dots are within a circle of 5 mm radius. If I move the rover antenna for example 3 cm away from the current position then a new cloud of dots will be create in a distance of 3 cm from the old one. If the antenna is moved further away - for example one meter - then the status "Fixed" is lost and falls back to "Floating". 
+The graph above shows the measurement for a short period of time. Each data point represents a one-second interval. As we can see almost all dots are within a circle of 5 mm radius. Moving the rover antenna by 3 cm results in a distinct new cluster of points, precisely reflecting the displacement. If the antenna is moved further away - for example one meter - then the status "Fixed" is lost and falls back to "Floating". 
  
 
 ![rover for a longer period](/images/rover_long_2026.png)
@@ -413,7 +413,7 @@ Status:    carrSoln (Fixed)
                                       GPS :  11  Galileo: 11  BeiDou: 16
                           satellites used :  26
                                       GPS :  10  Galileo: 6  BeiDou: 10
-     satellites used with rtcm coorection :  26
+     satellites used with RTCM correction :  26
   satellites with pseudorange corrections :  26
 satellites with carrier range corrections :  21
                                       GPS :  7  Galileo: 6  BeiDou: 8
