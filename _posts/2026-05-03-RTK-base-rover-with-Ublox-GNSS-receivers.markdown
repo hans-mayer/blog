@@ -11,12 +11,16 @@ After some tests with Precise Point Positioning ( see below 1-5 ) and in detaile
 Base station is a Raspberry Pi5 with a [ZED-X20P](/2026/03/09/u-blox_ZED-X20P.html){:target="_blank"} from U-blox. The pi-hat is from sparkfun. <br>
 Rover is a Raspberry Pi4 with a [ZED-F9P](/2022/07/29/ublox-ZED-F9P.html){:target="_blank"} from U-blox. The pi-hat is from uputronics. <BR>
 OS is in both cases Debian 13 (trixie)
+
+Antennas <br>
+For X20P I use the antenna HAB-ANN-MB2 fix mounted on the top of my roof of my house. <br>
+F9P is using the HAB-ANN-MB-00-00 antenna of course mobile in the garden. To place it on a metal plate is an advantage.
  
 In both cases I use the second interface UART2 to communicate between base and rover for the RTCM traffic. How to setup I described in [second interface for u-blox receiver](/2026/03/09/second-interface-for-u-blox-receiver-on-pi4-and-pi5.html){:target="_blank"}
 
-In advance I want to say that this combination with ZED-X20P and ZED-F9P is not perfect but possible. The reasons are multiple: ZED-F9P can handle only the L1 and L2 band. ZED-X20P is designed for L1/L2/L5/E6/B3/L. Another reason is that ZED-X20P cannot handle GLONASS (Globalnaja nawigazionnaja sputnikowaja sistema) at the moment. (And maybe never) And the Navigation Indian Constellation (NavIC) can only be used by ZED-X20P. Independant of that I don't see any Indian satellite here in Vienna ( 48N 16E ). Therefore there are left 3 GNSS: GPS, Galileo and BeiDou as least common multiple and common source. 
+In advance I want to say that this combination with ZED-X20P and ZED-F9P is not perfect but possible. The reasons are multiple: ZED-F9P can handle only the L1 and L2 band. ZED-X20P is designed for L1/L2/L5/E6/B3/L. Another reason is that ZED-X20P cannot handle GLONASS (Globalnaja nawigazionnaja sputnikowaja sistema) at the moment (and potentially never due to hardware/firmware focus or political situations). And the Navigation Indian Constellation (NavIC) can only be used by ZED-X20P. Independent of that I don't see any Indian satellite here in Vienna ( 48N 16E ). Therefore there are left 3 GNSS: GPS, Galileo and BeiDou as lowest common denominator and common source. 
 
-Below you can find 2 scripts. The first one is to setup the base station which is a little bit more laborious. The second one is for the rover. These scripts require certain prerequisites. For example there is a server with hostname "base" and "rover" or at least an DNS CNAME for it. SSH should be possible without password. 
+Below you can find 2 scripts: `setup_base_sh` and `setup_rover_sh`. The first one is to setup the base station which is a little bit more laborious. The second one is for the rover. These scripts require certain prerequisites. For example there are servers with hostname "base" and "rover" or at least an DNS CNAME for it. SSH should be possible without password. 
 
 functubxtool_ksh defines a function "ubxtool" like this 
 
@@ -64,7 +68,7 @@ setup_initial(){
 
   # Setup Script for u-blox (ZED-X20P) base station 
   logger -p user.debug "setup_base_sh setup_initial " 
-  # this is the initial setup to prepare the base sation for it function 
+  # this is the initial setup to prepare the base station for it's function 
   
   # make sure in advance that baudrate for uart1 is high enough 
   if test -z "`ubxtool -g  CFG-UART1-BAUDRATE | grep UART1-BAUDRATE | head -1 | grep 921600`" 
@@ -120,7 +124,7 @@ setup_initial(){
   ubxtool -z CFG-SIGNAL-QZSS_ENA,0 | grep UBX-ACK-ACK:
   ubxtool -z CFG-SIGNAL-GLO_ENA,0 | grep UBX-ACK-ACK:
   ubxtool -z CFG-SIGNAL-NAVIC_ENA,0 | grep UBX-ACK-ACK:
-  ubxtool -z CFG-SIGNAL-BDS_B2A_ENA,1 | grep UBX-ACK-ACK:
+  ubxtool -z CFG-SIGNAL-BDS_B2A_ENA,0 | grep UBX-ACK-ACK:
   
   ubxtool -z CFG-SIGNAL-GPS_L1CA_ENA,1 | grep UBX-ACK-ACK:
   ubxtool -z CFG-SIGNAL-GPS_L2C_ENA,1 | grep UBX-ACK-ACK:
@@ -170,6 +174,10 @@ case "$1" in
 esac 
 
 </pre>
+
+<br>
+
+Some hints on the base station setup. The unit for ECEF mode is in cm. Most tools, also like mine [transform ecef wgs84](https://github.com/hans-mayer/transform_ecef_wgs84){:target="_blank"}, are using meters as unit. Another important setup is to disable CFG-SIGNAL-BDS_B1C_ENA and CFG-SIGNAL-BDS_B3_ENA. As long as I had these signals enabled I couldn't see any BeiDou satellites to be used for RTCM correction.
 
 <br>
 
@@ -330,7 +338,7 @@ sat_used(){
   SYST=`echo "$NAVSAT" | grep  -B 2 svUsed | grep gnssId  | awk '{ print ( $2 ) }' | uniq -c`
   echo $SYST | awk '{ print ( "                                      GPS :  "  $1 "  Galileo: " $3  "  BeiDou: " $5 ) }' 
 
-  echo "     satellites used with rtcm coorection : " `echo "$NAVSAT" | grep -c rtcm `
+  echo "     satellites used with RTCM correction : " `echo "$NAVSAT" | grep -c rtcm `
   echo "  satellites with pseudorange corrections : " `echo "$NAVSAT" | grep -c prCorrUsed `
 
   echo "satellites with carrier range corrections : " `echo "$NAVSAT" | grep -c crCorrUsed `
@@ -375,13 +383,19 @@ esac
 
 ### setup_initial 
 
+Both scripts setup_base_sh and setup_rover_sh has to be run with this option. If this is done a communication between setup_base_sh and setup_rover_sh is established and a "Fixed" solution should be possible soon. 
+
+<br>
+
+The following options are just for the rover.
+
 ### nmea_pipe
 
-After setting up base and rover it will take some time to get a precision position with status `Fixed`. Worst case is one hour in my situation. But typically it takes 10 minutes or a little bit more. Running command `setup_rover_sh nmea_pipe` will create a gpspipe with `socat EXEC:gpspipe -r TCP-LISTEN:10001,reuseaddr,fork`. Running `rtkplot_qt &` and connecting to this port 10001 will show you the current possition at the rover. 
+After setting up base and rover it will take some time to get a precision position with status `Fixed`. Worst case is one hour in my situation. But typically it takes 10 minutes or a little bit more. Running command `setup_rover_sh nmea_pipe` will create a gpspipe with `socat EXEC:gpspipe -r TCP-LISTEN:10001,reuseaddr,fork`. Running `rtkplot_qt &` and connecting to this port 10001 will show you the current position at the rover. 
 
 ![rover for a short period](/images/rover_short_2026.png)
 
-The graph above shows the measurement for a short period of time. Each dot symbols a second. As we can see almost all dots are within a circle of 5 mm radius. If I move the rover antenna for example 3 cm away from the current possition then a new cloud of dots will be create in a distance of 3 cm from the old one. If the antenna is moved further away - for example one meter - then the status "Fixed" is lost and falls back to "Floating". 
+The graph above shows the measurement for a short period of time. Each dot symbols a second. As we can see almost all dots are within a circle of 5 mm radius. If I move the rover antenna for example 3 cm away from the current position then a new cloud of dots will be create in a distance of 3 cm from the old one. If the antenna is moved further away - for example one meter - then the status "Fixed" is lost and falls back to "Floating". 
  
 
 ![rover for a longer period](/images/rover_long_2026.png)
@@ -417,7 +431,7 @@ Status "None" is only visible short time after power on. Fixed is of course our 
 
 ### raw_pipe 
 
-Using option `raw_pipe` will create a second gpspipe. This will allow to use `str2str -in tcpcli://rover:10002 -out file://log_%Y%m%d%h%M.ubx` which logs the data to file. Than it's possible to exctract data in a future process. 
+Using option `raw_pipe` will create a second gpspipe. This will allow to use `str2str -in tcpcli://rover:10002 -out file://log_%Y%m%d%h%M.ubx` which logs the data to file. Than it's possible to extract data in a future process. 
 
 ### navpvt 
 
