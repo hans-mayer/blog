@@ -6,8 +6,9 @@ categories: GNSS
 ---
 
 
-This is now my fifth attempt and probably the last one to get an exact position (Precise Point Positioning) of my fixed mounted GNSS antenna at the roof of my house. 
+This is now my fifth attempt and probably the last one to get a high precision position (using RTK) of my stationary GNSS antenna on the roof of my house. 
 You can find the methods I used previously in my blogs here: <br> 
+
 (1) [PPP - Precise Point Positioning with averaging](/2023/06/03/PPP-Precise-Point-Positioning.html){:target="_blank"} <br>
 (2) [PPP with gpsrinex, CSRS-PPP and ECTT](/2026/01/21/PPP-with-gpsrinex.html){:target="_blank"} <br>
 (3) [PPP with RTKlib and local correction](/2026/02/21/PPP-with-RTKLIB.html){:target="_blank"} <br>
@@ -17,7 +18,7 @@ You can find the methods I used previously in my blogs here: <br>
 As GNSS receiver I used my brand new [u-blox ZED-X20P](/2026/03/09/u-blox_ZED-X20P.html){:target="_blank"} <br>
 to manage this device I use the [gpsd](https://gitlab.com/gpsd/gpsd){:target="_blank"} package. 
 
-The method is quite simple. Use `rtknavi_qt` to configure a `rover / base station` setup. Rover is the own GNSS receiver with a stationary antenna. The base station is an external RTCM stream. So feed RTCM date as a NTRIP ( Networked Transport of RTCM via Internet Protocol ) stream to rtknavi_qt. rtknavi_qt is part of the package RTKlib which can be found here [github.com/rtklibexplorer/RTKLIB](https://github.com/rtklibexplorer/RTKLIB){:target="_blank"}. I run it on Debian Linux. 
+The method is quite simple. Use `rtknavi_qt` to configure a `rover / base station` setup. Rover is the own GNSS receiver with a stationary antenna. The base station is an external RTCM stream. So feed RTCM data as a NTRIP ( Networked Transport of RTCM via Internet Protocol ) stream to rtknavi_qt. rtknavi_qt is part of the package RTKlib which can be found here [github.com/rtklibexplorer/RTKLIB](https://github.com/rtklibexplorer/RTKLIB){:target="_blank"}. I run it on Debian Linux. 
 
 To do so, one must use any NTRIP caster. There are several available for free and of course also some commercial. In any case you have to register as you need username and password. 
 
@@ -85,7 +86,7 @@ I have done this several times and this is the result
 | &nbsp;&nbsp;average&nbsp;&nbsp;               | &nbsp;&nbsp;48.14928593121&nbsp;&nbsp; | &nbsp;&nbsp;16.28383425542&nbsp;&nbsp; | &nbsp;&nbsp;286.47178310113&nbsp;&nbsp; |
 {: .tablelines}
 
-The points are all within of 23 mm away from the average value. 
+The points are all within 23 mm of the average value. 
 
 <pre>
 4092523.7097    1195484.3619    4728180.7806
@@ -101,6 +102,8 @@ Below the is a plot of one of these traces done with rtkplot_qt
 
 As we can see there are 71.4% of all points with Q = 1 that is status "FIX". I took only those point for the calculation of the average value. The area is about 
 5 times 6 cm. 
+
+Note: The quality of your RTK fix depends heavily on the quality and proximity of the NTRIP caster. If you experience inconsistent results, double-check the coordinates provided by the caster's mountpoint.
 
 Tools at github: <br>
 A commandline tool to [transform ecef wgs84](https://github.com/hans-mayer/transform_ecef_wgs84){:target="_blank"} data. <br>
