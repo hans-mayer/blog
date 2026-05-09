@@ -14,11 +14,14 @@ OS is in both cases Debian 13 (trixie)
 
 Antennas <br>
 For X20P I use the antenna HAB-ANN-MB2 permanently roof-mounted with a clear sky view. <br>
-F9P is using the HAB-ANN-MB-00-00 antenna of course mobile in the garden. To place it on a metal plate is an advantage.
+F9P uses the HAB-ANN-MB-00-00 antenna, which is moved mobile in the garden. To place it on a metal plate is an advantage.
  
-In both cases I use the second interface UART2 to communicate between base and rover for the RTCM traffic. How to setup I described in [second interface for u-blox receiver](/2026/03/09/second-interface-for-u-blox-receiver-on-pi4-and-pi5.html){:target="_blank"}
+In both cases I use the second interface UART2 to communicate between base and rover for the RTCM traffic. How to setup I described in [second interface for u-blox receiver](/2026/03/09/second-interface-for-u-blox-receiver-on-pi4-and-pi5.html){:target="_blank"} <br>
+I use str2str for communication between both systems. It is started in background with option "--deamon", see below. <br>
+Note: In RTKLIB's str2str, the parameter is literally spelled --deamon instead of --daemon. <br> The data path for RTCM traffic looks like this: <br>
+`X20P/UART2 --- str2str --- TCP/IP --- str2str --- UART2/F9P`
 
-In advance I want to say that this combination with ZED-X20P and ZED-F9P is not perfect but possible. The reasons are multiple: ZED-F9P can handle only the L1 and L2 band. ZED-X20P is designed for L1/L2/L5/E6/B3/L. Another reason is that ZED-X20P cannot handle GLONASS (Globalnaja nawigazionnaja sputnikowaja sistema) at the moment (and potentially never due to hardware/firmware focus or political situations). And the Navigation Indian Constellation (NavIC) can only be used by ZED-X20P. Independent of that I don't see any Indian satellite here in Vienna ( 48N 16E ). Therefore there are left 3 GNSS: GPS, Galileo and BeiDou as lowest common denominator and common source. 
+In advance I want to say that this combination with ZED-X20P and ZED-F9P is not perfect but possible. The reasons are multiple: ZED-F9P can handle only the L1 and L2 band. ZED-X20P is designed for L1/L2/L5/E6/B3/L. Another reason is that ZED-X20P cannot handle GLONASS (Globalnaja nawigazionnaja sputnikowaja sistema) at the moment (and potentially never due to hardware/firmware focus or political situations). And the Navigation Indian Constellation (NavIC) can only be used by ZED-X20P. Independent of that I don't see any Indian satellite here in Vienna ( 48N 16E ). Therefore, only 3 GNSS constellations remain:: GPS, Galileo and BeiDou as lowest common denominator and common source. 
 
 Below you can find 2 scripts: `setup_base_sh` and `setup_rover_sh`. The first one is to setup the base station which is a little bit more complex. The second one is for the rover. These scripts require certain prerequisites. For example there are servers with hostname "base" and "rover" or at least an DNS CNAME for it. SSH should be possible without password. 
 
@@ -81,7 +84,7 @@ setup_initial(){
   
   if test $? -ne 0 
     then 
-      echo $0: UART1-BAUDRATE,921600 failed 
+      echo $0: UART2-BAUDRATE,921600 failed 
       exit 1 
   fi 
 
@@ -230,7 +233,7 @@ setup_initial(){
   
   if test $? -ne 0 
     then 
-      echo $0: UART1-BAUDRATE,921600 failed 
+      echo $0: UART2-BAUDRATE,921600 failed 
       exit 1 
   fi 
   
@@ -330,19 +333,19 @@ sat_used(){
 
   echo "                    satellites total seen : " `echo "$NAVSAT" | grep -c gnssId `
 
-  SYST=`echo "$NAVSAT" | grep gnssId  | awk '{ print ( $2 ) }' | uniq -c`
+  SYST=`echo "$NAVSAT" | grep gnssId  | awk '{ print ( $2 ) }' | sort | uniq -c`
   echo $SYST | awk '{ print ( "                                      GPS :  "  $1 "  Galileo: " $3  "  BeiDou: " $5 ) }' 
 
   echo "                          satellites used : " `echo "$NAVSAT" | grep 'flags(' | grep -c svUsed `
 
-  SYST=`echo "$NAVSAT" | grep  -B 2 svUsed | grep gnssId  | awk '{ print ( $2 ) }' | uniq -c`
+  SYST=`echo "$NAVSAT" | grep  -B 2 svUsed | grep gnssId  | awk '{ print ( $2 ) }' | sort | uniq -c`
   echo $SYST | awk '{ print ( "                                      GPS :  "  $1 "  Galileo: " $3  "  BeiDou: " $5 ) }' 
 
   echo "     satellites used with RTCM correction : " `echo "$NAVSAT" | grep -c rtcm `
   echo "  satellites with pseudorange corrections : " `echo "$NAVSAT" | grep -c prCorrUsed `
 
   echo "satellites with carrier range corrections : " `echo "$NAVSAT" | grep -c crCorrUsed `
-  SYST=`echo "$NAVSAT" | grep  -B 2 crCorrUsed | grep gnssId  | awk '{ print ( $2 ) }' | uniq -c`
+  SYST=`echo "$NAVSAT" | grep  -B 2 crCorrUsed | grep gnssId  | awk '{ print ( $2 ) }' | sort | uniq -c`
   echo $SYST | awk '{ print ( "                                      GPS :  "  $1 "  Galileo: " $3  "  BeiDou: " $5 ) }' 
 }
 
@@ -431,7 +434,8 @@ Status "None" is only visible short time after power on. Fixed is of course our 
 
 ### raw_pipe 
 
-Using option `raw_pipe` will create a second gpspipe. This will allow to use `str2str -in tcpcli://rover:10002 -out file://log_%Y%m%d%h%M.ubx` which logs the data to file. Than it's possible to extract data in a future process. 
+Using option `raw_pipe` will create a second gpspipe. This will allow to use <br>
+`str2str -in tcpcli://rover:10002 -out file://log_%Y%m%d%h%M.ubx` which logs the data to file. Then it's possible to extract data in a future process. 
 
 ### navpvt 
 
