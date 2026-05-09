@@ -13,11 +13,11 @@ A detailed description how to prepare a Raspberry Pi4 and Pi5 for `gpsd` and `nt
 I own a pHAT from uputronics with a ZED-F9P on Pi4 and a pHAT from sparkfun with a ZED-X20P on Pi5. <br>
 Both GNSS receivers have a second interface called UART2 and both systems are wired to GPIO pins of the Raspberry Pi.
 
-And sometimes it's useful to have a second connection to the receiver. For example than if the interface speed of the primary interface is intended changed. But there are also other usecases where it's useful to have access over a second way. 
+And sometimes it's useful to have a second connection to the receiver. For example, if the interface speed of the primary interface is accidentally changed or misconfigured. Or if one wants to feed RTCM3 data over a different path. But there are also other use cases where it's useful to have access over a second way. 
 
 ## Pi 4 ##
 
-In my case the uputronics board UART2 is connected to GPIO12 for TXD5 and GPIO13 for RXD5. Don't mixup the GPIO name with the pin number. For example GPIO12 is pin 32 and GPIO13 is pin 33 on the 40 pin connector. 
+In my case the uputronics board UART2 is connected to GPIO12 for TXD5 and GPIO13 for RXD5. Don't mix up the GPIO name with the pin number. For example GPIO12 is pin 32 and GPIO13 is pin 33 on the 40 pin connector. 
 
 For the Pi 4 the modification is easy. Add a line in `/boot/firmware/config.txt` in the global section
 
@@ -28,7 +28,7 @@ and reboot. That's it. Now you will find a new device `/dev/ttyAMA5`. One can ac
 ## Pi 5 ## 
 
 On the Raspberry Pi5 it was a little bit more tricky as there is a complete redesign. The pin usage was unchanged but the hardware below changed. <br>
-sparkfun did connect UART2 of ZED-X20P to GPIO8 and GPIO9 which is UART3. I created a section `[all]` already for the first interface at the end of the file `/boot/firmware/config.txt` and did add a new line with `dtoverlay=uart3-pi5`. The complete change looks like this 
+sparkfun connected UART2 of ZED-X20P to GPIO8 and GPIO9 which is UART3. I created a section `[all]` already for the first interface at the end of the file `/boot/firmware/config.txt` and did add a new line with `dtoverlay=uart3-pi5`. The complete change looks like this 
 
 <pre>
 [all]
@@ -56,4 +56,8 @@ ubxtool(){
   /usr/local/bin/ubxtool $@ localhost:gpsd:/dev/serial0 
 }
 </pre>
+
+I compiled the gpsd source tree by myself. Therefore "ubxtool" and others are found in /usr/local/bin <br>
+If you install the delivered package you will find /usr/bin/ubxtool
+
 
