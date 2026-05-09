@@ -79,6 +79,6 @@ Utilizes the RTKlib software suite to perform the heavy lifting of RTK calculati
 (2) [PPP with gpsrinex, CSRS-PPP and ECTT](/2026/01/21/PPP-with-gpsrinex.html){:target="_blank"} <br>
 (3) [PPP with RTKlib and local correction](/2026/02/21/PPP-with-RTKLIB.html){:target="_blank"} <br>
 (4) [PPP with NTRIP source for u-blox GNSS receiver over gpsd](/2026/02/28/PPP-with-NTRIP-source.html){:target="_blank"} <br>
-(5) [PPP with NTRIP source and rtknavi_qt](/2026/03/15/PPP-with-NTRIP-source-and-rtknavi_qt.html){:target="_blank"} <br>
+(5) [High Precision Positioning with RTK and rtknavi_qt](/2026/03/15/PPP-with-NTRIP-source-and-rtknavi_qt.html){:target="_blank"} <br>
 
 

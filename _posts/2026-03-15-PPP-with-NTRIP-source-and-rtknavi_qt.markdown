@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  PPP with NTRIP source and rtknavi_qt to compute
+title:  High Precision Positioning with RTK and rtknavi_qt 
 date:   2026-03-15 11:13:00 CET
 categories: GNSS
 ---
@@ -17,13 +17,13 @@ You can find the methods I used previously in my blogs here: <br>
 As GNSS receiver I used my brand new [u-blox ZED-X20P](/2026/03/09/u-blox_ZED-X20P.html){:target="_blank"} <br>
 to manage this device I use the [gpsd](https://gitlab.com/gpsd/gpsd){:target="_blank"} package. 
 
-The method is quite simple. Use `rtknavi_qt` to configure a `rover / base station` setup. Rover is the own GNSS receiver with a fix mounted antenna. The base station is an external RTCM stream. So feed RTCM date as a NTRIP ( Networked Transport of RTCM via Internet Protocol ) stream to rtknavi_qt. rtknavi_qt is part of the package RTKlib which can be found here [github.com/rtklibexplorer/RTKLIB](https://github.com/rtklibexplorer/RTKLIB){:target="_blank"}. I run it on Debian Linux. 
+The method is quite simple. Use `rtknavi_qt` to configure a `rover / base station` setup. Rover is the own GNSS receiver with a stationary antenna. The base station is an external RTCM stream. So feed RTCM date as a NTRIP ( Networked Transport of RTCM via Internet Protocol ) stream to rtknavi_qt. rtknavi_qt is part of the package RTKlib which can be found here [github.com/rtklibexplorer/RTKLIB](https://github.com/rtklibexplorer/RTKLIB){:target="_blank"}. I run it on Debian Linux. 
 
 To do so, one must use any NTRIP caster. There are several available for free and of course also some commercial. In any case you have to register as you need username and password. 
 
-This methode doesn't differ very much to method (4). The only difference: now the processing is done by rtknavi_qt, in (4) it was done by the u-blox receiver itself. 
+This method doesn't differ much from method (4). The main difference: processing is now handled by `rtknavi_qt`, whereas in (4) it was calculated on-board by the u-blox receiver itself.
 
-To prepare my u-blox for this job I run the following commands: 
+To prepare my u-blox for this task, I run the following commands to enable RAWX and SFRBX messages:
 
 <pre>
 ubxtool -z CFG-MSGOUT-UBX_RXM_SFRBX_UART1,1 | grep ACK-ACK
@@ -42,16 +42,17 @@ ubxtool -g CFG-NAVSPG-DYNMODEL | grep CFG-NAVSPG-DYNMODEL
 Now configure rtknavi_qt 
 
 Open `rtknavi_qt &` and new window will appear. <br>
-Click on `Options...` on the bottom left site there is a `Load...` button. Load the file `f9p_ppk.conf` which comes with the source tree. Some of the settings I changed. `Positioning Mode` I set to `Static` as my antenna is fix mounted. As `Navigation Systems` I selected GPS, Galileo and BDS. This should fit what the base station is delivering. In the `Positions` tab for `Base Station` I selected `RTCM/Raw Antenna Position`. It is also possible to set Lat/Lon/height or X/Y/Z but as long as the base station is propagating its own position "RTCM/Raw Antenna Position" is the easy way. <br>
-Back in the main menu press `I` for input streams. Select `Rover` with `TCP Client` as Stream Type. As Stream Options enter IP address and port number where you start <br>
+Click on `Options...` on the bottom left side there is a `Load...` button. Load the file `f9p_ppk.conf` which comes with the source tree. Some of the settings I changed. `Positioning Mode` I set to `Static` as my antenna is fix mounted. As `Navigation Systems` I selected GPS, Galileo and BDS. This should fit what the base station is delivering. In the `Positions` tab for `Base Station` I selected `RTCM/Raw Antenna Position`. It is also possible to set Lat/Lon/height or X/Y/Z but as long as the base station is propagating its own position "RTCM/Raw Antenna Position" is the easy way. <br>
+Back in the main menu press `I` for input streams. Select `Rover` with `TCP Client` as Stream Type. As Stream Options enter IP address and port number where you start the following process <br>
 
 `socat EXEC:'gpspipe -RB' TCP-LISTEN:10001,reuseaddr,fork  &` 
 
 and Format `u-blox UBX` 
 
 `gpspipe` must be able to connect to the own `gpsd` process and `socat` offers this data on port 10001 <br>
+It would be possible too to connect rtknavi_qt via the serial port to the X20P directly. But then the gpsd process has to be stoppped. I like to have still the possibility to communicate via ubxtool to the GNSS receiver even if another task is running. 
 
-The base station is `NTRIP Client`, in Stream Options enter Caster Address, port, mountpoint, user name and password what you want to use. Format is `RtCM 3`. 
+The base station is `NTRIP Client`, in Stream Options enter Caster Address, port, mountpoint, user name and password what you want to use. Format is `RTCM 3`. 
 
 ![rtknavi input streams](/images/rtknavi_input.png)
 
@@ -92,7 +93,7 @@ The points are all within of 23 mm away from the average value.
 48 8 57.42935   16 17 1.80331
 </pre>
 
-Takeing the average value and calculating the distance to method (2) we get an offset of 4.5 cm. Distance to method (3) is 12.4 cm. Distance to method (4) is 8.8 cm.
+Taking the average value and calculating the distance to method (2) we get an offset of 4.5 cm. Distance to method (3) is 12.4 cm. Distance to method (4) is 8.8 cm.
 
 Below the is a plot of one of these traces done with rtkplot_qt 
 
