@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Comparison Precise Point Positioning (PPP) Methods
+title:  Comparison Precise Point Positioning (PPP) and RTK Methods
 date:   2026-03-16 14:02:00 CET
 categories: GNSS
 ---
