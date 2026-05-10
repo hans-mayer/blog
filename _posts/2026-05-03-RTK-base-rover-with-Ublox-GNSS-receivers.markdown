@@ -19,9 +19,10 @@ F9P uses the HAB-ANN-MB-00-00 antenna, which is moved mobile in the garden. To p
 In both cases I use the second interface UART2 to communicate between base and rover for the RTCM traffic. How to setup I described in [second interface for u-blox receiver](/2026/03/09/second-interface-for-u-blox-receiver-on-pi4-and-pi5.html){:target="_blank"} <br>
 I use str2str for communication between both systems. It is started in background with option "--deamon", see below. <br>
 Note: In RTKLIB's str2str, the parameter is literally spelled --deamon instead of --daemon. <br> The data path for RTCM traffic looks like this: <br>
-`X20P/UART2 --- str2str --- TCP/IP --- str2str --- UART2/F9P`
+`X20P/UART2 --- str2str --- TCP/IP --- str2str --- UART2/F9P` <br>
+Bandwidth is about 12 Kb from base to rover and 1.5 Kb from rover to base 
 
-In advance I want to say that this combination with ZED-X20P and ZED-F9P is not perfect but possible. The reasons are multiple: ZED-F9P can handle only the L1 and L2 band. ZED-X20P is designed for L1/L2/L5/E6/B3/L. Another reason is that ZED-X20P cannot handle GLONASS (Globalnaja nawigazionnaja sputnikowaja sistema) at the moment (and potentially never due to hardware/firmware focus or political situations). And the Navigation Indian Constellation (NavIC) can only be used by ZED-X20P. Independent of that I don't see any Indian satellite here in Vienna ( 48N 16E ). Therefore, only 3 GNSS constellations remain:: GPS, Galileo and BeiDou as lowest common denominator and common source. 
+In advance I want to say that this combination with ZED-X20P and ZED-F9P is not perfect but possible. The reasons are multiple: ZED-F9P can handle only the L1 and L2 band. ZED-X20P is designed for L1/L2/L5/E6/B3/L. Another reason is that ZED-X20P cannot handle GLONASS (Globalnaja nawigazionnaja sputnikowaja sistema) at the moment (and potentially never due to hardware/firmware focus or political situations). And the Navigation Indian Constellation (NavIC) can only be used by ZED-X20P. Independent of that I don't see any Indian satellite here in Vienna ( 48N 16E ). Therefore, only 3 GNSS constellations remain: GPS, Galileo and BeiDou as lowest common denominator and common source. 
 
 Below you can find 2 scripts: `setup_base_sh` and `setup_rover_sh`. The first one is to setup the base station which is a little bit more complex. The second one is for the rover. These scripts require certain prerequisites. For example there are servers with hostname "base" and "rover" or at least an DNS CNAME for it. SSH should be possible without password. 
 
@@ -106,13 +107,20 @@ setup_initial(){
   ubxtool -z CFG-TMODE-ECEF_Y_HP,0 | grep UBX-ACK-ACK:
   ubxtool -z CFG-TMODE-ECEF_Z_HP,0 | grep UBX-ACK-ACK:
   
-  # RTCM data (1 Hz Intervall, 1230 each 5 Sek)
-  # activate RTCM3 output on UART2 (Port 2)
-  # 1005: Station ID & Position, 1077-1207: MSM7 Nachrichten for GPS, GLO, GAL, BDS
-  for msg in 1005 1077 1087 1097 1124 1127 ; do
-    ubxtool -z CFG-MSGOUT-RTCM_3X_TYPE${msg}_UART2,1  | grep UBX-ACK-ACK:
-  done
-  ubxtool -z CFG-MSGOUT-RTCM_3X_TYPE1230_UART2,5 | grep UBX-ACK-ACK:
+  # RTCM data (1 Hz Intervall )
+  # activate RTCM3 output on UART2 (Port 2) , communication with str2str 
+  # 1005: Station ID & Position, 
+  # 1077: GPS MSM7 
+  # 1097: Galileo GAL MSM7 
+  # 1124: BeiDou BDS MSM4 included in 1127 
+  # 1127: BeiDou BDS MSM7 
+  for MSG in 1005 1077 1097 1127 # 1124 
+    do
+      ubxtool -z CFG-MSGOUT-RTCM_3X_TYPE${MSG}_UART2,1  | grep UBX-ACK-ACK:
+    done
+
+  # to check what the rover sees
+  # rover# ubxtool -w 30 | grep -A 1 "UBX-RXM-RTCM" | sort -u 
   
   # FIXED MODE schalten
   ubxtool -z CFG-TMODE-MODE,2 | grep UBX-ACK-ACK:
@@ -358,7 +366,7 @@ help(){
   echo "          sat_used ... will show the used satellites based on ubxtool -p NAV-SAT command "
   echo "          navpvt ... will show the status based on ubxtool -p NAV-PVT command "
   echo '          ntrip start | stop | status | "" '
-  echo "                to manage the communication with the base station with a str2str process "
+  echo "                to manage communication between base station and rover with a str2str process "
   echo "                without argument it will restart the str2str process " 
   exit 1 
 } 
@@ -394,7 +402,7 @@ The following options are just for the rover.
 
 ### nmea_pipe
 
-After setting up base and rover it will take some time to get a precision position with status `Fixed`. Worst case is one hour in my situation. But typically it takes 10 minutes or a little bit more. Running command `setup_rover_sh nmea_pipe` will create a gpspipe with `socat EXEC:gpspipe -r TCP-LISTEN:10001,reuseaddr,fork`. Running `rtkplot_qt &` and connecting to this port 10001 will show you the current position at the rover. 
+After setting up base and rover it will take some time to get a precision position with status `Fixed`. Worst case is one hour in my situation. But typically it takes 10 minutes or a little bit more. Running command `setup_rover_sh nmea_pipe` will create a gpspipe with <br>`socat EXEC:gpspipe -r TCP-LISTEN:10001,reuseaddr,fork`. Running `rtkplot_qt &` and connecting to this port 10001 at server rover will show you the current position at the rover. 
 
 ![rover for a short period](/images/rover_short_2026.png)
 
@@ -459,6 +467,22 @@ UBX-NAV-PVT:
     flags3 () lastCorrectionAge 2
 ```
 
+### help 
+
+```
+usage: ./setup_rover_sh help | setup_initial | nmea_pipe | raw_pipe | sat_used | navpvt | ntrip 
+          help  ... this help 
+          setup_initial ... this will initialise the base station 
+          nmea_pipe ... this will create a gpspipe with NMEA protocol listen on port 10001 
+          raw_pipe ... this will create a gpspipe with raw data listen on port 10002 
+          sat_used ... will show the used satellites based on ubxtool -p NAV-SAT command 
+          navpvt ... will show the status based on ubxtool -p NAV-PVT command 
+          ntrip start | stop | status | "" 
+                to manage communication between base station and rover with a str2str process 
+                without argument it will restart the str2str process 
+```
+
+
 ## some internal links 
 
 These are some possibilities to look for a precise point position. Definitelly one needs to have one exact position for the base station in a rover/base setup. 
@@ -467,7 +491,7 @@ These are some possibilities to look for a precise point position. Definitelly o
 (2) [PPP with gpsrinex, CSRS-PPP and ECTT](/2026/01/21/PPP-with-gpsrinex.html){:target="_blank"} <br>
 (3) [PPP with RTKlib and local correction](/2026/02/21/PPP-with-RTKLIB.html){:target="_blank"} <br>
 (4) [PPP with NTRIP source for u-blox GNSS receiver over gpsd](/2026/02/28/PPP-with-NTRIP-source.html){:target="_blank"} <br>
-(5) [PPP with NTRIP source and rtknavi_qt](/2026/03/15/PPP-with-NTRIP-source-and-rtknavi_qt.html){:target="_blank"} <br>
+(5) [High Precision Positioning with RTK and rtknavi_qt](/2026/03/15/PPP-with-NTRIP-source-and-rtknavi_qt.html){:target="_blank"} <br>
 
 Tools at github: <br>
 A commandline tool to [transform ecef wgs84](https://github.com/hans-mayer/transform_ecef_wgs84){:target="_blank"} data. <br>
