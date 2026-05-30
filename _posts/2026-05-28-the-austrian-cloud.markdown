@@ -61,5 +61,15 @@ Tap on the image to see details.
 }
 </style>
 
+Aufgenommen in der Friedensstraße,  Wien Mauer <br>
+Im Zentrum unten die Sternbauten von Atzgersdorf, rechts die Tilgnergasse
+<br> 
+<br> 
+
+![kreuz und quer](/images/kreuzundquer2026.jpg)
+
+"Kreuz und Quer" Nicht alle Bilder sind mit KI manipuliert. <br>
+Aufgenommen in der Taglieberstraße 
+
 
 
