@@ -2,7 +2,7 @@
 layout: post
 title:  second interface for u-blox GNSS receiver on Pi4 and Pi5
 date:   2026-03-09 18:35:00 CET
-categories: 
+categories: u-blox GNSS
 ---
 
 This post will just describe how to setup a second interface on a Raspberry Pi4 and Pi5 with Debian 13 (trixie) for the second interface on the GNSS receiver called UART2. <br>

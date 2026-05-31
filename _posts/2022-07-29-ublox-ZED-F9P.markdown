@@ -2,7 +2,7 @@
 layout: post
 title:  u-blox ZED-F9P
 date:   2022-07-29 18:21:00 CET
-categories:
+categories: u-blox GNSS
 ---
 
 
