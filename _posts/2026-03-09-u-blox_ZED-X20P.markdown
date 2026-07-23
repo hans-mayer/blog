@@ -9,19 +9,18 @@ categories: u-blox GNSS
 Some days ago I got the new ZED-X20P from manufacturer u-blox. <br>
 I bought this device from DigiKey as redistributor for sparkfun. 
 
-MON-VER gives the following information
+In July I updated to the latest version. MON-VER gives now the following information
 
-<pre># ubxtool  -p MON-VER 
-UBX-MON-VER:
-  swVersion EXT HPG 2.02 (43e74c)
+<pre># ubxtool  -p MON-VER
+  swVersion EXT HPG 2.10 (b0eda3)
   hwVersion 000B0000
   extension ROM BASE 0x00A9D329
-  extension FWVER=HPG 2.02
-  extension PROTVER=50.10
+  extension FWVER=HPG 2.10
+  extension PROTVER=50.11
   extension MOD=ZED-X20P
-  extension GPS;GAL;BDS
+  extension GPS;GLO;GAL;BDS
   extension SBAS;QZSS
-  extension NAVIC
+  extension NAVIC;LBAND
 </pre>
 
 As you can see this pHAT from sparkfun has a submodul with the ZED-X20P
@@ -34,6 +33,6 @@ The submodule is connect with a very short antenna cable to the pHAT. Below ther
 ![zed-x20p_1.png](/images/zed-x20p_1.png)
 
 Since some years I own a [u-blox ZED-F9P](/2022/07/29/ublox-ZED-F9P.html){:target="_blank"} too. But now I am happy that I can do some experiments with the latest family of GNSS receivers from u-blox. 
-
+If you are missing GLONASS in version 2.02 the version 2.10 is the solution. 
 
 
