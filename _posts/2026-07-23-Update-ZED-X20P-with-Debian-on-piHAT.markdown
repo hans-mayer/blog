@@ -7,20 +7,20 @@ categories: u-blox GNSS
 
 Here I want to show you how to update a ZED-X20P without u-center2. This scenario is typically used if the X20P is mounted on a piHAT sitting on a Raspberry Pi running Linux like Debian. <BR>
 
-In my case I use the pHAT from sparkfun. It is mounted on a Raspberry Pi5 with Debian 13 trixie. And of course there is no easy way to run u-center2 directly. I found information to connect the Linux box and the Windows box with "ser2net" on Debian and HW VSP (Virtual Serial Port) on Windows part. But this didn"t work for me. 
+In my case, I'm use the pHAT from sparkfun. It is mounted on a Raspberry Pi5 with Debian 13 trixie. And of course there is no easy way to run u-center2 directly. I found information to connect the Linux box and the Windows box with "ser2net" on Debian and HW VSP (Virtual Serial Port) on Windows part. But this didn't work for me. 
 
-Lucy I found a thread at https://portal.u-blox.com/ where someone posted a binary file "ubxfwupdate" which runs perfect on 64-bit ARM platform. 
+Luckily, I found a thread at https://portal.u-blox.com/ where someone posted a binary file "ubxfwupdate" which runs perfect on 64-bit ARM platform. 
 
-So I had to download the latest image which is available at the official home page from U-blox: UBX_20_HPG_210_ZED_X20P-01B.512369040097ce18fd3475e71e7c627f.bin
+So I had to download the latest image which is available from the official U-blox website: UBX_20_HPG_210_ZED_X20P-01B.512369040097ce18fd3475e71e7c627f.bin
 
-Normally I run "gpsd" from the gpsd package. Its important to stop this as we need the serial interface for the update. 
+Normally I run "gpsd" from the gpsd package. It's important to stop this as we need the serial interface for the update. 
 
 <pre>
 systemctl stop gpsd.service 
 systemctl stop gpsd.socket 
 </pre>
 
-The next step is also important. Set the baudrate for UART1 to the same value as you give as first value for the "-b" option. In my case it is 460800 bd. As I have also the [second interface](/2026/03/09/second-interface-for-u-blox-receiver-on-pi4-and-pi5.html){:target="_blank"} available I could do this easily over the second interface for UART1. 
+The next step is also important. Set the baud rate for UART1 to the same value as the first parameter of the "-b" option. In my case it is 460800 bd. Since I also have the [second interface](/2026/03/09/second-interface-for-u-blox-receiver-on-pi4-and-pi5.html){:target="_blank"} available I could do this easily over the second interface for UART1. 
 
 ```ubxtool3 -z CFG-UART1-BAUDRATE,460800``` 
 
