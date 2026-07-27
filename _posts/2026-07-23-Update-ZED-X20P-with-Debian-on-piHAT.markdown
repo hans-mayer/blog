@@ -114,3 +114,7 @@ UBX-MON-VER:
   extension NAVIC;LBAND
 </pre>
 
+And what you can see here GLONASS is also available, at least in my geographic region. 
+
+My [ZED-X20P](/2026/03/09/u-blox_ZED-X20P.html){:target="_blank"} from sparkfun in action. 
+

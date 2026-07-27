@@ -34,5 +34,5 @@ The submodule is connect with a very short antenna cable to the pHAT. Below ther
 
 Since some years I own a [u-blox ZED-F9P](/2022/07/29/ublox-ZED-F9P.html){:target="_blank"} too. But now I am happy that I can do some experiments with the latest family of GNSS receivers from u-blox. 
 If you are missing GLONASS in version 2.02 the version 2.10 is the solution. 
-
+Read here how to [update](/2026/07/23/Update-ZED-X20P-with-Debian-on-piHAT.html){:target="_blank"} without u-center 2
 
