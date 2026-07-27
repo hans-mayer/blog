@@ -9,7 +9,7 @@ Here I want to show you how to update a ZED-X20P without u-center2. This scenari
 
 In my case, I'm use the pHAT from sparkfun. It is mounted on a Raspberry Pi5 with Debian 13 trixie. And of course there is no easy way to run u-center2 directly. I found information to connect the Linux box and the Windows box with "ser2net" on Debian and HW VSP (Virtual Serial Port) on Windows part. But this didn't work for me. 
 
-Luckily, I found a thread at https://portal.u-blox.com/ where someone posted a binary file "ubxfwupdate" which runs perfect on 64-bit ARM platform. 
+Luckily, I found a thread at [https://portal.u-blox.com/](https://portal.u-blox.com/){:target="_blank"} where someone posted a binary file "ubxfwupdate" which runs perfect on 64-bit ARM platform. 
 
 So I had to download the latest image which is available from the official U-blox website: UBX_20_HPG_210_ZED_X20P-01B.512369040097ce18fd3475e71e7c627f.bin
 
