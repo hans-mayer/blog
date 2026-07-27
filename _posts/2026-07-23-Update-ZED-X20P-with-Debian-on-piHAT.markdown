@@ -2,6 +2,7 @@
 layout: post
 title:  Update ZED-X20P with Debian on piHAT
 date:   2026-07-23 12:32:00 CET
+last_modified_at: 2026-07-27 21:20:00 CET
 categories: u-blox GNSS
 ---
 
