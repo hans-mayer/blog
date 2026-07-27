@@ -34,7 +34,7 @@ Now comes the magic moment. Run the update:
 
 <pre>ubxfwupdate -p /dev/ttyAMA0  -v 1 --no-fis 1 -C 1 -s 1 -b 460800:9600:460800 UBX_20_HPG_210_ZED_X20P-01B.512369040097ce18fd3475e71e7c627f.bin</pre>
 
-<pre>
+```
 ----------CMD line arguments-----------
 Image file:        UBX_20_HPG_210_ZED_X20P-01B.512369040097ce18fd3475e71e7c627f.bin
 Flash:             <compiled-in>
@@ -97,7 +97,7 @@ Use USB alt:       0
  39.4  flash retention success
  39.4  Rebooting receiver
  39.4 Firmware Update SUCCESS
-</pre>
+```
 
 If you check the MON_VER again, you should see:
 
