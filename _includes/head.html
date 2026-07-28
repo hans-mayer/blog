@@ -12,27 +12,45 @@
 
 
 <style>
+
+/* Grundlegende Lesbarkeit für den Fließtext */
+  body {
+      font-size: 18px;         /* Standard ist oft 16px - 18px erhöht die Lesbarkeit deutlich */
+      line-height: 1.6;        /* Ausreichender Zeilenabstand für bessere Orientierung */
+      color: #111111;          /* Sehr dunkles Grau auf weißem Grund ergibt ein Kontrastverhältnis von ~18:1 (weit über 4,5:1) */
+      background-color: #ffffff;
+  }
+
   /* Der pre-Container muss relativ sein */
-  pre {
+  pre, code {
       position: relative;
       padding-top: 30px; 
+      font-size: 15px;         /* Monospace-Schriften wirken oft etwas größer, daher 15-16px */
+      background-color: #f4f4f4; /* Hellgrauer Hintergrund */
+      color: #1a1a1a;          /* Dunkler Text für maximalen Kontrast */
   }
 
   .copy-code-button {
       position: absolute;
       top: 5px;
       right: 5px;
-      background: #eeeeee;
+      background: #222222;
+      color: #ffffff;            /* Weißer Text = Kontrast 15.3:1 (AA & AAA konform) */
       border: 1px solid #ddd;
       border-radius: 5px;
-      padding: 3px 8px;
+      padding: 4px 10px;
       cursor: pointer;
-      font-size: 12px;
+      font-size: 13px;
       z-index: 10; /* Damit der Button über dem Code liegt */
   }
 
   .copy-code-button:hover {
-      background: #dddddd;
+      background: #000000;
+  }
+
+  a {
+      color: #0056b3; /* Kontrast ca. 7:1 auf weiß */
+      text-decoration: underline; /* Unterstreichung hilft zusätzlich bei Barrierefreiheit */
   }
 </style>
 

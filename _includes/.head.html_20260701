@@ -1,0 +1,39 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="icon" href="/images/m16.png" type="image/png">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+
+
+<style>
+  /* Der pre-Container muss relativ sein */
+  pre {
+      position: relative;
+      padding-top: 30px; 
+  }
+
+  .copy-code-button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #eeeeee;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 3px 8px;
+      cursor: pointer;
+      font-size: 12px;
+      z-index: 10; /* Damit der Button über dem Code liegt */
+  }
+
+  .copy-code-button:hover {
+      background: #dddddd;
+  }
+</style>
+
+</head>
