@@ -52,30 +52,6 @@
       color: #0056b3; /* Kontrast ca. 7:1 auf weiß */
       text-decoration: underline; /* Unterstreichung hilft zusätzlich bei Barrierefreiheit */
   }
-
-  /* 1. Beitrags-Metadaten (Datum, Autor etc.) */
-  .meta,
-  .post-meta {
-      color: #555555 !important; /* Kontrast 7.4:1 auf Weiß (erfüllt AA und AAA) */
-  }
-  
-  /* 2. Erster Punkt im Footer (Linke Spalte) */
-  .footer-col-1 > ul > li:nth-child(1),
-  .site-footer {
-      color: #444444 !important; /* Kontrast 9.8:1 auf Weiß */
-  }
-  
-  /* Links im Footer ebenfalls abdunkeln, falls vorhanden */
-  .site-footer a,
-  .footer-col-1 a {
-      color: #0056b3 !important; /* Kontrast 7:1 auf Weiß */
-  }
-  
-  /* 3. Alle Elemente mit der Klasse .text */
-  .text {
-      color: #222222 !important; /* Kontrast 15.3:1 auf Weiß */
-  }
-
 </style>
 
 </head>

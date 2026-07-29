@@ -7,17 +7,9 @@ url: "https://blog.mayer.tv"
 github_username:  hans-mayer
 lang: en
 
-# Barrierefreiheit & Metadaten
-author: "Hans Mayer"
-timezone: Europe/Vienna
-
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title.html
 gems:
   - jekyll-sitemap
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
 
