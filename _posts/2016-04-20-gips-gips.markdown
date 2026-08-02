@@ -2,6 +2,8 @@
 layout: post
 title:  Gips ist nicht gleich Gips 
 date:   2016-04-20 21:52:00 CET
+last_modified_at: 2026-08-02 12:00:00 CET
+lang: de
 categories: heimwerker
 ---
 
