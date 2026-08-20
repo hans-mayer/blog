@@ -2,6 +2,8 @@
 layout: post
 title:  Wetter 2025 in Wien Mauer
 date:   2026-01-01 00:00:00 CET
+last_modified_at: 2026-08-20 17:51:59 CET
+lang: de
 categories: 
 ---
 
@@ -10,6 +12,28 @@ Position: 48° 8' 57.1" N, 16° 17' 2.1" E <BR>
 Meeresniveau: 235 m ü. A. 
 
 <BR>
+
+## Table of Contents 
+
+   * [<span> Temperatur </span>](#-temperatur-)
+      * [Die fünf heißesten Tage im Jahr 2025](#die-fünf-heißesten-tage-im-jahr-2025)
+      * [Die fünf kältesten Tage im Jahr 2025](#die-fünf-kältesten-tage-im-jahr-2025)
+      * [Fünf Tage mit geringster Tageserwärmung](#fünf-tage-mit-geringster-tageserwärmung)
+      * [Fünf Tage mit höchster Tageserwärmung](#fünf-tage-mit-höchster-tageserwärmung)
+      * [Insgesamt gab es 7 Eistage](#insgesamt-gab-es-7-eistage)
+      * [Längste Periode an Eistagen](#längste-periode-an-eistagen)
+      * [Insgesamt gab es 63 Frosttage](#insgesamt-gab-es-63-frosttage)
+      * [Letzter und erster Frosttag](#letzter-und-erster-frosttag)
+      * [Anzahl der Frosttage pro Monat](#anzahl-der-frosttage-pro-monat)
+      * [Insgesamt gab es 10 Tropennächte](#insgesamt-gab-es-10-tropennächte)
+      * [Insgesamt gab es 38 Hitzetage](#insgesamt-gab-es-38-hitzetage)
+      * [Anzahl der Hitzetage mit über 30 Grad pro Monat](#anzahl-der-hitzetage-mit-über-30-grad-pro-monat)
+      * [Längste Periode an Hitzetagen](#längste-periode-an-hitzetagen)
+      * [Wüstentage](#wüstentage)
+      * [Monatsübersicht 2025](#monatsübersicht-2025)
+      * [Jahreszusammenfassung 2025](#jahreszusammenfassung-2025)
+   * [<span> Niederschläge </span>](#-niederschläge-)
+
 
 ## <span style="color:blue"> Temperatur </span>
 
@@ -251,6 +275,17 @@ Die Tageshöchstwerte klettern über 30 °C
 | &nbsp;&nbsp;von&nbsp;&nbsp;        | &nbsp;&nbsp;bis&nbsp;&nbsp;        | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;avgT&nbsp;&nbsp;   | &nbsp;&nbsp;Tage&nbsp;&nbsp;   |
 |------------------------------------|------------------------------------|--------------------------------|--------------------------------|--------------------------------|--------------------------------|
 | &nbsp;&nbsp;2025-06-22&nbsp;&nbsp; | &nbsp;&nbsp;2025-06-27&nbsp;&nbsp; | &nbsp;&nbsp;13.1&nbsp;&nbsp;   | &nbsp;&nbsp;36.2&nbsp;&nbsp;   | &nbsp;&nbsp;24.96&nbsp;&nbsp;  | &nbsp;&nbsp;6&nbsp;&nbsp;      |
+
+### Wüstentage ###
+
+Die Tageshöchstwerte klettern über 35 °C
+
+| &nbsp;&nbsp;Datum&nbsp;&nbsp;      | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   |
+|------------------------------------|--------------------------------|--------------------------------|
+| &nbsp;&nbsp;2025-06-26&nbsp;&nbsp; | &nbsp;&nbsp;20.4&nbsp;&nbsp;   | &nbsp;&nbsp;36.2&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-07-03&nbsp;&nbsp; | &nbsp;&nbsp;20.7&nbsp;&nbsp;   | &nbsp;&nbsp;38.0&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-14&nbsp;&nbsp; | &nbsp;&nbsp;19.1&nbsp;&nbsp;   | &nbsp;&nbsp;35.0&nbsp;&nbsp;   |
+| &nbsp;&nbsp;2025-08-15&nbsp;&nbsp; | &nbsp;&nbsp;18.4&nbsp;&nbsp;   | &nbsp;&nbsp;35.5&nbsp;&nbsp;   |
 
 
 ### Monatsübersicht 2025 
