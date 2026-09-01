@@ -2,7 +2,7 @@
 layout: post
 title:  Wetter 2025 in Wien Mauer
 date:   2026-01-01 00:00:00 CET
-last_modified_at: 2026-08-20 17:51:59 CET
+last_modified_at: 2026-09-01 19:51:59 CET
 lang: de
 categories: 
 ---
@@ -30,6 +30,7 @@ Meeresniveau: 235 m ü. A.
       * [Anzahl der Hitzetage mit über 30 Grad pro Monat](#anzahl-der-hitzetage-mit-über-30-grad-pro-monat)
       * [Längste Periode an Hitzetagen](#längste-periode-an-hitzetagen)
       * [Wüstentage](#wüstentage)
+      * [Längste Periode an Wüstentagen](#längste-periode-an-wüstentagen)
       * [Monatsübersicht 2025](#monatsübersicht-2025)
       * [Jahreszusammenfassung 2025](#jahreszusammenfassung-2025)
    * [<span> Niederschläge </span>](#-niederschläge-)
@@ -286,6 +287,12 @@ Die Tageshöchstwerte klettern über 35 °C
 | &nbsp;&nbsp;2025-07-03&nbsp;&nbsp; | &nbsp;&nbsp;20.7&nbsp;&nbsp;   | &nbsp;&nbsp;38.0&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-08-14&nbsp;&nbsp; | &nbsp;&nbsp;19.1&nbsp;&nbsp;   | &nbsp;&nbsp;35.0&nbsp;&nbsp;   |
 | &nbsp;&nbsp;2025-08-15&nbsp;&nbsp; | &nbsp;&nbsp;18.4&nbsp;&nbsp;   | &nbsp;&nbsp;35.5&nbsp;&nbsp;   |
+
+### Längste Periode an Wüstentagen ### 
+
+| &nbsp;&nbsp;von&nbsp;&nbsp;        | &nbsp;&nbsp;bis&nbsp;&nbsp;        | &nbsp;&nbsp;minT&nbsp;&nbsp;   | &nbsp;&nbsp;maxT&nbsp;&nbsp;   | &nbsp;&nbsp;avgT&nbsp;&nbsp;   | &nbsp;&nbsp;Tage&nbsp;&nbsp;   |
+|------------------------------------|------------------------------------|--------------------------------|--------------------------------|--------------------------------|--------------------------------|
+| &nbsp;&nbsp;2025-08-14&nbsp;&nbsp; | &nbsp;&nbsp;2025-08-15&nbsp;&nbsp; | &nbsp;&nbsp;18.4&nbsp;&nbsp;   | &nbsp;&nbsp;35.5&nbsp;&nbsp;   | &nbsp;&nbsp;26.84&nbsp;&nbsp;  | &nbsp;&nbsp;2&nbsp;&nbsp;      |
 
 
 ### Monatsübersicht 2025 
